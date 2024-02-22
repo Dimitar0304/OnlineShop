@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lasss\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {}
+    "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lasss\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
+    "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lasss\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+        "projectUniqueName": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
         "projectName": "OnlineShop",
-        "projectPath": "C:\\Users\\lasss\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+        "projectPath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
         "packagesPath": "C:\\Users\\lasss\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lasss\\source\\repos\\OnlineShop\\OnlineShop\\obj\\",
+        "outputPath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lasss\\AppData\\Roaming\\NuGet\\NuGet.Config",

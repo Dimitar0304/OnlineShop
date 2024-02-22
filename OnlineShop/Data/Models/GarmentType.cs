@@ -3,16 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OnlineShop.Data.Models
 {
-    [Comment("Size for clothes in shop")]
-    public  class Size
+    [Comment("Garment type entity")]
+    public class GarmentType
     {
         [Key]
-        [Comment("Size identifier")]
+        [Comment("Garment type identifier")]
         public int Id { get; set; }
         [Required]
-        [StringLength(DataConstants.Size.MaxLenght)]
-        [Comment("Size Name")]
+        [StringLength(DataConstants.GarmentType.MaxNameLenght)]
+        [Comment("Garment type name")]
         public string Name { get; set; } = null!;
-        
     }
 }

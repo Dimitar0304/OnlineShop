@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WxewSQbnvnS7siVNwRUiygaZPOct8fCPTDYBcTCAj0rf+t+c1AFND19ESr2YNsAOC4LIshePvs7/1vreOGGFcA==",
+  "dgSpecHash": "3umQBLrIB/fmJ3BTSeXHoaZhj1bVoU/LMjGD/NzdKKoSUWRqHLpNApwUt+zOPmC0ZcHd2zTgwAlu9q+j0hYPrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lasss\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+  "projectFilePath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lasss\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
