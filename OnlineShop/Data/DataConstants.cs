@@ -44,5 +44,13 @@
             public const int MinNameLenght = 1;
             public const int MaxNameLenght = 15;
         }
+        public static class Order
+        {
+            public const int MinPhoneNumberLenght = 10;
+            public const int MaxPhoneNumberLenght = 13;
+
+            public const int MinAddressLenght = 10;
+            public const int MaxAddressLenght = 20;
+        }
     }
 }
