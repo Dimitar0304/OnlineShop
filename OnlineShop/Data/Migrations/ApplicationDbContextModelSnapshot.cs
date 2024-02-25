@@ -51,14 +51,14 @@ namespace OnlineShop.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "94398963-b704-4af2-9245-43c3dd188b3f",
-                            ConcurrencyStamp = "a08949b7-dda0-4310-bc18-65933e48c11d",
+                            Id = "2c3de53b-1af4-4671-a2db-f2810168d2b1",
+                            ConcurrencyStamp = "a459c7b1-d51b-4af4-9d9a-152258b39238",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "3915c2bf-3fa8-4ac9-8eb7-981071a2eb83",
-                            ConcurrencyStamp = "87b7687f-f708-453b-8a06-dedd363fd805",
+                            Id = "a7bb2cee-ce63-496c-871b-67e329f00a9f",
+                            ConcurrencyStamp = "523d2ab7-2fcd-4325-9caf-c40cd5a67b62",
                             Name = "User"
                         });
                 });
@@ -287,8 +287,8 @@ namespace OnlineShop.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
                         .HasComment("Brand Name");
 
                     b.HasKey("Id");
@@ -407,6 +407,38 @@ namespace OnlineShop.Data.Migrations
                     b.ToTable("GarmentsTypes");
 
                     b.HasComment("Garment type entity");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Tshirt"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Shirt"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Leggin"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Pant"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Jacket"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Coat"
+                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Data.Models.Order", b =>
@@ -520,14 +552,36 @@ namespace OnlineShop.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
                     b.ToTable("ShoesTypes");
 
                     b.HasComment("Shoe type entity");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Sneakers"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Boots"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Basketball shoes"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Football shoes"
+                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Data.Models.Size", b =>

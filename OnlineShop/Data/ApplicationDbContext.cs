@@ -48,6 +48,14 @@ namespace OnlineShop.Data
             //Seeding roles
             builder.Entity<IdentityRole>()
                 .HasData(AddIdentityRoles());
+             
+            //Seed shoes types
+            builder.Entity<ShoeType>()
+                .HasData(AddShoeTypes());
+
+            //Seed garments types
+            builder.Entity<GarmentType>()
+                .HasData(AddGarmentType());
 
             base.OnModelCreating(builder);
         }
@@ -134,6 +142,70 @@ namespace OnlineShop.Data
                 new IdentityRole("Admin"),
                 new IdentityRole("User")
                 
+            };
+        }
+
+        private List<ShoeType> AddShoeTypes()
+        {
+            return new List<ShoeType>()
+            {
+                new ShoeType()
+                {
+                    Id = 1,
+                    Name = "Sneakers"
+                },
+                new ShoeType()
+                {
+                    Id =2,
+                    Name = "Boots"
+                },
+                new ShoeType()
+                {
+                    Id =3,
+                    Name = "Basketball shoes"
+                },
+                new ShoeType()
+                {
+                    Id = 4,
+                    Name = "Football shoes"
+                }
+            };
+        }
+
+        private List<GarmentType> AddGarmentType()
+        {
+            return new List<GarmentType>()
+            {
+                new GarmentType()
+                {
+                    Id =1 ,
+                    Name = "Tshirt"
+                },
+                new GarmentType()
+                {
+                    Id=2,
+                    Name = "Shirt"
+                },
+                new GarmentType()
+                {
+                    Id =3,
+                    Name = "Leggin"
+                },
+                new GarmentType()
+                {
+                    Id =4,
+                    Name = "Pant"
+                },
+                new GarmentType()
+                {
+                    Id =5,
+                    Name = "Jacket"
+                },
+                new GarmentType()
+                {
+                    Id = 6,
+                    Name = "Coat"
+                }
             };
         }
     }

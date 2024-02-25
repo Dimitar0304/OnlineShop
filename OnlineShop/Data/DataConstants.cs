@@ -32,12 +32,12 @@
         public static class Brand
         {
             public const int MinNameLenght = 1;
-            public const int MaxNameLenght = 25;
+            public const int MaxNameLenght = 50;
         }
         public static class ShoeType
         {
             public const int MinNameLenght = 1;
-            public const int MaxNameLenght = 15;
+            public const int MaxNameLenght = 50;
         }
         public static class GarmentType
         {
