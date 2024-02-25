@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -28,5 +29,6 @@ namespace OnlineShop.Data.Models
         [Comment("Order Address")]
         [MaxLength(DataConstants.Order.MaxAddressLenght)]
         public string Address { get; set; } = null!;
+        public IEnumerable<UserOrder> UsersOrders { get; set; } = new List<UserOrder>();
     }
 }

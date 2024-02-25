@@ -12,8 +12,8 @@ using OnlineShop.Data;
 namespace OnlineShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240224192943_Initial")]
-    partial class Initial
+    [Migration("20240225111228_SeedingData")]
+    partial class SeedingData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,6 +49,20 @@ namespace OnlineShop.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "94398963-b704-4af2-9245-43c3dd188b3f",
+                            ConcurrencyStamp = "a08949b7-dda0-4310-bc18-65933e48c11d",
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = "3915c2bf-3fa8-4ac9-8eb7-981071a2eb83",
+                            ConcurrencyStamp = "87b7687f-f708-453b-8a06-dedd363fd805",
+                            Name = "User"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -284,6 +298,33 @@ namespace OnlineShop.Data.Migrations
                     b.ToTable("Brands");
 
                     b.HasComment("Brand data entity");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Nike"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Adidas"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "LaCoste"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Under Armour"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Champion"
+                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Data.Models.Garment", b =>
@@ -511,6 +552,43 @@ namespace OnlineShop.Data.Migrations
                     b.ToTable("Sizes");
 
                     b.HasComment("Size for clothes in shop");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "S"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "XS"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "M"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "L"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "XL"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "XXL"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "XXXL"
+                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Data.Models.UserOrder", b =>
@@ -676,9 +754,9 @@ namespace OnlineShop.Data.Migrations
             modelBuilder.Entity("OnlineShop.Data.Models.UserOrder", b =>
                 {
                     b.HasOne("OnlineShop.Data.Models.Order", "Order")
-                        .WithMany()
+                        .WithMany("UsersOrders")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
@@ -704,6 +782,11 @@ namespace OnlineShop.Data.Migrations
             modelBuilder.Entity("OnlineShop.Data.Models.Garment", b =>
                 {
                     b.Navigation("ClothesSizes");
+                });
+
+            modelBuilder.Entity("OnlineShop.Data.Models.Order", b =>
+                {
+                    b.Navigation("UsersOrders");
                 });
 
             modelBuilder.Entity("OnlineShop.Data.Models.Shoe", b =>
