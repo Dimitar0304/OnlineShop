@@ -1,0 +1,34 @@
+﻿
+@model GarmentViewModel
+@{
+}
+<form asp-action="Add" method="post" class="needs-validation" novalidate>
+    <div class="form-group">
+        <label asp-for="Model" class="control-label">Model</label>
+        <input asp-for="Model" class="form-control" />
+        <span asp-validation-for="Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TypeId" class="control-label">Type</label>
+        <input asp-for="TypeId" class="form-control" />
+        <span asp-validation-for="TypeId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BrandId" class="control-label">Brand</label>
+        <select asp-for="BrandId" class="form-control" asp-items="@(new SelectList(Model.Brands, "Id", "Name"))">
+            <option value="">Select Brand</option>
+        </select>
+        <span asp-validation-for="BrandId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label">Price</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Color" class="control-label">Color</label>
+        <input asp-for="Color" class="form-control" />
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

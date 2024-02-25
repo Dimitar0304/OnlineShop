@@ -15,6 +15,10 @@ namespace OnlineShop.Data.Models
         [Comment("Garment Name")]
         public string Model { get; set; } = null!;
         [Required]
+        [Comment("Garment Type identifier")]
+        [ForeignKey(nameof(Type))]
+        public int TypeId { get; set; } 
+        [Required]
         [Comment("Garment Type")]
         public GarmentType Type { get; set; } = null!;
         [Required]
