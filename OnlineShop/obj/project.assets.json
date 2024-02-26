@@ -3897,6 +3897,34 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "OnlineShop.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "OnlineShop.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OnlineShop.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineShop.Core.dll": {}
+        }
+      },
+      "OnlineShop.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.27",
+          "Microsoft.EntityFrameworkCore": "6.0.27",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27"
+        },
+        "compile": {
+          "bin/placeholder/OnlineShop.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineShop.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -11115,6 +11143,16 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "OnlineShop.Core/1.0.0": {
+      "type": "project",
+      "path": "../OnlineShop.Core/OnlineShop.Core.csproj",
+      "msbuildProject": "../OnlineShop.Core/OnlineShop.Core.csproj"
+    },
+    "OnlineShop.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../OnlineShop.Infrastructure/OnlineShop.Infrastructure.csproj",
+      "msbuildProject": "../OnlineShop.Infrastructure/OnlineShop.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11124,7 +11162,8 @@
       "Microsoft.AspNetCore.Identity.UI >= 6.0.27",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.27",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.27",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
+      "OnlineShop.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11154,7 +11193,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj": {
+              "projectPath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

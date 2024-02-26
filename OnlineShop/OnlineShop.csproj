@@ -24,4 +24,8 @@
     <Folder Include="Models\Shoe\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineShop.Core\OnlineShop.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,12 @@
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.AssemblyInfo.cs
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\bin\Debug\net6.0\OnlineShop.Infrastructure.deps.json
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\bin\Debug\net6.0\OnlineShop.Infrastructure.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\bin\Debug\net6.0\OnlineShop.Infrastructure.pdb
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\refint\OnlineShop.Infrastructure.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.pdb
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\ref\OnlineShop.Infrastructure.dll

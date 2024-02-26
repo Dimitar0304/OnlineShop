@@ -494,7 +494,6 @@ C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineSho
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.AssemblyInfoInputs.cache
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.AssemblyInfo.cs
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.csproj.CoreCompileInputs.cache
-C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.RazorAssemblyInfo.cache
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.RazorAssemblyInfo.cs
@@ -514,3 +513,7 @@ C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\refint\On
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.pdb
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.genruntimeconfig.cache
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\ref\OnlineShop.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\OnlineShop.Core.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\OnlineShop.Infrastructure.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\OnlineShop.Core.pdb
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\OnlineShop.Infrastructure.pdb

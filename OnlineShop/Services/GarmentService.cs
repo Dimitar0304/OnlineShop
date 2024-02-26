@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.EntityFrameworkCore;
-using OnlineShop.Data;
-using OnlineShop.Data.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineShop.Infrastructure;
+using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
@@ -59,6 +58,7 @@ namespace OnlineShop.Services
             var g = data.Garments.FirstOrDefault(g => g.Id == id);
             if (g != null)
             {
+                
                 data.Garments.Remove(g);
                 data.SaveChanges();
             }

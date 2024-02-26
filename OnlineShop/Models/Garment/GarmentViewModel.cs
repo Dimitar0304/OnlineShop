@@ -1,10 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OnlineShop.Data.Models;
-using OnlineShop.Data;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using OnlineShop.Validations;
+﻿using OnlineShop.Infrastructure;
 using OnlineShop.Models.Brand;
+using OnlineShop.Validations;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnlineShop.Models.Garment
 {
