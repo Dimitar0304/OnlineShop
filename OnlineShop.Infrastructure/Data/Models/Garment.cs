@@ -71,9 +71,17 @@ namespace OnlineShop.Infrastructure.Data.Models
         public string Color { get; set; } = null!;
 
         /// <summary>
+        /// Garment Image Url
+        /// </summary>
+        [Required]
+        public string ImageUrl { get; set; } = null!;
+
+        /// <summary>
         /// Garment Size Collection
         /// </summary>
         [Comment("Garment size collection")]
         public IEnumerable<GarmentSize> ClothesSizes { get; set; } = null!;
+
+
     }
 }

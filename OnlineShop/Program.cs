@@ -1,9 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using OnlineShop.Configurations;
 using OnlineShop.Infrastructure;
-using OnlineShop.Services.Contracts;
-using OnlineShop.Services.RoleService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +14,6 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 //Add Admin of app
 
-builder.Configuration.Add<RoleConfiguration>(options=>options.AddAdmin());
 
 
 
@@ -57,5 +53,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
+
+
 
 app.Run();

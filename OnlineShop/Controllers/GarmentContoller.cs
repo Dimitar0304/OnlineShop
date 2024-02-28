@@ -14,12 +14,13 @@ namespace OnlineShop.Controllers
             service = _service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> All()
         {
-            return View();
+            var models = await service.GetAllGarmentsAsync();
+            return View(models);
         }
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Add()
         {
             var model = new GarmentViewModel();
@@ -27,6 +28,7 @@ namespace OnlineShop.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Add(GarmentViewModel model)
         {
             if (ModelState.IsValid)
@@ -38,5 +40,6 @@ namespace OnlineShop.Controllers
             model.Brands = await service.GetBrands();
             return View(model);
         }
+
     }
 }

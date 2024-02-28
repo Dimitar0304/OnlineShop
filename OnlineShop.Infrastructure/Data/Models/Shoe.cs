@@ -70,6 +70,13 @@ namespace OnlineShop.Infrastructure.Data.Models
         [Comment("Shoe color")]
         public string Color { get; set; }= null!;
 
+
+        /// <summary>
+        /// Shoe Image Url
+        /// </summary>
+        [Required]
+        public string ImageUrl { get; set; } = null!;
+
         /// <summary>
         /// ShoeSize Collection
         /// </summary>

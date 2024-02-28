@@ -57,5 +57,11 @@ namespace OnlineShop.Infrastructure.Data.Models
         [Required]
         [Comment("Accessory brand type")]
         public Brand Brand { get; set; } = null!;
+
+        /// <summary>
+        /// Accessory Image Url
+        /// </summary>
+        [Required] 
+        public string ImageUrl { get; set; } = null!;
     }
 }
