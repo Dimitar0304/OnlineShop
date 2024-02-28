@@ -5,7 +5,7 @@ using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 
-namespace OnlineShop.Services
+namespace OnlineShop.Services.GarmentService
 {
     /// <summary>
     /// Garment service
@@ -58,11 +58,11 @@ namespace OnlineShop.Services
             var g = data.Garments.FirstOrDefault(g => g.Id == id);
             if (g != null)
             {
-                
+
                 data.Garments.Remove(g);
                 data.SaveChanges();
             }
-            
+
         }
         /// <summary>
         /// Method for returns all garments async
@@ -71,7 +71,7 @@ namespace OnlineShop.Services
         public async Task<List<GarmentViewModel>> GetAllGarmentsAsync()
         {
             return await data.Garments
-                .Select(g=>new GarmentViewModel()
+                .Select(g => new GarmentViewModel()
                 {
                     Id = g.Id,
                     Model = g.Model,
@@ -82,8 +82,8 @@ namespace OnlineShop.Services
                 })
                 .AsNoTracking()
                    .ToListAsync();
-                
-                
+
+
         }
         /// <summary>
         /// Method that returns me garmentViewModel by current id
@@ -102,7 +102,7 @@ namespace OnlineShop.Services
                 Price = g.Price,
                 Color = g.Color
 
-            }).Where(g=>g.Id == id)
+            }).Where(g => g.Id == id)
             .FirstAsync();
             return g;
         }
@@ -114,10 +114,10 @@ namespace OnlineShop.Services
 
         public async Task UpdateGarmentToDbAsync(GarmentViewModel model)
         {
-            Garment g = await data.Garments.FirstOrDefaultAsync(g=>g.Id==model.Id);
+            Garment g = await data.Garments.FirstOrDefaultAsync(g => g.Id == model.Id);
 
 
-           if (g != null)
+            if (g != null)
             {
                 g.Model = model.Model;
                 g.BrandId = model.BrandId;

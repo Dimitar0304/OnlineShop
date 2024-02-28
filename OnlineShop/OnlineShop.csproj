@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Extentions\" />
     <Folder Include="Models\Accessory\" />
     <Folder Include="Models\Shoe\" />
   </ItemGroup>

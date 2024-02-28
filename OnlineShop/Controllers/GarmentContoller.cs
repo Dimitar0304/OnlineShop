@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 
 namespace OnlineShop.Controllers
 {
+    [Authorize]
     public class GarmentContoller : Controller
     {
         private readonly IGarmentService service;
@@ -17,6 +19,7 @@ namespace OnlineShop.Controllers
             return View();
         }
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Add()
         {
             var model = new GarmentViewModel();
