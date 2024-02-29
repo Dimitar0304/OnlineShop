@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Infrastructure;
+using OnlineShop.Services.Contracts;
+using OnlineShop.Services.GarmentService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+//Add Garment Service
+builder.Services.AddScoped<IGarmentService,GarmentService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -33,6 +38,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+
+    //use status code page
+    app.UseStatusCodePages();
 }
 else
 {
@@ -44,16 +52,17 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+//Session option functionality
+app.UseSession()
+
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapDefaultControllerRoute();
 app.MapRazorPages();
 
 
 
-app.Run();
+ await app.RunAsync();

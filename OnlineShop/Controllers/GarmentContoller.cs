@@ -16,8 +16,15 @@ namespace OnlineShop.Controllers
 
         public async Task<IActionResult> All()
         {
-            var models = await service.GetAllGarmentsAsync();
-            return View(models);
+            var model = new AllGarmentViewModel();
+            model.Garments = await service.GetAllGarmentsAsync();
+            if (model.Garments.Count > 0 && model.Garments != null)
+            {
+
+                return View(model);
+            }
+            return RedirectToAction("Index", "Home");
+
         }
         [HttpGet]
         [Authorize(Roles = "Admin")]
