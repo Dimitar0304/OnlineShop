@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using OnlineShop.Infrastructure.Data.Configuration;
 using OnlineShop.Infrastructure.Data.Models;
 
 namespace OnlineShop.Infrastructure
@@ -93,176 +94,25 @@ namespace OnlineShop.Infrastructure
                 .WithMany(uo => uo.UsersOrders)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            //Seeding sizes 
-            builder.Entity<Size>()
-                .HasData(AddSizes());
+            //Seeding brands  configuration
+            builder.ApplyConfiguration(new BrandConfiguration());
 
-            //Seeding sport brands
-            builder.Entity<Brand>()
-                .HasData(AddDistributedBrands());
+            //Seed garment type configuration
+            builder.ApplyConfiguration(new GarmentTypeConfiguration());
 
-            //Seeding roles
-            builder.Entity<IdentityRole>()
-                .HasData(AddIdentityRoles());
-             
-            //Seed shoes types
-            builder.Entity<ShoeType>()
-                .HasData(AddShoeTypes());
+            //Seed identity roles configuration
+            builder.ApplyConfiguration(new IdentityRolesConfiguration());
 
-            //Seed garments types
-            builder.Entity<GarmentType>()
-                .HasData(AddGarmentType());
+            //Seed payment method configuration
+            builder.ApplyConfiguration(new PaymentMethodConfiguration());
+
+            //Seed shoe type configuration
+            builder.ApplyConfiguration(new ShoeTypeConfiguration());
+
+            //Seed size configuration
+            builder.ApplyConfiguration(new SizeConfiguration());
 
             base.OnModelCreating(builder);
-        }
-        private List<Size> AddSizes()
-        {
-            return new List<Size>() {
-            new Size()
-            {
-                Id = 1,
-                Name = "S"
-
-            },
-
-            new Size()
-            {
-                Id =2,
-                Name = "XS"
-            },
-            new Size()
-            {
-                Id = 3,
-                Name = "M"
-            },
-            new Size()
-            {
-                Id = 4,
-                Name = "L"
-            },
-            new Size()
-            {
-                Id = 5,
-                Name = "XL"
-            },
-            new Size()
-            {
-                Id = 6,
-                Name = "XXL"
-            },
-            new Size()
-            {
-                Id = 7,
-                Name = "XXXL"
-            }
-            };
-        }
-
-        private List<Brand> AddDistributedBrands()
-        {
-            return new List<Brand>()
-            {
-                new Brand()
-                {
-                    Id = 1,
-                    Name= "Nike",
-                    
-                },
-                new Brand()
-                {
-                    Id = 2,
-                    Name = "Adidas"
-                },
-                new Brand()
-                {
-                    Id = 3,
-                    Name = "LaCoste"
-                },
-                new Brand()
-                {
-                    Id = 4,
-                    Name = "Under Armour"
-                },
-                new Brand()
-                {
-                    Id = 5,
-                    Name = "Champion"
-                }
-            };
-        }
-
-        private List<IdentityRole> AddIdentityRoles()
-        {
-            return new List<IdentityRole>()
-            {
-                new IdentityRole("Admin"),
-                new IdentityRole("User")
-                
-            };
-        }
-
-        private List<ShoeType> AddShoeTypes()
-        {
-            return new List<ShoeType>()
-            {
-                new ShoeType()
-                {
-                    Id = 1,
-                    Name = "Sneakers"
-                },
-                new ShoeType()
-                {
-                    Id =2,
-                    Name = "Boots"
-                },
-                new ShoeType()
-                {
-                    Id =3,
-                    Name = "Basketball shoes"
-                },
-                new ShoeType()
-                {
-                    Id = 4,
-                    Name = "Football shoes"
-                }
-            };
-        }
-
-        private List<GarmentType> AddGarmentType()
-        {
-            return new List<GarmentType>()
-            {
-                new GarmentType()
-                {
-                    Id =1 ,
-                    Name = "Tshirt"
-                },
-                new GarmentType()
-                {
-                    Id=2,
-                    Name = "Shirt"
-                },
-                new GarmentType()
-                {
-                    Id =3,
-                    Name = "Leggin"
-                },
-                new GarmentType()
-                {
-                    Id =4,
-                    Name = "Pant"
-                },
-                new GarmentType()
-                {
-                    Id =5,
-                    Name = "Jacket"
-                },
-                new GarmentType()
-                {
-                    Id = 6,
-                    Name = "Coat"
-                }
-            };
         }
     }
 }
