@@ -3,6 +3,7 @@ using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
+using OnlineShop.Models.Size;
 using OnlineShop.Services.Contracts;
 
 namespace OnlineShop.Services.GarmentService
@@ -151,6 +152,22 @@ namespace OnlineShop.Services.GarmentService
                     Name = b.Name
                 })
                 .AsNoTracking()
+                .ToListAsync();
+        }
+
+        /// <summary>
+        /// Method that return possible Sizes when we add to cart
+        /// </summary>
+        /// <returns></returns>
+
+        public async Task<List<SizeViewModel>> GetSizes()
+        {
+            return await data.Sizes
+                .Select(s => new SizeViewModel()
+                {
+                    Id = s.Id,
+                    Name = s.Name,
+                })
                 .ToListAsync();
         }
     }

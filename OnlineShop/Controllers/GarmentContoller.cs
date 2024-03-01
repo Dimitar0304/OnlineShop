@@ -48,5 +48,21 @@ namespace OnlineShop.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> AddToCart(int id)
+        {
+            var model = new GarmentSizeViewModel();
+            model.Sizes = await service.GetSizes();
+            model.GarmentId = id;
+
+            return View(model);
+            
+        }
+        //[HttpPost]
+        //public async Task<IActionResult> AddToCart(GarmentSizeViewModel model)
+        //{
+
+        //}
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
+using OnlineShop.Models.Size;
 
 namespace OnlineShop.Services.Contracts
 {
@@ -11,5 +12,6 @@ namespace OnlineShop.Services.Contracts
         Task<List<GarmentViewModel>> GetAllGarmentsAsync();
         Task<GarmentViewModel> GetByIdAsync(int id);
         public  Task<List<BrandViewModel>> GetBrands();
+        public Task<List<SizeViewModel>>GetSizes();
     }
 }
