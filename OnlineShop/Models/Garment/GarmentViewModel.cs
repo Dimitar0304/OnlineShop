@@ -48,7 +48,13 @@ namespace OnlineShop.Models.Garment
         /// <summary>
         /// Garments brands
         /// </summary>
+       
 
         public List<BrandViewModel> Brands { get; set; } = new List<BrandViewModel>();
+
+        /// <summary>
+        /// image url
+        /// </summary>
+        public string ImageUrl { get; set; }
     }
 }

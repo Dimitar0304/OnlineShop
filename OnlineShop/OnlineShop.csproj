@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Configurations\" />
-    <Folder Include="Extentions\" />
     <Folder Include="Models\Accessory\" />
     <Folder Include="Models\Shoe\" />
   </ItemGroup>

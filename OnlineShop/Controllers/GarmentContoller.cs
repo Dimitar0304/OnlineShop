@@ -6,10 +6,10 @@ using OnlineShop.Services.Contracts;
 namespace OnlineShop.Controllers
 {
     [Authorize]
-    public class GarmentContoller : Controller
+    public class GarmentController : Controller
     {
         private readonly IGarmentService service;
-        public GarmentContoller(IGarmentService _service)
+        public GarmentController(IGarmentService _service)
         {
             service = _service;
         }

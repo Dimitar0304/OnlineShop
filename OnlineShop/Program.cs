@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
 using OnlineShop.Services.Contracts;
 using OnlineShop.Services.GarmentService;
+using OnlineShop.Services.RoleService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,11 +15,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 //Add Garment Service
-builder.Services.AddScoped<IGarmentService,GarmentService>();
+builder.Services.AddScoped<IGarmentService, GarmentService>();
+
+//Add role service
+//builder.Services.AddTransient<IRoleService, RoleService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-//Add Admin of app
+
 
 
 
@@ -41,6 +46,7 @@ if (app.Environment.IsDevelopment())
 
     //use status code page
     app.UseStatusCodePages();
+
 }
 else
 {
@@ -53,16 +59,21 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 //Session option functionality
-app.UseSession()
+//app.UseSession()
 
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
+//My custom MiddleWare for add admin
+//app.UseAddAdmin();
+
+
+
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
 
 
 
- await app.RunAsync();
+await app.RunAsync();

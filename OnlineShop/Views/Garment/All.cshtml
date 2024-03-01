@@ -1,10 +1,53 @@
 ﻿@model AllGarmentViewModel;
 @{
-    ViewBag.Title = $"Our {Model.Season} collection";
+    ViewBag.Collection = $"Our {Model.Season} collection";
+    ViewBag.Title = "Our Suggestions";
 }
-<div>@ViewBag.Title</div>
+<h1>@ViewBag.Collection</h1>
+
+<h2>@ViewBag.Title</h2>
+
 <div class="hr-divider">
     <h3 class="hr-divider-content hr-divider-heading">
-        Divider heading
+        @foreach (var garment in Model.Garments)
+        {
+            <div class="card" style="max-height:15; max-width:15;max-block-size:15;">
+                
+                <div class="card-body">Model:
+                    <!-- Model -->
+                    <strong>@garment.Model</strong>
+
+                    <!-- Brand -->
+                    <p class="card-text">Brand:
+                        <strong>
+                            @garment.Brands.Where(br=>br.Id==garment.BrandId).First().Name
+                        </strong>
+                    </p>
+
+                    <!-- Price -->
+                    <p class="card-text">Price: <strong>@garment.Price</strong> BGN</p>
+
+                    <!-- Color -->
+                    <p class="card-text">Color: <strong>@garment.Color</strong></p>
+
+                    <!-- Image URL -->
+                    <img src="@garment.ImageUrl" alt="Image" width="150" height="150" />
+
+                    @if(User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Garment" asp-action="Edit" asp-route-id="@garment.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
+                    }
+                    else
+                    {
+                        <form class="input-group-sm" asp-controller="Garment" asp-action="AddToCart" asp-route-id="@garment.Id">
+                            <input type="submit" value="Add to cart" class="fs-6 btn btn-success mb-2 w-100 p-3 fw-bold" />
+                        </form>
+                        <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@garment.Id">
+                            <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold" />
+                        </form>
+                    }
+                </div>
+            </div>
+        }
     </h3>
 </div>

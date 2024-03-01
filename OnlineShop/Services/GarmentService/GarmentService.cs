@@ -78,7 +78,13 @@ namespace OnlineShop.Services.GarmentService
                     TypeId = g.TypeId,
                     BrandId = g.BrandId,
                     Price = g.Price,
-                    Color = g.Color
+                    Color = g.Color,
+                    ImageUrl = g.ImageUrl,
+                    Brands = data.Brands.Select(b=>new BrandViewModel()
+                    {
+                        Id = b.Id,
+                        Name = b.Name,
+                    }).ToList(),
                 })
                 .AsNoTracking()
                    .ToListAsync();
