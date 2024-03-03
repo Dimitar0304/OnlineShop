@@ -23,7 +23,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
                         </li>
                         @if (User.Identity.IsAuthenticated&&User.IsInRole("Admin"))
                         {
@@ -36,6 +36,18 @@
                         {
                             <li class="nav-item mx-2">
                                 <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Garment" asp-action="All">All Clothes</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Shoe" asp-action="All">All Shoes</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Accessories" asp-action="All">All Accessories</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Brand" asp-action="All">All Brands</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Cart" asp-action="MyShoppingCart">My Shoping Cart</a>
                             </li>
                         }
                     </ul>
@@ -52,7 +64,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - OnlineShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - OnlineShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
