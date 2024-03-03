@@ -2,6 +2,21 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Habanero/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Habanero.BO.dll": {},
+          "lib/Habanero.Base.dll": {},
+          "lib/Habanero.Console.dll": {},
+          "lib/Habanero.DB.dll": {}
+        },
+        "runtime": {
+          "lib/Habanero.BO.dll": {},
+          "lib/Habanero.Base.dll": {},
+          "lib/Habanero.Console.dll": {},
+          "lib/Habanero.DB.dll": {}
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -2372,6 +2387,32 @@
           }
         }
       },
+      "SendGrid/9.29.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "starkbank-ecdsa": "[1.3.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "starkbank-ecdsa/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3902,7 +3943,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "OnlineShop.Infrastructure": "1.0.0"
+          "Microsoft.AspNetCore.Identity.UI": "6.0.27",
+          "OnlineShop.Infrastructure": "1.0.0",
+          "SendGrid": "9.29.2"
         },
         "compile": {
           "bin/placeholder/OnlineShop.Core.dll": {}
@@ -3929,6 +3972,21 @@
     }
   },
   "libraries": {
+    "Habanero/3.0.1": {
+      "sha512": "BX8WuZobnYHRU5VYFXYAtZ5Rpm1EgKZhz5cKBFGit5jhW+BNnN/gfjLOJByzZYmc0i5DmMrvBGP6JioR2p3Cqw==",
+      "type": "package",
+      "path": "habanero/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "habanero.3.0.1.nupkg.sha512",
+        "habanero.nuspec",
+        "lib/Habanero.BO.dll",
+        "lib/Habanero.Base.dll",
+        "lib/Habanero.Console.dll",
+        "lib/Habanero.DB.dll"
+      ]
+    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -7342,6 +7400,45 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "SendGrid/9.29.2": {
+      "sha512": "/Uj+2Wd4poD73okfZApJe98QNwSBHzyrz73Ovz4m2Jvw5dHwxRsVYF9jUPsGR3WjkID3EOEMBa4EBiKuBHUfjg==",
+      "type": "package",
+      "path": "sendgrid/9.29.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SendGrid.dll",
+        "lib/net40/SendGrid.pdb",
+        "lib/net40/SendGrid.xml",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.29.2.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
+    "starkbank-ecdsa/1.3.3": {
+      "sha512": "OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
+      "type": "package",
+      "path": "starkbank-ecdsa/1.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/StarkbankEcdsa.dll",
+        "lib/net452/StarkbankEcdsa.dll",
+        "lib/netstandard1.3/StarkbankEcdsa.dll",
+        "lib/netstandard2.0/StarkbankEcdsa.dll",
+        "lib/netstandard2.1/StarkbankEcdsa.dll",
+        "starkbank-ecdsa.1.3.3.nupkg.sha512",
+        "starkbank-ecdsa.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -11157,6 +11254,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Habanero >= 3.0.1",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.15",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.27",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.27",
@@ -11210,6 +11308,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Habanero": {
+            "target": "Package",
+            "version": "[3.0.1, )"
+          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.15, )"
@@ -11259,5 +11361,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Habanero 3.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Habanero",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

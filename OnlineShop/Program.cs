@@ -1,10 +1,11 @@
+using Habanero.Util;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
-using OnlineShop.Extentions;
+using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Infrastructure;
 using OnlineShop.Services.Contracts;
 using OnlineShop.Services.GarmentService;
-using OnlineShop.Services.RoleService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,19 +23,31 @@ builder.Services.AddScoped<IGarmentService, GarmentService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+//Add email sender service
+builder.Services.AddTransient<IEmailSender, EmailSenderService>();
+builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
+
+//Adding session options
+builder.Services.ConfigureApplicationCookie(o =>
+{
+    o.ExpireTimeSpan = TimeSpan.FromDays(5);
+    o.SlidingExpiration = true;
+});
 
 
 
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 {
-    options.SignIn.RequireConfirmedAccount = false;
+    options.SignIn.RequireConfirmedAccount = true;
     options.Password.RequireDigit = false;
     options.Password.RequireUppercase = false;
     options.Password.RequireNonAlphanumeric = false;
 })
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+   
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
