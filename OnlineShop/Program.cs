@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Core.Services.EmailSender;
+using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
 using OnlineShop.Services.Contracts;
 using OnlineShop.Services.GarmentService;
@@ -15,18 +16,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-//Add Garment Service
-builder.Services.AddScoped<IGarmentService, GarmentService>();
-
-//Add role service
-//builder.Services.AddTransient<IRoleService, RoleService>();
-
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-//Add email sender service
-builder.Services.AddTransient<IEmailSender, EmailSenderService>();
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
-
 
 //Adding session options
 builder.Services.ConfigureApplicationCookie(o =>
@@ -35,6 +27,8 @@ builder.Services.ConfigureApplicationCookie(o =>
     o.SlidingExpiration = true;
 });
 
+//adding application services by extention class
+builder.Services.AddApplicationService();
 
 
 
