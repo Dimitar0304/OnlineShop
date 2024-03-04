@@ -1,4 +1,6 @@
-﻿using OnlineShop.Core.Services.Contracts;
+﻿using OnlineShop.Core.Models.Shoe;
+using OnlineShop.Core.Models.Type;
+using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
@@ -13,9 +15,9 @@ namespace OnlineShop.Core.Services.ShoeService
         {
             repository = _repository;
         }
-        public Task AddGarmentToDbAsync(GarmentViewModel model)
+        public Task AddGarmentToDbAsync(ShoeAddViewModel model)
         {
-            
+            throw new NotImplementedException();
         }
 
         public void DeleteGarmentToDbAsync(int id)
@@ -23,7 +25,7 @@ namespace OnlineShop.Core.Services.ShoeService
             throw new NotImplementedException();
         }
 
-        public Task<List<GarmentViewModel>> GetAllGarmentsAsync()
+        public Task<List<ShoeAddViewModel>> GetAllGarmentsAsync()
         {
             throw new NotImplementedException();
         }
@@ -33,7 +35,7 @@ namespace OnlineShop.Core.Services.ShoeService
             throw new NotImplementedException();
         }
 
-        public Task<GarmentViewModel> GetByIdAsync(int id)
+        public Task<ShoeAddViewModel> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -43,7 +45,12 @@ namespace OnlineShop.Core.Services.ShoeService
             throw new NotImplementedException();
         }
 
-        public Task UpdateGarmentToDbAsync(GarmentViewModel model)
+        public Task<List<TypeAllViewModel>> GetTypes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateGarmentToDbAsync(ShoeAddViewModel model)
         {
             throw new NotImplementedException();
         }

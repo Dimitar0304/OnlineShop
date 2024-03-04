@@ -13,7 +13,7 @@ namespace OnlineShop.Core.Models.Accessory
     /// <summary>
     /// Accessory all view model
     /// </summary>
-    public class AccessoryAllViewModel
+    public class AccessoryAddViewModel
     {
         /// <summary>
         /// accessory identifier

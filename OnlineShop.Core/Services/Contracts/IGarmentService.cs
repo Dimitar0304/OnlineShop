@@ -1,4 +1,5 @@
-﻿using OnlineShop.Models.Brand;
+﻿using OnlineShop.Core.Models.Type;
+using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
 using OnlineShop.Models.Size;
 
@@ -13,5 +14,6 @@ namespace OnlineShop.Services.Contracts
         Task<GarmentViewModel> GetByIdAsync(int id);
         public  Task<List<BrandViewModel>> GetBrands();
         public Task<List<SizeViewModel>>GetSizes();
+        public Task<List<TypeAllViewModel>> GetTypes();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnlineShop.Core.Models.Type;
 using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Common;
@@ -169,6 +170,20 @@ namespace OnlineShop.Services.GarmentService
                 .ToListAsync();
 
         }
-        
+
+        /// <summary>
+        /// Method for get all type and  choose from it
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<TypeAllViewModel>> GetTypes()
+        {
+            return await repository.All<ShoeType>()
+                .Select(t=>new TypeAllViewModel()
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                })
+                .ToListAsync();
+        }
     }
 }

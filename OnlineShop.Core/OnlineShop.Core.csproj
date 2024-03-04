@@ -15,4 +15,9 @@
     <PackageReference Include="SendGrid" Version="9.29.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\AccessoryService\" />
+    <Folder Include="Services\BrandService\" />
+  </ItemGroup>
+
 </Project>
