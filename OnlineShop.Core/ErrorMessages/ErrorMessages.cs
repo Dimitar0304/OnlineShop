@@ -18,5 +18,10 @@
         /// The current user is in that role error message
         /// </summary>
         public const string UserIsInThatRoleError = "The user is in that role";
+
+        /// <summary>
+        /// Price range error message
+        /// </summary>
+        public const string PriceRangeErrorMessage = "Range must be between 0.00 and 5000.00";
     }
 }

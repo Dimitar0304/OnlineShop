@@ -46,6 +46,8 @@
             /// Max Color Lenght
             /// </summary>
             public const int MaxColorLenght = 15;
+
+           
         }
 
         /// <summary>
@@ -98,6 +100,7 @@
             /// Max Type Lenght
             /// </summary>
             public const int MaxTypeLenght = 40;
+
         }
         
         /// <summary>
