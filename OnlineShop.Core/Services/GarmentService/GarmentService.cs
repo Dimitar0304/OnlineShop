@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
+using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
 using OnlineShop.Models.Size;
 using OnlineShop.Services.Contracts;
+using System.Security.Claims;
 
 namespace OnlineShop.Services.GarmentService
 {
@@ -13,17 +16,10 @@ namespace OnlineShop.Services.GarmentService
     /// </summary>
     public class GarmentService : IGarmentService
     {
-        /// <summary>
-        /// Database field
-        /// </summary>
-        private readonly ApplicationDbContext data;
-        /// <summary>
-        /// Dependency injection constructor
-        /// </summary>
-        /// <param name="_context"></param>
-        public GarmentService(ApplicationDbContext _context)
+        private readonly IRepository repository;
+        public GarmentService(IRepository _repository)
         {
-            data = _context;
+            repository = _repository;
         }
         /// <summary>
         /// Garment add service method
@@ -44,8 +40,8 @@ namespace OnlineShop.Services.GarmentService
                     Color = model.Color,
 
                 };
-                await data.Garments.AddAsync(g);
-                await data.SaveChangesAsync();
+                await repository.AddAsync(g);
+                await repository.SaveChangesAsync();
 
             }
 
@@ -56,12 +52,12 @@ namespace OnlineShop.Services.GarmentService
         /// <param name="id"></param>
         public void DeleteGarmentToDbAsync(int id)
         {
-            var g = data.Garments.FirstOrDefault(g => g.Id == id);
+            var g = repository.GetByIdAsync<Garment>(id);
             if (g != null)
             {
 
-                data.Garments.Remove(g);
-                data.SaveChanges();
+                repository.Delete(g);
+                repository.SaveChangesAsync();
             }
 
         }
@@ -71,8 +67,8 @@ namespace OnlineShop.Services.GarmentService
         /// <returns></returns>
         public async Task<List<GarmentViewModel>> GetAllGarmentsAsync()
         {
-            return await data.Garments
-                .Select(g => new GarmentViewModel()
+            return await repository
+                .All<Garment>().Select(g => new GarmentViewModel()
                 {
                     Id = g.Id,
                     Model = g.Model,
@@ -81,7 +77,7 @@ namespace OnlineShop.Services.GarmentService
                     Price = g.Price,
                     Color = g.Color,
                     ImageUrl = g.ImageUrl,
-                    Brands = data.Brands.Select(b=>new BrandViewModel()
+                    Brands = repository.All<Brand>().Select(b => new BrandViewModel()
                     {
                         Id = b.Id,
                         Name = b.Name,
@@ -100,7 +96,7 @@ namespace OnlineShop.Services.GarmentService
 
         public async Task<GarmentViewModel> GetByIdAsync(int id)
         {
-            var g = await data.Garments.Select(g => new GarmentViewModel()
+            var g = await repository.All<Garment>().Select(g => new GarmentViewModel()
             {
                 Id = id,
                 Model = g.Model,
@@ -121,7 +117,7 @@ namespace OnlineShop.Services.GarmentService
 
         public async Task UpdateGarmentToDbAsync(GarmentViewModel model)
         {
-            Garment g = await data.Garments.FirstOrDefaultAsync(g => g.Id == model.Id);
+            Garment g = await repository.GetByIdAsync<Garment>(model.Id);
 
 
             if (g != null)
@@ -133,8 +129,8 @@ namespace OnlineShop.Services.GarmentService
                 g.TypeId = model.TypeId;
 
 
-                data.Garments.Update(g);
-                await data.SaveChangesAsync();
+                await repository.UpdateAsync<Garment>(g);
+                await repository.SaveChangesAsync();
 
             }
         }
@@ -145,7 +141,7 @@ namespace OnlineShop.Services.GarmentService
         /// <returns></returns>
         public async Task<List<BrandViewModel>> GetBrands()
         {
-            return await data.Brands
+            return await repository.All<Brand>()
                 .Select(b => new BrandViewModel()
                 {
                     Id = b.Id,
@@ -162,13 +158,17 @@ namespace OnlineShop.Services.GarmentService
 
         public async Task<List<SizeViewModel>> GetSizes()
         {
-            return await data.Sizes
+            
+            
+            return await repository.All<Size>()
                 .Select(s => new SizeViewModel()
                 {
                     Id = s.Id,
                     Name = s.Name,
                 })
                 .ToListAsync();
+
         }
+        
     }
 }

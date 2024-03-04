@@ -1,3 +1,6 @@
+using OnlineShop.Extentions;
+using System.Security.Claims;
+
 namespace OnlineShop.Models
 {
     public class ErrorViewModel
@@ -5,5 +8,7 @@ namespace OnlineShop.Models
         public string? RequestId { get; set; }
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+        
     }
 }

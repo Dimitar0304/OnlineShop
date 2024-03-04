@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Extentions;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 
@@ -12,6 +13,7 @@ namespace OnlineShop.Controllers
         public GarmentController(IGarmentService _service)
         {
             service = _service;
+            
         }
 
         public async Task<IActionResult> All()
@@ -63,6 +65,10 @@ namespace OnlineShop.Controllers
         //{
 
         //}
+        public void getUserid()
+        {
+            var id = ClaimsPrincipalExtentions.Id(this.User);
+        }
 
     }
 }
