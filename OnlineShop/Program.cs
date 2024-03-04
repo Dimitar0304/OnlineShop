@@ -1,10 +1,12 @@
 using Habanero.Util;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
+using OnlineShop.ModelBinders;
 using OnlineShop.Services.Contracts;
 using OnlineShop.Services.GarmentService;
 
@@ -41,8 +43,13 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 })
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
-   
-builder.Services.AddControllersWithViews();
+
+builder.Services.AddControllersWithViews()
+    .AddMvcOptions(o =>
+    {
+        o.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+    });
+
 
 var app = builder.Build();
 
