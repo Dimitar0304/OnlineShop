@@ -1,14 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnlineShop.Core.Models.Size;
 using OnlineShop.Core.Models.Type;
-using OnlineShop.Extentions;
-using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
-using OnlineShop.Models.Size;
 using OnlineShop.Services.Contracts;
-using System.Security.Claims;
 
 namespace OnlineShop.Services.GarmentService
 {
@@ -159,8 +156,8 @@ namespace OnlineShop.Services.GarmentService
 
         public async Task<List<SizeViewModel>> GetSizes()
         {
-            
-            
+
+
             return await repository.All<Size>()
                 .Select(s => new SizeViewModel()
                 {
@@ -178,12 +175,30 @@ namespace OnlineShop.Services.GarmentService
         public async Task<List<TypeAllViewModel>> GetTypes()
         {
             return await repository.All<ShoeType>()
-                .Select(t=>new TypeAllViewModel()
+                .Select(t => new TypeAllViewModel()
                 {
                     Id = t.Id,
                     Name = t.Name,
                 })
                 .ToListAsync();
+        }
+
+        /// <summary>
+        /// Method for add garment with current size to db
+        /// </summary>
+        /// <param name="sizeId"></param>
+        /// <param name="garmentId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task AddGarmentWithSizeToDb(int sizeId, int garmentId)
+        {
+            var model = new GarmentSize()
+            {
+                GarmentId = garmentId,
+                SizeId = sizeId
+            };
+            await repository.AddAsync(model);
+            await repository.SaveChangesAsync();
         }
     }
 }

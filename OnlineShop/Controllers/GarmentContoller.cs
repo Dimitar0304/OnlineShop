@@ -13,7 +13,7 @@ namespace OnlineShop.Controllers
         public GarmentController(IGarmentService _service)
         {
             service = _service;
-            
+
         }
 
         public async Task<IActionResult> All()
@@ -29,7 +29,7 @@ namespace OnlineShop.Controllers
 
         }
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Add()
         {
             var model = new GarmentViewModel();
@@ -38,7 +38,7 @@ namespace OnlineShop.Controllers
             return View(model);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Add(GarmentViewModel model)
         {
             if (ModelState.IsValid)
@@ -51,6 +51,12 @@ namespace OnlineShop.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Action for add garment with chosen size to db
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+
         [HttpGet]
         public async Task<IActionResult> AddToCart(int id)
         {
@@ -59,13 +65,21 @@ namespace OnlineShop.Controllers
             model.GarmentId = id;
 
             return View(model);
-            
-        }
-        //[HttpPost]
-        //public async Task<IActionResult> AddToCart(GarmentSizeViewModel model)
-        //{
 
-        //}
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddToCart(GarmentSizeViewModel model)
+        {
+            if (model != null)
+            {
+                await service.AddGarmentWithSizeToDb(model.SizeId, model.GarmentId);
+                return RedirectToAction("Cart", "Home");
+            }
+
+            model = new GarmentSizeViewModel();
+            model.Sizes = await service.GetSizes();
+            return View(model);
+        }
         public void getUserid()
         {
             var id = ClaimsPrincipalExtentions.Id(this.User);

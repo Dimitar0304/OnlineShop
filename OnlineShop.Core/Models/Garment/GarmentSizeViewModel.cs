@@ -1,7 +1,4 @@
-﻿using OnlineShop.Infrastructure;
-using OnlineShop.Models.Size;
-using OnlineShop.Validations;
-using System.ComponentModel.DataAnnotations;
+﻿using OnlineShop.Core.Models.Size;
 
 namespace OnlineShop.Models.Garment
 {

@@ -1,7 +1,7 @@
-﻿using OnlineShop.Core.Models.Type;
+﻿using OnlineShop.Core.Models.Size;
+using OnlineShop.Core.Models.Type;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
-using OnlineShop.Models.Size;
 
 namespace OnlineShop.Services.Contracts
 {
@@ -15,5 +15,7 @@ namespace OnlineShop.Services.Contracts
         public  Task<List<BrandViewModel>> GetBrands();
         public Task<List<SizeViewModel>>GetSizes();
         public Task<List<TypeAllViewModel>> GetTypes();
+
+        public Task AddGarmentWithSizeToDb(int sizeId,int garmentId);
     }
 }

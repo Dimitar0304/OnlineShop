@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineShop.Core.Models.Shoe;
+using OnlineShop.Core.Models.Size;
 using OnlineShop.Core.Models.Type;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
-using OnlineShop.Models.Size;
 
 namespace OnlineShop.Core.Services.ShoeService
 {

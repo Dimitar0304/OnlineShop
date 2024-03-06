@@ -2,7 +2,7 @@
 using OnlineShop.Validations;
 using System.ComponentModel.DataAnnotations;
 
-namespace OnlineShop.Models.Size
+namespace OnlineShop.Core.Models.Size
 {
     /// <summary>
     /// Size view model
