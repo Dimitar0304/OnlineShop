@@ -34,6 +34,7 @@ namespace OnlineShop.Controllers
         {
             var model = new GarmentViewModel();
             model.Brands = await service.GetBrands();
+            model.Types = await service.GetTypes();
             return View(model);
         }
         [HttpPost]

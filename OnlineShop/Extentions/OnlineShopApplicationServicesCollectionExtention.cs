@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
+using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Core.Services.EmailSender;
+using OnlineShop.Core.Services.ShoeService;
+using OnlineShop.Infrastructure.Common;
 using OnlineShop.Services.Contracts;
 using OnlineShop.Services.GarmentService;
 
@@ -17,8 +20,12 @@ namespace OnlineShop.Extentions
 
             //Add email sender service
             services.AddTransient<IEmailSender, EmailSenderService>();
-         
 
+            //Add shoe service
+            services.AddScoped<IShoeService, ShoeService>();
+
+            //Add repository
+            services.AddScoped<IRepository, Repository>();
 
 
             return services;

@@ -18,8 +18,7 @@ namespace OnlineShop.Core.Models.Shoe
         /// Shoe view model Entity
         /// </summary>
         [Comment("Shoe view model entity")]
-        public class Shoe
-        {
+        
             /// <summary>
             /// Shoe Identifier
             /// </summary>
@@ -86,4 +85,4 @@ namespace OnlineShop.Core.Models.Shoe
         }
 
     }
-}
+

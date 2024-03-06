@@ -13,14 +13,15 @@ namespace OnlineShop.Core.Services.Contracts
 {
     public interface IShoeService
     {
-        Task AddGarmentToDbAsync(ShoeAddViewModel model);
-        Task UpdateGarmentToDbAsync(ShoeAddViewModel model);
-        void DeleteGarmentToDbAsync(int id);
-        Task<List<ShoeAddViewModel>> GetAllGarmentsAsync();
+        Task AddShoeToDbAsync(ShoeAddViewModel model);
+        Task UpdateShoeToDbAsync(ShoeAddViewModel model);
+        void DeleteShoeToDbAsync(int id);
+        Task<List<ShoeAddViewModel>> GetAllShoeAsync();
         Task<ShoeAddViewModel> GetByIdAsync(int id);
         public Task<List<BrandViewModel>> GetBrands();
         public Task<List<SizeViewModel>> GetSizes();
 
         public Task<List<TypeAllViewModel>> GetTypes();
+        public bool ShoeIsExistInDb(ShoeAddViewModel model);
     }
 }
