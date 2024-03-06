@@ -18,10 +18,10 @@ namespace OnlineShop.Core.Services.Contracts
         void DeleteShoeToDbAsync(int id);
         Task<List<ShoeAddViewModel>> GetAllShoeAsync();
         Task<ShoeAddViewModel> GetByIdAsync(int id);
-        public Task<List<BrandViewModel>> GetBrands();
-        public Task<List<SizeViewModel>> GetSizes();
+        public List<BrandViewModel> GetBrands();
+        public List<SizeViewModel> GetSizes();
 
-        public Task<List<TypeAllViewModel>> GetTypes();
+        public List<TypeAllViewModel> GetTypes();
         public bool ShoeIsExistInDb(ShoeAddViewModel model);
     }
 }

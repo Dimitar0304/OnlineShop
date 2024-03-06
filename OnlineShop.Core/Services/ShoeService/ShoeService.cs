@@ -5,9 +5,7 @@ using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
-using OnlineShop.Models.Garment;
 using OnlineShop.Models.Size;
-using System.Reflection.PortableExecutable;
 
 namespace OnlineShop.Core.Services.ShoeService
 {
@@ -44,6 +42,7 @@ namespace OnlineShop.Core.Services.ShoeService
                 Color = model.Color,
             };
            await repository.AddAsync<Shoe>(shoe);
+            await repository.SaveChangesAsync();
         }
 
         /// <summary>
@@ -81,17 +80,17 @@ namespace OnlineShop.Core.Services.ShoeService
         /// Method for get all brands
         /// </summary>
         /// <returns></returns>
-        public async Task<List<BrandViewModel>> GetBrands()
+        public  List<BrandViewModel> GetBrands()
         {
             
-            return await repository.All<Brand>()
+            return  repository.All<Brand>()
                 .Select(b => new BrandViewModel()
                 {
                     Id = b.Id,
                     Name = b.Name
                 })
                 .AsNoTracking()
-                .ToListAsync();
+                .ToList();
         }
 
         /// <summary>
@@ -118,30 +117,30 @@ namespace OnlineShop.Core.Services.ShoeService
         /// Method for get sizes from db
         /// </summary>
         /// <returns></returns>
-        public async Task<List<SizeViewModel>> GetSizes()
+        public  List<SizeViewModel> GetSizes()
         {
-            return await repository.All<Size>()
+            return  repository.All<Size>()
               .Select(s => new SizeViewModel()
               {
                   Id = s.Id,
                   Name = s.Name,
               })
-              .ToListAsync();
+              .ToList();
         }
 
         /// <summary>
         /// Method for get types from db
         /// </summary>
         /// <returns></returns>
-        public async Task<List<TypeAllViewModel>> GetTypes()
+        public List<TypeAllViewModel> GetTypes()
         {
-            return await repository.All<ShoeType>()
+            return  repository.All<ShoeType>()
               .Select(t => new TypeAllViewModel()
               {
                   Id = t.Id,
                   Name = t.Name,
               })
-              .ToListAsync();
+              .ToList();
         }
 
         /// <summary>

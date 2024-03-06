@@ -39,28 +39,30 @@ namespace OnlineShop.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> Add()
+        public   IActionResult Add()
         {
             var model =  new ShoeAddViewModel();
-            model.Brands = await service.GetBrands();
-            model.Types = await service.GetTypes();
+            model.Brands =   service.GetBrands();
+            model.Types =  service.GetTypes();
             return  View(model);
         }
         [HttpPost]
         public async Task<IActionResult> Add(ShoeAddViewModel model)
         {
+
             if (!ModelState.IsValid)
             {
                 model = new ShoeAddViewModel();
-                model.Brands = await service.GetBrands();
-                model.Types = await service.GetTypes();
+                model.Brands =  service.GetBrands();
+                model.Types =  service.GetTypes();
                 return View(model);
             }
-            if (service.ShoeIsExistInDb(model)==true)
+            if (service.ShoeIsExistInDb(model) == true)
             {
                 ModelState.AddModelError("Error", "");
             }
             await service.AddShoeToDbAsync(model);
+            
             return RedirectToAction("All");   
         }
     }

@@ -1,5 +1,64 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ShoeAddViewModel
 @{
+    ViewBag.Title = "Add new shoe";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form asp-action="Add" method="post">
+            <div class="mb-3">
+                <label asp-for="@Model.Model" class="form-label-add-edit">Shoe Model</label>
+                <input asp-for="@Model.Model" class="form-control" aria-required="true" />
+                <span asp-validation-for="@Model.Model "class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Price" class="form-label-add-edit">Shoe Price</label>
+                <input asp-for="@Model.Price" class="form-control" aria-required="true" />
+                <span asp-validation-for="@Model.Price " class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Color" class="form-label-add-edit">Color</label>
+                <input asp-for="@Model.Color" class="form-control" aria-required="true" rows="5"></input>
+                <span asp-validation-for="@Model.Color " class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.ImageUrl" class="form-label-add-edit">Image Url</label>
+                <input asp-for="@Model.ImageUrl" class="form-control" aria-required="true" rows="5"></input>
+                <span asp-validation-for="@Model.ImageUrl " class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="@Model.BrandId" class="form-label-add-edit">Select Brand</label>
+                <select asp-for="@Model.BrandId" class="form-control" aria-required="true">
+                    <option disabled selected value="">Select brand...</option>
+                    @foreach (var category in Model.Brands)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="@Model.BrandId " class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.TypeId" class="form-label-add-edit">Select Type</label>
+                <select asp-for="@Model.TypeId" class="form-control" aria-required="true">
+                    <option disabled selected value="">Select type...</option>
+                    @foreach (var type in Model.Types)
+                    {
+                        <option value="@type.Id">@type.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="@Model.TypeId " class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-warning mb-2 w-100 p-3 fw-bold" type="submit" value="Add Shoe In Shop" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

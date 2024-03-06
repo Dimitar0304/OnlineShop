@@ -33,6 +33,7 @@ namespace OnlineShop.Infrastructure.Common
         public async Task AddAsync<T>(T entity) where T : class
         {
             await GetSet<T>().AddAsync(entity);
+            await context.SaveChangesAsync();
         }
 
         /// <summary>
