@@ -23,7 +23,7 @@ namespace OnlineShop.Core.Services.ShoeService
         {
             repository = _repository;
         }
-      
+
         /// <summary>
         /// Method for add shoe to db context
         /// </summary>
@@ -41,7 +41,7 @@ namespace OnlineShop.Core.Services.ShoeService
                 ImageUrl = model.ImageUrl,
                 Color = model.Color,
             };
-           await repository.AddAsync<Shoe>(shoe);
+            await repository.AddAsync<Shoe>(shoe);
             await repository.SaveChangesAsync();
         }
 
@@ -80,10 +80,10 @@ namespace OnlineShop.Core.Services.ShoeService
         /// Method for get all brands
         /// </summary>
         /// <returns></returns>
-        public  List<BrandViewModel> GetBrands()
+        public List<BrandViewModel> GetBrands()
         {
-            
-            return  repository.All<Brand>()
+
+            return repository.All<Brand>()
                 .Select(b => new BrandViewModel()
                 {
                     Id = b.Id,
@@ -100,7 +100,7 @@ namespace OnlineShop.Core.Services.ShoeService
         /// <returns></returns>
         public async Task<ShoeAddViewModel> GetByIdAsync(int id)
         {
-            var model= await repository.GetByIdAsync<Shoe>(id);
+            var model = await repository.GetByIdAsync<Shoe>(id);
             return new ShoeAddViewModel()
             {
                 Id = model.Id,
@@ -117,9 +117,9 @@ namespace OnlineShop.Core.Services.ShoeService
         /// Method for get sizes from db
         /// </summary>
         /// <returns></returns>
-        public  List<SizeViewModel> GetSizes()
+        public List<SizeViewModel> GetSizes()
         {
-            return  repository.All<Size>()
+            return repository.All<Size>()
               .Select(s => new SizeViewModel()
               {
                   Id = s.Id,
@@ -134,7 +134,7 @@ namespace OnlineShop.Core.Services.ShoeService
         /// <returns></returns>
         public List<TypeAllViewModel> GetTypes()
         {
-            return  repository.All<ShoeType>()
+            return repository.All<ShoeType>()
               .Select(t => new TypeAllViewModel()
               {
                   Id = t.Id,
@@ -152,21 +152,21 @@ namespace OnlineShop.Core.Services.ShoeService
         {
             var shoe = await repository.GetByIdAsync<Shoe>(model.Id);
 
-            if (shoe!=null)
+            if (shoe != null)
             {
 
-            shoe.Price = model.Price;
-            shoe.Color = model.Color;
-            shoe.Model = model.Name;
-            shoe.BrandId = model.BrandId;
-            shoe.TypeId = model.TypeId;
-            shoe.ImageUrl = model.ImageUrl;
+                shoe.Price = model.Price;
+                shoe.Color = model.Color;
+                shoe.Model = model.Name;
+                shoe.BrandId = model.BrandId;
+                shoe.TypeId = model.TypeId;
+                shoe.ImageUrl = model.ImageUrl;
 
-            await repository.UpdateAsync(shoe);
-            await repository.SaveChangesAsync();
+                await repository.UpdateAsync(shoe);
+                await repository.SaveChangesAsync();
 
             }
-            
+
         }
 
         /// <summary>
@@ -174,12 +174,25 @@ namespace OnlineShop.Core.Services.ShoeService
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool ShoeIsExistInDb(ShoeAddViewModel model)
+        public  bool ShoeIsExistInDb(ShoeAddViewModel model)
         {
-            var entity =  repository.AllReadOnly<Shoe>()
-                .Where(s => s.Model == model.Name && s.Color == model.Color);
-            if (entity!=null)
+            List<ShoeAddViewModel> entities =  repository.AllReadOnly<Shoe>()
+                .Select(s => new ShoeAddViewModel()
+                {
+                    Id = s.Id,
+                    Name = s.Model,
+                    ImageUrl = s.ImageUrl,
+                    Price = s.Price,
+                    BrandId = s.BrandId,
+                    TypeId = s.TypeId,
+                    Color = s.Color,
+                })
+                .ToList();
+
+
+            if (entities.Contains(model))
             {
+
                 return true;
             }
             return false;

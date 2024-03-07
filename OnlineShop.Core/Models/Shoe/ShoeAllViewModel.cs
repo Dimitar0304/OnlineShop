@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace OnlineShop.Core.Models.Shoe
 {
-    internal class ShoeAllViewModel
+    public class ShoeAllViewModel
     {
+
+        public List<ShoeAddViewModel> Shoes { get; set; } = new List<ShoeAddViewModel>();
+        public string Season { get; set; } = "Winter";
     }
 }

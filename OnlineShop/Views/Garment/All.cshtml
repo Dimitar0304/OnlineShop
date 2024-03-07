@@ -3,50 +3,61 @@
     ViewBag.Collection = $"Our {Model.Season} collection";
     ViewBag.Title = "Our Suggestions";
 }
-<h1>@ViewBag.Collection</h1>
+<h1><mark>@ViewBag.Collection</mark></h1>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 8px;
+            width: 150px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
 
-<h2>@ViewBag.Title</h2>
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
 
-<div class="hr-divider">
-    <h3 class="hr-divider-content hr-divider-heading">
-        @foreach (var garment in Model.Garments)
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        @foreach (GarmentViewModel s in Model.Garments)
         {
-            <div class="card" style="max-height:15; max-width:15;max-block-size:15;">
-                
-                <div class="card-body">Model:
-                    <!-- Model -->
-                    <strong>@garment.Name</strong>
+            //@brandName = s.Brands.Where(b => b.Id == s.BrandId);
 
-                    <!-- Brand -->
-                    <p class="card-text">Brand:
-                        <strong>
-                            @garment.Brands.Where(br=>br.Id==garment.BrandId).First().Name
-                        </strong>
-                    </p>
 
-                    <!-- Price -->
-                    <p class="card-text">Price: <strong>@garment.Price</strong> BGN</p>
+            <div class="card">
+                <h3>@s.Name</h3>
 
-                    <!-- Color -->
-                    <p class="card-text">Color: <strong>@garment.Color</strong></p>
-
-                    <!-- Image URL -->
-                    <img src="@garment.ImageUrl" alt="Image" width="150" height="150" />
-
-                    @if(User.IsInRole("Admin"))
-                    {
-                        <a asp-controller="Garment" asp-action="Edit" asp-route-id="@garment.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
-                    }
-                    
-                        <form class="input-group-sm" asp-controller="Garment" asp-action="AddToCart" asp-route-id="@garment.Id">
-                            <input type="submit" value="Add to cart" class="fs-6 btn btn-success mb-2 w-100 p-3 fw-bold" />
-                        </form>
-                        <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@garment.Id">
-                            <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold" />
-                        </form>
-                    
-                </div>
+                <p>@s.Price BGN</p>
+                <img src="@s.ImageUrl">
+                <form class="input-group-sm" asp-controller="Garment" asp-action="AddToCart" asp-route-id="@s.Id">
+                    <input type="submit" value="Add to cart" class="fs-6 btn btn-success mb-2 w-100 p-3 fw-bold"width="60" />
+                </form>
+                <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@s.Id">
+                    <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold "width="60" />
+                </form>
             </div>
         }
-    </h3>
-</div>
+
+    </div>
+
+</body>
+</html>

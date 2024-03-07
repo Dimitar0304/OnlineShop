@@ -31,7 +31,10 @@ namespace OnlineShop.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            return View(models);
+            var model = new ShoeAllViewModel();
+            model.Shoes = models;
+            
+            return View(model);
         }
 
         /// <summary>
@@ -57,7 +60,7 @@ namespace OnlineShop.Controllers
                 model.Types = service.GetTypes();
                 return View(model);
             }
-            if (service.ShoeIsExistInDb(model) == true)
+            if (service.ShoeIsExistInDb(model))
             {
                 ModelState.AddModelError("Error", "");
             }

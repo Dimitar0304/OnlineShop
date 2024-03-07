@@ -1,5 +1,56 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ShoeAllViewModel
 @{
+    ViewBag.Title = "All Shoes";
+    BrandViewModel brandName = new BrandViewModel();
 }
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        @foreach (ShoeAddViewModel s in Model.Shoes)
+        {
+            //@brandName = s.Brands.Where(b => b.Id == s.BrandId);
+        
+        
+            <div class="card">
+                <h3>@s.Name</h3>
+                
+                <p>@s.Price BGN</p>
+                <img src="@s.ImageUrl">
+            </div>
+        }
+
+    </div>
+
+</body>
+</html>
