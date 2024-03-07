@@ -47,7 +47,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 builder.Services.AddControllersWithViews()
     .AddMvcOptions(o =>
     {
-        o.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+       // o.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
     });
 
 

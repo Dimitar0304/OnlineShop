@@ -34,7 +34,7 @@ namespace OnlineShop.Core.Services.ShoeService
             var shoe = new Shoe()
             {
                 Id = model.Id,
-                Model = model.Model,
+                Model = model.Name,
                 Price = model.Price,
                 BrandId = model.BrandId,
                 TypeId = model.TypeId,
@@ -65,7 +65,7 @@ namespace OnlineShop.Core.Services.ShoeService
             return await repository.All<Shoe>().Select(s => new ShoeAddViewModel()
             {
                 Id = s.Id,
-                Model = s.Model,
+                Name = s.Model,
                 Price = s.Price,
                 Color = s.Color,
                 BrandId = s.BrandId,
@@ -104,7 +104,7 @@ namespace OnlineShop.Core.Services.ShoeService
             return new ShoeAddViewModel()
             {
                 Id = model.Id,
-                Model = model.Model,
+                Name = model.Model,
                 Price = model.Price,
                 Color = model.Color,
                 BrandId = model.BrandId,
@@ -157,7 +157,7 @@ namespace OnlineShop.Core.Services.ShoeService
 
             shoe.Price = model.Price;
             shoe.Color = model.Color;
-            shoe.Model = model.Model;
+            shoe.Model = model.Name;
             shoe.BrandId = model.BrandId;
             shoe.TypeId = model.TypeId;
             shoe.ImageUrl = model.ImageUrl;
@@ -177,7 +177,7 @@ namespace OnlineShop.Core.Services.ShoeService
         public bool ShoeIsExistInDb(ShoeAddViewModel model)
         {
             var entity =  repository.AllReadOnly<Shoe>()
-                .Where(s => s.Model == model.Model && s.Color == model.Color);
+                .Where(s => s.Model == model.Name && s.Color == model.Color);
             if (entity!=null)
             {
                 return true;

@@ -26,10 +26,10 @@ namespace OnlineShop.Controllers
         /// <returns></returns>
         public async Task<IActionResult> All()
         {
-            var models =await service.GetAllShoeAsync();
+            var models = await service.GetAllShoeAsync();
             if (models == null)
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
             return View(models);
         }
@@ -39,12 +39,12 @@ namespace OnlineShop.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public   IActionResult Add()
+        public IActionResult Add()
         {
-            var model =  new ShoeAddViewModel();
-            model.Brands =   service.GetBrands();
-            model.Types =  service.GetTypes();
-            return  View(model);
+            var model = new ShoeAddViewModel();
+            model.Brands = service.GetBrands();
+            model.Types = service.GetTypes();
+            return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> Add(ShoeAddViewModel model)
@@ -53,17 +53,22 @@ namespace OnlineShop.Controllers
             if (!ModelState.IsValid)
             {
                 model = new ShoeAddViewModel();
-                model.Brands =  service.GetBrands();
-                model.Types =  service.GetTypes();
+                model.Brands = service.GetBrands();
+                model.Types = service.GetTypes();
                 return View(model);
             }
             if (service.ShoeIsExistInDb(model) == true)
             {
                 ModelState.AddModelError("Error", "");
             }
-            await service.AddShoeToDbAsync(model);
-            
-            return RedirectToAction("All");   
+            else
+            {
+
+                await service.AddShoeToDbAsync(model);
+
+                return RedirectToAction("All");
+            }
+            return RedirectToAction("All");
         }
     }
 }

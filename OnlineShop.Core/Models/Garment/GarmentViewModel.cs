@@ -25,7 +25,7 @@ namespace OnlineShop.Models.Garment
             , MinimumLength = DataConstants.Garment.MinModelLenght
             , ErrorMessage = ErrorMessages.StringLenghtError)]
         [Display(Name ="Garment Model")]
-        public string Model { get; set; } = null!;
+        public string Name { get; set; } = null!;
 
         /// <summary>
         /// Garment Dto type identifier

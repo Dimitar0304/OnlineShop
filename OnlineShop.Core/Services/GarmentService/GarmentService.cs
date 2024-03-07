@@ -31,9 +31,10 @@ namespace OnlineShop.Services.GarmentService
                 var g = new Garment()
                 {
                     Id = model.Id,
-                    Model = model.Model,
+                    Model = model.Name,
                     TypeId = model.TypeId,
                     BrandId = model.BrandId,
+                    ImageUrl = model.ImageUrl,
                     Price = model.Price,
                     Color = model.Color,
 
@@ -69,7 +70,7 @@ namespace OnlineShop.Services.GarmentService
                 .All<Garment>().Select(g => new GarmentViewModel()
                 {
                     Id = g.Id,
-                    Model = g.Model,
+                    Name = g.Model,
                     TypeId = g.TypeId,
                     BrandId = g.BrandId,
                     Price = g.Price,
@@ -97,7 +98,7 @@ namespace OnlineShop.Services.GarmentService
             var g = await repository.All<Garment>().Select(g => new GarmentViewModel()
             {
                 Id = id,
-                Model = g.Model,
+                Name = g.Model,
                 TypeId = g.TypeId,
                 BrandId = g.BrandId,
                 Price = g.Price,
@@ -120,7 +121,7 @@ namespace OnlineShop.Services.GarmentService
 
             if (g != null)
             {
-                g.Model = model.Model;
+                g.Model = model.Name;
                 g.BrandId = model.BrandId;
                 g.Price = model.Price;
                 g.Color = model.Color;
@@ -174,7 +175,7 @@ namespace OnlineShop.Services.GarmentService
         /// <returns></returns>
         public async Task<List<TypeAllViewModel>> GetTypes()
         {
-            return await repository.All<ShoeType>()
+            return await repository.All<GarmentType>()
                 .Select(t => new TypeAllViewModel()
                 {
                     Id = t.Id,
