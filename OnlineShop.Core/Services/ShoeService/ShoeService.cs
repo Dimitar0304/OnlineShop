@@ -71,6 +71,7 @@ namespace OnlineShop.Core.Services.ShoeService
                 BrandId = s.BrandId,
                 TypeId = s.TypeId,
                 ImageUrl = s.ImageUrl,
+                BrandName = s.Brand.Name
             })
                  .ToListAsync();
 
