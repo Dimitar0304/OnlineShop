@@ -76,11 +76,13 @@ namespace OnlineShop.Services.GarmentService
                     Price = g.Price,
                     Color = g.Color,
                     ImageUrl = g.ImageUrl,
+                    
                     Brands = repository.All<Brand>().Select(b => new BrandViewModel()
                     {
                         Id = b.Id,
                         Name = b.Name,
                     }).ToList(),
+                    
                 })
                 .AsNoTracking()
                    .ToListAsync();

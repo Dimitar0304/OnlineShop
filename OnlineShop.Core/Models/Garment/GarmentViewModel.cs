@@ -47,6 +47,11 @@ namespace OnlineShop.Models.Garment
         public int BrandId { get; set; }
 
         /// <summary>
+        /// Brand name
+        /// </summary>
+        public string BrandName { get; set; } = null!;
+
+        /// <summary>
         /// Garments brands
         /// </summary>
         public List<BrandViewModel> Brands { get; set; } = new List<BrandViewModel>();
