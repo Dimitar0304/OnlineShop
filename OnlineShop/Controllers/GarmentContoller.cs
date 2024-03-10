@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Extentions;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
+using X.PagedList;
 
 namespace OnlineShop.Controllers
 {
@@ -16,14 +17,22 @@ namespace OnlineShop.Controllers
 
         }
 
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(int? page)
         {
+
+            var pageNumber = page?? 1;
+
+            var pageSize = 10;
+
             var model = new AllGarmentViewModel();
             model.Garments = await service.GetAllGarmentsAsync();
+
+            var pagedData = model.Garments.ToPagedList<GarmentViewModel>(pageNumber,pageSize);
+
             if (model.Garments.Count > 0 && model.Garments != null)
             {
 
-                return View(model);
+                return View(pagedData);
             }
             return RedirectToAction("Index", "Home");
 
