@@ -62,7 +62,7 @@ namespace OnlineShop.Core.Models.Shoe
         /// <summary>
         /// Brand name
         /// </summary>
-        public string BrandName { get; set; } = null!;
+        public string BrandName { get; set; } = "Default";
 
         /// <summary>
         /// Shoe Price

@@ -193,12 +193,13 @@ namespace OnlineShop.Services.GarmentService
         /// <param name="garmentId"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public async Task AddGarmentWithSizeToDb(int sizeId, int garmentId)
+        public async Task AddGarmentWithSizeToDb(string SizeName, int garmentId)
         {
+
             var model = new GarmentSize()
             {
                 GarmentId = garmentId,
-                SizeId = sizeId
+                SizeId = repository.All<Size>().Where(s => s.Name == SizeName).First().Id
             };
             await repository.AddAsync(model);
             await repository.SaveChangesAsync();

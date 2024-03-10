@@ -49,7 +49,7 @@ namespace OnlineShop.Models.Garment
         /// <summary>
         /// Brand name
         /// </summary>
-        public string BrandName { get; set; } = null!;
+        public string BrandName { get; set; } = "Default";
 
         /// <summary>
         /// Garments brands

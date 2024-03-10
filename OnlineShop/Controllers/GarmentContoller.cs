@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using OnlineShop.Extentions;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
@@ -22,7 +23,8 @@ namespace OnlineShop.Controllers
 
             var pageNumber = page?? 1;
 
-            var pageSize = 10;
+            var pageSize = 4;
+
 
             var model = new AllGarmentViewModel();
             model.Garments = await service.GetAllGarmentsAsync();
@@ -50,6 +52,7 @@ namespace OnlineShop.Controllers
         //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Add(GarmentViewModel model)
         {
+            
             if (ModelState.IsValid)
             {
 
@@ -57,6 +60,7 @@ namespace OnlineShop.Controllers
                 return RedirectToAction("Index", "Home");
             }
             model.Brands = await service.GetBrands();
+            model.Types = await service.GetTypes();
             return View(model);
         }
 
@@ -66,8 +70,8 @@ namespace OnlineShop.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
 
-        [HttpGet]
-        public async Task<IActionResult> AddToCart(int id)
+        [HttpPost]
+        public async Task<IActionResult> PickSize(int id)
         {
             var model = new GarmentSizeViewModel();
             model.Sizes = await service.GetSizes();
@@ -76,12 +80,12 @@ namespace OnlineShop.Controllers
             return View(model);
 
         }
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> AddToCart(GarmentSizeViewModel model)
         {
             if (model != null)
             {
-                await service.AddGarmentWithSizeToDb(model.SizeId, model.GarmentId);
+                await service.AddGarmentWithSizeToDb(model.SizeName, model.GarmentId);
                 return RedirectToAction("Cart", "Home");
             }
 
@@ -89,10 +93,8 @@ namespace OnlineShop.Controllers
             model.Sizes = await service.GetSizes();
             return View(model);
         }
-        public void getUserid()
-        {
-            var id = ClaimsPrincipalExtentions.Id(this.User);
-        }
+
+        
 
     }
 }
