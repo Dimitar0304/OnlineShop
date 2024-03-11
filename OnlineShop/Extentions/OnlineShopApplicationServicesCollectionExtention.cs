@@ -31,6 +31,9 @@ namespace OnlineShop.Extentions
             //Add garmentSize service
             services.AddScoped<IGarmentSizeService, GarmentSizeService>();
 
+            //Add shoeSize service
+            services.AddScoped<IShoeSizeService,ShoeSizeService>();
+
 
             return services;
 
