@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Core.Services.EmailSender;
+using OnlineShop.Core.Services.GarmentService;
 using OnlineShop.Core.Services.ShoeService;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Services.Contracts;
@@ -26,6 +27,9 @@ namespace OnlineShop.Extentions
 
             //Add repository
             services.AddScoped<IRepository, Repository>();
+
+            //Add garmentSize service
+            services.AddScoped<IGarmentSizeService, GarmentSizeService>();
 
 
             return services;

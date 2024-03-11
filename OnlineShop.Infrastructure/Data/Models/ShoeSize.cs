@@ -33,5 +33,12 @@ namespace OnlineShop.Infrastructure.Data.Models
         [Required]
         [Comment("Shoe size")]
         public int Size { get; set; }
+
+        /// <summary>
+        /// ShoeSize Quantity
+        /// </summary>
+        [Required]
+        [Comment("ShoeSize Quantity")]
+        public int Quantity { get; set; }
     }
 }

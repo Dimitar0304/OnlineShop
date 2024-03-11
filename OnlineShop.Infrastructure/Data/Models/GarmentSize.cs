@@ -37,5 +37,12 @@ namespace OnlineShop.Infrastructure.Data.Models
         /// </summary>
         [Required]
         public Size Size { get; set; } = null!;
+
+        /// <summary>
+        /// GarmentSize Quantity
+        /// </summary>
+        [Required]
+        [Comment("GarmentSize Quantity")]
+        public int Quantity { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Extentions;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
@@ -12,10 +13,11 @@ namespace OnlineShop.Controllers
     public class GarmentController : Controller
     {
         private readonly IGarmentService service;
-        public GarmentController(IGarmentService _service)
+        private readonly IGarmentSizeService garmentSizeService;
+        public GarmentController(IGarmentService _service,IGarmentSizeService _garmentSizeService)
         {
             service = _service;
-
+            garmentSizeService = _garmentSizeService;
         }
 
         public async Task<IActionResult> All(int? page)
@@ -55,8 +57,15 @@ namespace OnlineShop.Controllers
             
             if (ModelState.IsValid)
             {
-
+                //add garment to db
                 await service.AddGarmentToDbAsync(model);
+
+                //Get identifier of last added garment
+                var lastAddedGarmentId = service.GetAllGarmentsAsync().Result.Last().Id;
+
+                //Add garmentSize models with last added garment in db
+                await garmentSizeService.AddGarmentWithSizes(lastAddedGarmentId);
+                //return view
                 return RedirectToAction("Index", "Home");
             }
             model.Brands = await service.GetBrands();
