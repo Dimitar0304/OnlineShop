@@ -233,6 +233,10 @@
               "target": "Package",
               "version": "[4.5.0, )"
             },
+            "Syncfusion.EJ2.MVC5": {
+              "target": "Package",
+              "version": "[24.2.3, )"
+            },
             "X.PagedList": {
               "target": "Package",
               "version": "[8.4.7, )"

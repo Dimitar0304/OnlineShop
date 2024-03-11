@@ -17,6 +17,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
           "OnlineShop.Core": "1.0.0",
           "PagedList.Mvc": "4.5.0",
+          "Syncfusion.EJ2.MVC5": "24.2.3",
           "X.PagedList": "8.4.7"
         },
         "runtime": {
@@ -1202,7 +1203,7 @@
         "dependencies": {
           "Humanizer": "2.14.1",
           "Microsoft.CodeAnalysis.CSharp.Features": "4.0.0",
-          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json": "13.0.2",
           "NuGet.ProjectModel": "6.6.1"
         },
         "runtime": {
@@ -1488,7 +1489,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "6.0.16",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {
           "lib/net6.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {
@@ -1540,7 +1541,7 @@
           "Microsoft.Build": "17.3.2",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "4.0.0",
           "Microsoft.DotNet.Scaffolding.Shared": "6.0.16",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {
           "lib/net6.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll": {
@@ -1638,11 +1639,11 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.2": {
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.1.25517"
+            "fileVersion": "13.0.2.27524"
           }
         }
       },
@@ -1704,7 +1705,7 @@
       },
       "NuGet.Packaging/6.6.1": {
         "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json": "13.0.2",
           "NuGet.Configuration": "6.6.1",
           "NuGet.Versioning": "6.6.1",
           "System.Security.Cryptography.Cng": "5.0.0",
@@ -1816,7 +1817,7 @@
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "SendGrid/9.29.2": {
         "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json": "13.0.2",
           "starkbank-ecdsa": "1.3.3"
         },
         "runtime": {
@@ -1831,6 +1832,28 @@
           "lib/netstandard2.1/StarkbankEcdsa.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Syncfusion.EJ2.JavaScript/24.2.3": {},
+      "Syncfusion.EJ2.MVC5/24.2.3": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2",
+          "Syncfusion.EJ2.JavaScript": "24.2.3",
+          "Syncfusion.Licensing": "24.2.3"
+        },
+        "runtime": {
+          "lib/net45/Syncfusion.EJ2.dll": {
+            "assemblyVersion": "24.2.3.0",
+            "fileVersion": "24.2.3.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/24.2.3": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "24.2.3.0",
+            "fileVersion": "24.2.3.0"
           }
         }
       },
@@ -3523,12 +3546,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/13.0.1": {
+    "Newtonsoft.Json/13.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
-      "path": "newtonsoft.json/13.0.1",
-      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+      "sha512": "sha512-R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
+      "path": "newtonsoft.json/13.0.2",
+      "hashPath": "newtonsoft.json.13.0.2.nupkg.sha512"
     },
     "NuGet.Common/6.6.1": {
       "type": "package",
@@ -3732,6 +3755,27 @@
       "sha512": "sha512-OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
       "path": "starkbank-ecdsa/1.3.3",
       "hashPath": "starkbank-ecdsa.1.3.3.nupkg.sha512"
+    },
+    "Syncfusion.EJ2.JavaScript/24.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oyXkdGEZdZ1pc7z5nvAvEfRohX1qNfYUwno4VYgcr1zq7GHsOfg2VkV4W6elkhVuOF+b2scTuWEaWXxr2b892w==",
+      "path": "syncfusion.ej2.javascript/24.2.3",
+      "hashPath": "syncfusion.ej2.javascript.24.2.3.nupkg.sha512"
+    },
+    "Syncfusion.EJ2.MVC5/24.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uBovIP5Rt2C+OYaTXyE4iVkJXP8px7TvGjH4TwXMTYqU6G5y+OvC0bFrkKOveUozL2V7A7vpkUbnzZ39eGFe/Q==",
+      "path": "syncfusion.ej2.mvc5/24.2.3",
+      "hashPath": "syncfusion.ej2.mvc5.24.2.3.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/24.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LjggcY/65ZqbjJ0XyPr1hjPC733nT1pDC2ncQJ0VVFeM7B0PiDGU9Z1vL7StArtgoi3X2auwJHoh8kLvy71k7Q==",
+      "path": "syncfusion.licensing/24.2.3",
+      "hashPath": "syncfusion.licensing.24.2.3.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

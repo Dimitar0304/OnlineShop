@@ -71,7 +71,7 @@ namespace OnlineShop.Controllers
         /// <returns></returns>
 
         [HttpPost]
-        public async Task<IActionResult> PickSize(int id)
+        public async Task<IActionResult> AddToCart(int id)
         {
             var model = new GarmentSizeViewModel();
             model.Sizes = await service.GetSizes();

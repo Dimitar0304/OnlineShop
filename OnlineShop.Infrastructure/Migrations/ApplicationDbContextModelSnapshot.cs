@@ -51,14 +51,14 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "bfeed789-77c2-49e1-9d3a-f183f3120839",
-                            ConcurrencyStamp = "33a14525-dce0-4ac5-941b-800f76608fc6",
+                            Id = "362474ee-46c1-40ea-869c-82381550bf94",
+                            ConcurrencyStamp = "3b224be4-da75-4843-a89f-6d65387ac4ce",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "ce1c59bd-cebe-4aa4-a102-103c855728e6",
-                            ConcurrencyStamp = "c09d88c1-5dda-4404-b836-ca20d112dad2",
+                            Id = "a95f4c0d-3465-4e62-9f3c-a42f87e98d5f",
+                            ConcurrencyStamp = "953c56a9-c24d-4214-a4d3-09a8d52a21b0",
                             Name = "User"
                         });
                 });
@@ -255,6 +255,9 @@ namespace OnlineShop.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(35)
@@ -351,6 +354,9 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Model")
                         .IsRequired()
@@ -465,6 +471,9 @@ namespace OnlineShop.Infrastructure.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasComment("Order Address");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<int>("PaymentMethodId")
                         .HasColumnType("int")
                         .HasComment("Payment method identifier");
@@ -549,6 +558,9 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Model")
                         .IsRequired()

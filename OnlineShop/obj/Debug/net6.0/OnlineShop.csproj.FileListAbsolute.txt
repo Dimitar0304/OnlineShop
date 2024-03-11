@@ -528,3 +528,5 @@ C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\JetBrains
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\PagedList.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\PagedList.Mvc.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\Syncfusion.EJ2.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\Syncfusion.Licensing.dll

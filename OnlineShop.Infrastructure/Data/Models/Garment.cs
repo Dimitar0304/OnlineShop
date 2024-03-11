@@ -77,10 +77,17 @@ namespace OnlineShop.Infrastructure.Data.Models
         public string ImageUrl { get; set; } = null!;
 
         /// <summary>
+        /// Property for delete 
+        /// </summary>
+        [Required]
+        public bool IsActive { get; set; } = false;
+
+        /// <summary>
         /// Garment Size Collection
         /// </summary>
         [Comment("Garment size collection")]
         public IEnumerable<GarmentSize> ClothesSizes { get; set; } = null!;
+
 
 
     }

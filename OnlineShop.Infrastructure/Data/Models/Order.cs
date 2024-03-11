@@ -75,5 +75,12 @@ namespace OnlineShop.Infrastructure.Data.Models
         [Required]
         [Comment("Payment method type")]
         public PaymentMethod PaymentMethod { get; set; } = null!;
+
+
+        /// <summary>
+        /// Property for delete 
+        /// </summary>
+        [Required]
+        public bool IsActive { get; set; } = false;
     }
 }

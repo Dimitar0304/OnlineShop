@@ -63,5 +63,11 @@ namespace OnlineShop.Infrastructure.Data.Models
         /// </summary>
         [Required] 
         public string ImageUrl { get; set; } = null!;
+
+        /// <summary>
+        /// Property for delete 
+        /// </summary>
+        [Required]
+        public bool IsActive { get; set; } = false;
     }
 }
