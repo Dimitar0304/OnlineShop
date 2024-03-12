@@ -16,10 +16,17 @@
 <body>
     
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/images/favicon-32x32.png" width="48px" height="48px" />
+                <style>
+                    .img{
+                            width: 100%;
+                            height: auto;
+                            opacity: 0.3;
+                    }
+                </style>
+                    <img src="~/images/favicon-32x32.png" width="48px" height="43px" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -28,10 +35,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
+                            <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
                         </li>
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                         {
@@ -43,25 +50,22 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Garment" asp-action="All">All Clothes</a>
+                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Garment" asp-action="All">All Clothes</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Shoe" asp-action="All">All Shoes</a>
+                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Shoe" asp-action="All">All Shoes</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Accessories" asp-action="All">All Accessories</a>
+                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Accessories" asp-action="All">All Accessories</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Brand" asp-action="All">All Brands</a>
+                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Brand" asp-action="All">All Brands</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a  class="nav-link btn btn-sm custom-button-color text-black  " asp-area="" asp-controller="Cart" asp-action="MyShoppingCart">My Shoping Cart<span class="badge">6</span></a>
+                                <a class="nav-link btn btn-sm custom-button-color text-primary  " asp-area="" asp-controller="Cart" asp-action="MyShoppingCart">My Shoping Cart<span class="badge">6</span></a>
                             </li>
-                            <li class="nav-item mx-2">
-                                <a class="pull-right nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="All" asp-action="SearchAll">
-                                    <img src="~/images/search-icon.png">
-                                </a>
-                            </li>
+                           
+                            
                         }
                         
                     </ul>
@@ -69,7 +73,9 @@
                 </div>
             </div>
         </nav>
+        @Html.Partial("_ShowSearchFormPartial")
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
