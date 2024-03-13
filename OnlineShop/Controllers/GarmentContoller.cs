@@ -61,7 +61,13 @@ namespace OnlineShop.Controllers
                 model.Types = await service.GetTypes();
                 return View(model);
             }
-            if(service.)
+            if (await service.IsGarmentExist(model))
+            {
+                ModelState.AddModelError("Error", "");
+                model.Brands = await service.GetBrands();
+                model.Types = await service.GetTypes();
+                return View(model);
+            }
 
             else 
             {
