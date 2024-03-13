@@ -53,12 +53,26 @@ namespace OnlineShop.Controllers
             {
 
                 ModelState.AddModelError("Error", "");
+                model.Brands = await service.GetBrands();
+                return View(model);
             }
             else
             {
-
+                await service.AddAccessoryToDbAsync(model);
+                return View("All");
             }
-            return View();
+            
+        }
+
+        /// <summary>
+        /// Method for get all accessories
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> All()
+        {
+            var models = await service.GetAllAccessoryAsync();
+
+            return View(models);
         }
     }
 }

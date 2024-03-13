@@ -1,0 +1,26 @@
+﻿@model List<AccessoryAllViewModel>
+@{
+}
+
+<div class="container">
+    @foreach (AccessoryAllViewModel s in Model)
+    {
+        
+
+
+        <div style="width:min-content;height:min-content" class="card">
+            <h3>@s.Name</h3>
+            <p>@s.Price BGN</p>
+            <img src="@s.ImageUrl">
+            <p>@s.BrandName</p>
+            
+            <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@s.Id">
+                <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold " width="60" />
+            </form>
+        </div>
+    }
+
+
+</div>
+
+
