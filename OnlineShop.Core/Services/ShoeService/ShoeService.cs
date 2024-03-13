@@ -40,6 +40,7 @@ namespace OnlineShop.Core.Services.ShoeService
                 TypeId = model.TypeId,
                 ImageUrl = model.ImageUrl,
                 Color = model.Color,
+                IsActive = true
             };
             await repository.AddAsync<Shoe>(shoe);
             await repository.SaveChangesAsync();
@@ -62,7 +63,9 @@ namespace OnlineShop.Core.Services.ShoeService
         /// <returns></returns>
         public async Task<List<ShoeAddViewModel>> GetAllShoeAsync()
         {
-            return await repository.All<Shoe>().Select(s => new ShoeAddViewModel()
+            return await repository.All<Shoe>()
+                .Where(s=>s.IsActive==true)
+                .Select(s => new ShoeAddViewModel()
             {
                 Id = s.Id,
                 Name = s.Model,

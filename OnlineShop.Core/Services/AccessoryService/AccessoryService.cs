@@ -44,6 +44,7 @@ namespace OnlineShop.Core.Services.AccessoryService
                     Price = s.Price,
                     BrandId = s.BrandId,
                     Type = s.Type,
+
                 })
                 .ToList();
 
@@ -64,7 +65,21 @@ namespace OnlineShop.Core.Services.AccessoryService
         /// <exception cref="NotImplementedException"></exception>
         public async Task AddAccessoryToDbAsync(AccessoryAddViewModel model)
         {
-            await repository.AddAsync(model);
+            if (model != null)
+            {
+                var entity = new Accessory()
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    ImageUrl = model.ImageUrl,
+                    Price = model.Price,
+                    BrandId = model.BrandId,
+                    IsActive = true,
+                    Type = model.Type,
+                    Quantity = 10,
+                };
+                await repository.AddAsync(entity);
+            }
         }
 
         /// <summary>
@@ -86,6 +101,7 @@ namespace OnlineShop.Core.Services.AccessoryService
         public async Task<List<AccessoryAllViewModel>> GetAllAccessoryAsync()
         {
             return await repository.All<Accessory>()
+                .Where(a => a.IsActive == true)
                  .Select(a => new AccessoryAllViewModel()
                  {
                      Id = a.Id,

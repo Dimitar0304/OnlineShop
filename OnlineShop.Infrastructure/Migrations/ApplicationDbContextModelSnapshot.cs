@@ -51,14 +51,14 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "87746889-978a-4eb2-86fe-cf52a52bf51e",
-                            ConcurrencyStamp = "c90ef201-d388-40ac-ad37-d3adeaf70266",
+                            Id = "0077b0ec-8d84-4f9e-9c58-77aec6f51037",
+                            ConcurrencyStamp = "88edc141-b039-4686-b460-348a2a2bdb2c",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "a873d09c-bf8c-4224-ada7-bd94c611a9dc",
-                            ConcurrencyStamp = "d96ee64f-f8b6-4a7d-aad7-d29b068c16cd",
+                            Id = "fbabe2b2-9476-417a-b009-cf080ae0545d",
+                            ConcurrencyStamp = "1f06f847-aa27-4582-a577-20b98f498c77",
                             Name = "User"
                         });
                 });
@@ -267,6 +267,9 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)")
                         .HasComment("Accessory Price");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<string>("Type")
                         .IsRequired()

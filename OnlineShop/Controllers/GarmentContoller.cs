@@ -14,7 +14,7 @@ namespace OnlineShop.Controllers
     {
         private readonly IGarmentService service;
         private readonly IGarmentSizeService garmentSizeService;
-        public GarmentController(IGarmentService _service,IGarmentSizeService _garmentSizeService)
+        public GarmentController(IGarmentService _service, IGarmentSizeService _garmentSizeService)
         {
             service = _service;
             garmentSizeService = _garmentSizeService;
@@ -23,7 +23,7 @@ namespace OnlineShop.Controllers
         public async Task<IActionResult> All(int? page)
         {
 
-            var pageNumber = page?? 1;
+            var pageNumber = page ?? 1;
 
             var pageSize = 4;
 
@@ -31,7 +31,7 @@ namespace OnlineShop.Controllers
             var model = new AllGarmentViewModel();
             model.Garments = await service.GetAllGarmentsAsync();
 
-            var pagedData = model.Garments.ToPagedList<GarmentViewModel>(pageNumber,pageSize);
+            var pagedData = model.Garments.ToPagedList<GarmentViewModel>(pageNumber, pageSize);
 
             if (model.Garments.Count > 0 && model.Garments != null)
             {
@@ -54,8 +54,16 @@ namespace OnlineShop.Controllers
         //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Add(GarmentViewModel model)
         {
-            
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+
+                model.Brands = await service.GetBrands();
+                model.Types = await service.GetTypes();
+                return View(model);
+            }
+            if(service.)
+
+            else 
             {
                 //add garment to db
                 await service.AddGarmentToDbAsync(model);
@@ -68,9 +76,6 @@ namespace OnlineShop.Controllers
                 //return view
                 return RedirectToAction("Index", "Home");
             }
-            model.Brands = await service.GetBrands();
-            model.Types = await service.GetTypes();
-            return View(model);
         }
 
         /// <summary>
@@ -103,7 +108,7 @@ namespace OnlineShop.Controllers
             return View(model);
         }
 
-        
+
 
     }
 }

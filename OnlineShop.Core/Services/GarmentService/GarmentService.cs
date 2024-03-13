@@ -37,6 +37,7 @@ namespace OnlineShop.Services.GarmentService
                     ImageUrl = model.ImageUrl,
                     Price = model.Price,
                     Color = model.Color,
+                    IsActive = true
 
                 };
                 await repository.AddAsync(g);
@@ -67,7 +68,9 @@ namespace OnlineShop.Services.GarmentService
         public async Task<List<GarmentViewModel>> GetAllGarmentsAsync()
         {
             return await repository
-                .All<Garment>().Select(g => new GarmentViewModel()
+                .All<Garment>()
+                .Where(g => g.IsActive == true)
+                .Select(g => new GarmentViewModel()
                 {
                     Id = g.Id,
                     Name = g.Model,
@@ -203,6 +206,24 @@ namespace OnlineShop.Services.GarmentService
             };
             await repository.AddAsync(model);
             await repository.SaveChangesAsync();
+        }
+
+        /// <summary>
+        /// Method for check is current adding garment exist in db
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<bool> IsGarmentExist(GarmentViewModel model)
+        {
+            var garments = await repository.All<Garment>()
+                .Where(g => g.Model.ToLower() == model.Name.ToLower())
+                .ToListAsync();
+            if (garments.Count() >= 1&&garments!=null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

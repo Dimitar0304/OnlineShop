@@ -69,5 +69,11 @@ namespace OnlineShop.Infrastructure.Data.Models
         /// </summary>
         [Required]
         public bool IsActive { get; set; } = false;
+
+        /// <summary>
+        /// Property for quantity of current accessory
+        /// </summary>
+        [Required]
+        public int Quantity { get; set; }
     }
 }

@@ -17,5 +17,7 @@ namespace OnlineShop.Services.Contracts
         public Task<List<TypeAllViewModel>> GetTypes();
 
         public Task AddGarmentWithSizeToDb(string sizeName,int garmentId);
+
+        public Task<bool> IsGarmentExist(GarmentViewModel model);
     }
 }
