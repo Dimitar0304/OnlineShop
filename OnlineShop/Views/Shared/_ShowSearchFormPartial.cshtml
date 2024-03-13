@@ -6,19 +6,24 @@
 <nav style="border:#666633" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 text-black">
     <div class="container-fluid">
         <style>
-            .img {
+            img {
                 position: static;
                 right: 4em;
             }
-            .form {
+
+            form {
                 position: static;
             }
             
+            
         </style>
-        
-        <form  method="post"  class="form-horizontal" asp-controller="AllClothes"asp-action="SearchAllByName">
+
+        <form method="post" class="form-horizontal" asp-controller="AllClothes" asp-action="SearchAllByName">
             <input type="search" class="form-control" id="search-popup-submit" value="Search by product name">
 
         </form>
         <button type="submit"><img src="~/images/search-icon.png"></button>
+        
+            @Html.Partial("_AdminMenuPartial")
+    
     </div>
