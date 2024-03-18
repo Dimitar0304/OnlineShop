@@ -1,5 +1,6 @@
 ﻿using OnlineShop.Core.Models.Size;
 using OnlineShop.Core.Models.Type;
+using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
 
@@ -19,5 +20,7 @@ namespace OnlineShop.Services.Contracts
         public Task AddGarmentWithSizeToDb(string sizeName,int garmentId);
 
         public Task<bool> IsGarmentExist(GarmentViewModel model);
+
+        public Task<List<SizeViewModel>> GetSizeViewModels(int modelId);
     }
 }

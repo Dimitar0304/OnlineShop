@@ -9,5 +9,6 @@ namespace OnlineShop.Models.Garment
         public List<GarmentViewModel> Garments { get; set; } = new List<GarmentViewModel>();
         [Required]
         public string Season { get; set; } = "Winter";
+        
     }
 }

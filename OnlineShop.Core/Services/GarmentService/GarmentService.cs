@@ -225,5 +225,25 @@ namespace OnlineShop.Services.GarmentService
             }
             return false;
         }
+
+        /// <summary>
+        /// Method for gett SizeViewModels for given garment
+        /// </summary>
+        /// <param name="modelId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public Task<List<SizeViewModel>> GetSizeViewModels(int modelId)
+        {
+            var availableSizes = repository.All<GarmentSize>()
+                .Where(g => g.GarmentId == modelId)
+                .Select(s => new SizeViewModel()
+                {
+                    Id = s.SizeId,
+                    Name = s.Size.Name
+                })
+                .ToListAsync();
+            return availableSizes;
+                
+        }
     }
 }

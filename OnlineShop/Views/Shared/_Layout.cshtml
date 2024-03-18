@@ -14,18 +14,18 @@
     <script src="https://cdn.syncfusion.com/ej2/24.2.3/dist/ej2.min.js"></script>
 </head>
 <body>
-    
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                <style>
-                    .img{
+                    <style>
+                        .img {
                             width: 100%;
                             height: auto;
                             opacity: 0.3;
-                    }
-                </style>
+                        }
+                    </style>
                     <img src="~/images/favicon-32x32.png" width="48px" height="43px" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -64,10 +64,10 @@
                             <li class="nav-item mx-2">
                                 <a class="nav-link btn btn-sm custom-button-color text-primary  " asp-area="" asp-controller="Cart" asp-action="MyShoppingCart">My Shoping Cart<span class="badge">6</span></a>
                             </li>
-                           
-                            
+
+
                         }
-                        
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -86,7 +86,18 @@
         <div class="container">
             &copy; 2024 - OnlineShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
         </div>
+
     </footer>
+        <content>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div style="width:fit-content;margin-right:initial" class="alert alert-info">
+                    <strong>Info!</strong> You are authenticated with this email @User.Identity.Name
+                </div>
+
+            }
+        </content>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

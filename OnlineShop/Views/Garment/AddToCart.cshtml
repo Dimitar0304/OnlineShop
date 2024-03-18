@@ -1,0 +1,23 @@
+﻿@model GarmentSizeViewModel;
+@{
+    ViewBag.Title = "Chose size";
+}
+<h1 class="text-black">@ViewBag.Title</h1>
+<form asp-action="AddToCart" method="post">
+    <h3>Pick garment size!</h3>
+    @foreach (SizeViewModel size in Model.Sizes)
+    {
+
+        <div class="radio disabled">
+            <input type="radio" asp-for="@Model.SizeName" value="@size.Name">
+            <label><input type="radio" name="optradio" disabled>@size.Name</label>
+            
+        </div>
+
+    }
+    <form class="input-group-sm" asp-controller="Garment" asp-action="AddToCart">
+        <input type="submit" value="AddToCart" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold " width="60" />
+    </form>
+
+</form>
+

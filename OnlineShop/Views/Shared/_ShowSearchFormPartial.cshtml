@@ -14,16 +14,14 @@
             form {
                 position: static;
             }
-            
-            
         </style>
 
         <form method="post" class="form-horizontal" asp-controller="AllClothes" asp-action="SearchAllByName">
-            <input type="search" class="form-control" id="search-popup-submit" value="Search by product name">
+            <input type="text" class="form-control" id="search-popup-submit" value="Search by product name">
 
+            <input type="submit"><img src="~/images/search-icon.png">
         </form>
-        <button type="submit"><img src="~/images/search-icon.png"></button>
-        
-            @Html.Partial("_AdminMenuPartial")
-    
+
+        @Html.Partial("_AdminMenuPartial")
+
     </div>

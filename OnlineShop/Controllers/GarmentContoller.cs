@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using OnlineShop.Core.Models.Garment;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Extentions;
 using OnlineShop.Models.Garment;
@@ -114,7 +115,29 @@ namespace OnlineShop.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Details(int id)
+        {
+            if (id<0)
+            {
+                return RedirectToAction("All", "Garment");
+            }
+            var entity = await service.GetByIdAsync(id);
+            if (entity == null)
+            {
+                return RedirectToAction("All", "Garment");
+            }
+            var model = new GarmentDetailsViewModel()
+            {
+                Name = entity.Name,
+                TypeName = service.GetTypes().Result.Where(t => t.Id == entity.TypeId).FirstOrDefault().Name,
+                Price = entity.Price,
+                Brand = entity.BrandName,
+                Color = entity.Color,
+                AvailableSizes =await service.GetSizeViewModels(id)
 
-
+            };
+            return View(model);
+        }
     }
 }
