@@ -1,1 +1,15 @@
-﻿
+﻿@model GarmentDetailsViewModel
+
+<div>
+    <h2 class="text-center">@Model.Name</h2>
+    <h3 class="text-center">@Model.Price</h3>
+    <h3 class="text-center">@Model.Brand</h3>
+    <h3 class="text-center">@Model.TypeName</h3>
+    <h3 class="text-center">@Model.Color</h3>
+
+    <h3>Available sizes</h3>
+    @foreach(SizeViewModel s in Model.AvailableSizes)
+    {
+        <label>@s.Name</label>
+    }
+</div>

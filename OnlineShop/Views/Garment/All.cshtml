@@ -1,4 +1,4 @@
-﻿@model PagedList<GarmentViewModel>;
+﻿@model List<IPagedList<GarmentViewModel>>;
 @{
     ViewBag.Collection = $"Our Winter collection";
     ViewBag.Title = "Our Suggestions";
@@ -38,46 +38,49 @@
 
 
     <div class="container">
-        @foreach (GarmentViewModel s in Model)
+        @foreach (IPagedList<GarmentViewModel> p in Model)
         {
+            foreach (var g in p)
+            {
+
+                <div class="card">
+                    <h3>@g.Name</h3>
+                    <p>@g.Price BGN</p>
+                    <img src="@g.ImageUrl">
+                    <p>@g.BrandName</p>
+                    <form class="input-group-sm" asp-controller="Garment" asp-action="AddToCart" asp-route-id="@g.Id">
+                        <input type="submit" value="Add to cart" class="fs-6 btn btn-success mb-2 w-100 p-3 fw-bold" width="60" />
+                    </form>
+                    <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@g.Id">
+                        <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold " width="60" />
+                    </form>
+                </div>
+            }
 
 
-
-            <div class="card">
-                <h3>@s.Name</h3>
-                <p>@s.Price BGN</p>
-                <img src="@s.ImageUrl">
-                <p>@s.BrandName</p>
-                <form class="input-group-sm" asp-controller="Garment" asp-action="AddToCart" asp-route-id="@s.Id">
-                    <input type="submit" value="Add to cart" class="fs-6 btn btn-success mb-2 w-100 p-3 fw-bold" width="60" />
-                </form>
-                <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@s.Id">
-                    <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold " width="60" />
-                </form>
-            </div>
         }
 
 
     </div>
 
     <ul class="pagination">
-        @for (int i = 1; i <= Model.PageCount; i++)
+        @for (int i = 1; i <= Model.Count; i++)
         {
             <li class="page-item">
-               
-                    <a class="page-item" href="">@i,</a>
-                
+
+                <a class="page-item" href="">@i,</a>
+
 
             </li>
         }
     </ul>
     @*<input type="hidden" id="hfCurrentPageIndex" name="currentPageIndex" />
     <script type="text/javascript">
-        function PagerClick(index)
-        {
-            document.getElementById("hfCurrentPageIndex").value=index;
-            document.forms[0].submit();
-        }
+    function PagerClick(index)
+    {
+    document.getElementById("hfCurrentPageIndex").value=index;
+    document.forms[0].submit();
+    }
     </script>*@
 </body>
 </html>
