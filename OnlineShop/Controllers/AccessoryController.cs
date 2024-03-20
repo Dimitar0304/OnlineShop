@@ -61,18 +61,35 @@ namespace OnlineShop.Controllers
                 await service.AddAccessoryToDbAsync(model);
                 return View("All");
             }
-            
+
         }
 
         /// <summary>
         /// Method for get all accessories
         /// </summary>
         /// <returns></returns>
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(int currentPage)
         {
+            var model = new AccessoryAllViewModel();
+
+            var pageSize = 3;
+
             var models = await service.GetAllAccessoryAsync();
 
-            return View(models);
+            var totalPages = (int)Math.Ceiling(models.Count / (decimal)pageSize);
+
+            model.CurrentPage = currentPage;
+            model.PageSize = pageSize;
+            model.TotalPages = totalPages;
+            model.Accessories = models.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+            if (model.Accessories != null&&model.Accessories.Count>0)
+            {
+
+                return View(model);
+            }
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }

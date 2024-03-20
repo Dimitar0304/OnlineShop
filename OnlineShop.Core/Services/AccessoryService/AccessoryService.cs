@@ -98,11 +98,11 @@ namespace OnlineShop.Core.Services.AccessoryService
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public async Task<List<AccessoryAllViewModel>> GetAllAccessoryAsync()
+        public async Task<List<AccessoryAddViewModel>> GetAllAccessoryAsync()
         {
             return await repository.All<Accessory>()
                 .Where(a => a.IsActive == true)
-                 .Select(a => new AccessoryAllViewModel()
+                 .Select(a => new AccessoryAddViewModel()
                  {
                      Id = a.Id,
                      Name = a.Name,

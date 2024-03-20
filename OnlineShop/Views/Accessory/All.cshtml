@@ -1,9 +1,9 @@
-﻿@model List<AccessoryAllViewModel>
+﻿@model AccessoryAllViewModel
 @{
 }
 
 <div class="container">
-    @foreach (AccessoryAllViewModel s in Model)
+    @foreach (AccessoryAddViewModel s in Model.Accessories)
     {
         
 
@@ -14,13 +14,50 @@
             <img src="@s.ImageUrl">
             <p>@s.BrandName</p>
             
-            <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@s.Id">
+            <form class="input-group-sm" asp-controller="Accessory" asp-action="Details" asp-route-id="@s.Id">
                 <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold " width="60" />
             </form>
         </div>
     }
 
+    <div>
 
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @if (Model.CurrentPage > 1)
+                {
+
+                    <li class="page-item">
+                        <a class="page-link" href="/Accessory/All?currentPage =@Model.CurrentPage-1" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                }
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    if (i == Model.CurrentPage)
+                    {
+
+                        <li xclass="page-item"><a class="page-link active" href="/Accessory/All?currentPage=@i">@i</a></li>
+                    }
+                    else
+                    {
+                        <li xclass="page-item"><a class="page-link " href="/Accessory/All?currentPage=@i">@i</a></li>
+                    }
+                }
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+
+                    <li class="page-item">
+                        <a class="page-link" href="/Accessory/All?currentPage=@Model.CurrentPage+1" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </nav>
+    </div>
 </div>
 
 

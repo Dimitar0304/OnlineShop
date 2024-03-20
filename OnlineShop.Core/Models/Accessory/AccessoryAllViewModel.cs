@@ -11,12 +11,11 @@ namespace OnlineShop.Core.Models.Accessory
     /// </summary>
     public class AccessoryAllViewModel
     {
-        
-        public int Id { get; set; }
-        public string Name { get; set; } = null!;
-        public string Type { get; set; } = null!;
-        public decimal Price { get; set; }
-        public string BrandName { get; set; } = null!;
-        public string ImageUrl { get; set; } = null!;
+        public List<AccessoryAddViewModel> Accessories { get; set; }=new List<AccessoryAddViewModel>();
+        public string Season { get; set; } = "Winter";
+
+        public int PageSize { get; set; }
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
     }
 }

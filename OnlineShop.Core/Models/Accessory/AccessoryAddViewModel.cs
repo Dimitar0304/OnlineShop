@@ -66,5 +66,7 @@ namespace OnlineShop.Core.Models.Accessory
         [Required(ErrorMessage =ErrorMessages.RequiredField)]
         [Display(Name ="Accessory Image Url")]
         public string ImageUrl { get; set; } = null!;
+
+        public string BrandName { get; set; } = null!;
     }
 }
