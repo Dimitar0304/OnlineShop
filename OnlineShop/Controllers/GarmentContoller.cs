@@ -22,31 +22,32 @@ namespace OnlineShop.Controllers
             garmentSizeService = _garmentSizeService;
         }
 
-        public async Task<IActionResult> All(int? page)
+        public async Task<IActionResult> All(int currentPage)
         {
+            var model = new AllGarmentViewModel();
 
-            var pageNumber = page ?? 1;
-
+            int totalRecords = service.GetAllGarmentsAsync().Result.Count;
             var pageSize = 3;
+            var totalPages = (int)Math.Ceiling(totalRecords/(decimal)pageSize);
 
-            var models = service.GetAllGarmentsAsync().Result.ToList();
+            model.CurrentPage = currentPage;
+            model.PageSize = pageSize;
+            model.TotalPages = totalPages;
+            
 
-            int counterOfPages = models.Count % pageSize;
+            var garments =  service.GetAllGarmentsAsync().Result
+                .ToList();
 
-            List<IPagedList<GarmentViewModel>> pagedData=new List<IPagedList<GarmentViewModel>>();
-            for (int i = 1; i <= counterOfPages; i++)
-            {
-                pagedData.Add(await service
-                .GetAllGarmentsAsync().Result.Skip(pageNumber - 1 * pageSize).Take(pageSize)
-                .ToPagedListAsync(pageNumber, pageSize)); 
+            garments = garments.Skip((currentPage-1)*(pageSize))
+                .Take(pageSize)
+                .ToList();
 
-            }
-
+            model.Garments = garments;
                 
-            if (pagedData.Count!=null&&pagedData.Count>0)
+            if (garments.Count!=null&&garments.Count>0)
             {
 
-                return View(pagedData);
+                return View(model);
     }
             return RedirectToAction("Index", "Home");
 
