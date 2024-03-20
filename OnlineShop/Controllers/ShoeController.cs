@@ -26,17 +26,38 @@ namespace OnlineShop.Controllers
         /// Action for Display all shoes
         /// </summary>
         /// <returns></returns>
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(int currentPage)
         {
-            var models = await service.GetAllShoeAsync();
-            if (models == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            //model for pass to view
             var model = new ShoeAllViewModel();
-            model.Shoes = models;
-            
-            return View(model);
+
+            //enities per page size
+            int pageSize = 3;
+
+            //get all enitites
+            var models = await service.GetAllShoeAsync();
+
+            //get total pages count 
+            int totalPages = (int)Math.Ceiling(models.Count / (decimal)pageSize);
+
+            //set currentPage index
+            model.CurrentPage= currentPage;
+
+            //set entities per page size
+            model.PageSize = pageSize;
+
+            //set totalpages
+            model.TotalPages=totalPages;
+
+            //get list of entities for currentPage
+            model.Shoes = models.Skip((currentPage-1) * pageSize).Take(pageSize).ToList();
+
+            if (models.Count != null && models.Count > 0)
+            {
+
+                return View(model);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         /// <summary>
