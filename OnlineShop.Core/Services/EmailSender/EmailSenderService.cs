@@ -12,12 +12,15 @@ namespace OnlineShop.Core.Services.EmailSender
     public class EmailSenderService : IEmailSender
     {
         private readonly ILogger _logger;
+        //private readonly IEmailSender emailSender;
 
         public EmailSenderService(IOptions<AuthMessageSenderOptions> optionsAccessor,
-                           ILogger<EmailSenderService> logger)
+                           ILogger<EmailSenderService> logger
+                           )
         {
             Options = optionsAccessor.Value;
             _logger = logger;
+            //emailSender = _emailSender;
         }
 
         public AuthMessageSenderOptions Options { get; } //Set with Secret Manager.

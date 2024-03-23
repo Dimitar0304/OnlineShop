@@ -16,7 +16,7 @@ namespace OnlineShop.Core.Services.Contracts
         Task AddAccessoryToDbAsync(AccessoryAddViewModel model);
         Task UpdateAccessoryToDbAsync(AccessoryAddViewModel model);
         void DeleteAccessoryToDbAsync(int id);
-        Task<List<AccessoryAddViewModel>> GetAllAccessoryAsync();
+        Task<List<AccessoryAllViewModel>> GetAllAccessoryAsync();
         Task<AccessoryAddViewModel> GetByIdAsync(int id);
         public Task<List<BrandViewModel>> GetBrands();
         public bool AccessoryIsExistInDb(AccessoryAddViewModel model);

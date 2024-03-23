@@ -51,14 +51,14 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0077b0ec-8d84-4f9e-9c58-77aec6f51037",
-                            ConcurrencyStamp = "88edc141-b039-4686-b460-348a2a2bdb2c",
+                            Id = "ca6b6429-3e2f-4695-97b6-fd403a72b1bf",
+                            ConcurrencyStamp = "5b9cf135-fb4d-4e93-bb7a-c37b5f15f10b",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "fbabe2b2-9476-417a-b009-cf080ae0545d",
-                            ConcurrencyStamp = "1f06f847-aa27-4582-a577-20b98f498c77",
+                            Id = "1f3b6b58-cad8-4725-abd5-2541c19f889d",
+                            ConcurrencyStamp = "9119b744-5bf0-45c0-b2c6-4217b122aeb2",
                             Name = "User"
                         });
                 });

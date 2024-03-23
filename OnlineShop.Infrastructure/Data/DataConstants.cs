@@ -175,5 +175,6 @@
             /// </summary>
             public const int MaxAddressLenght = 20;
         }
+       
     }
 }

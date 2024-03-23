@@ -17,7 +17,7 @@ namespace OnlineShop.Infrastructure.Data.Models
         [Required]
         [Comment("User identifier")]
         [ForeignKey(nameof(User))]
-        public string UserId { get; set; }=null!;
+        public string UserId { get; set; } = null!;
 
         /// <summary>
         /// User Type
