@@ -18,13 +18,16 @@ namespace OnlineShop.Controllers
             accessoryService = _accessoryService;
 
         }
-        public IActionResult ShowSearchedItems(string? term)
+        public IActionResult ShowSearchedItems(string? term, int currentPage)
         {
+            var model = new AllClothesViewModel();
+            
             if (string.IsNullOrEmpty(term))
             {
-                return RedirectToAction("Index","Home");   
+                return RedirectToAction("Index", "Home");
             }
             term = term.ToLower();
+            model.Term = term;
 
 
             //make collection of clothesViewModels
@@ -80,15 +83,22 @@ namespace OnlineShop.Controllers
                     Price = a.Price,
                 });
             }
-            //return view
-            if (models.Count > 0)
+            if (models.Count <= 0)
             {
-                return View(models);
-            }
-            else
-            {
+
                 return RedirectToAction("Index", "Home");
             }
+            model.CurrentPage = currentPage;
+            model.PageSize = 5;
+            model.TotalPages = (int)Math.Ceiling(models.Count / (decimal)model.PageSize);
+            //return view
+            model.Clothes = models.Skip((currentPage - 1) * model.PageSize)
+                .Take(model.PageSize)
+                .ToList();
+
+            return View(model);
+
+
         }
     }
 }

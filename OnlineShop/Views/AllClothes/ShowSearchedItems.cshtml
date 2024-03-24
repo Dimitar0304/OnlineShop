@@ -1,11 +1,11 @@
-﻿@model List<ClothesViewModel>
+﻿@model AllClothesViewModel
 @{
     ViewBag.Title = "Your Result";
 }
 <h1>@ViewBag.Title</h1>
 
 <h2>Garments</h2>
-@foreach(var i in Model.Where(i=>i.ClothesType=="Garment"))
+@foreach(var i in Model.Clothes.Where(i=>i.ClothesType=="Garment"))
 {
     <div style="width:min-content;height:min-content"  class="card ">
          <h3>@i.Name</h3>
@@ -14,7 +14,7 @@
     </div>
 }
 <h2>Shoes</h2>
-@foreach (var i in Model.Where(i => i.ClothesType == "Shoe"))
+@foreach (var i in Model.Clothes.Where(i => i.ClothesType == "Shoe"))
 {
     <div style="width:min-content;height:min-content" class="card ">
         <h3>@i.Name</h3>
@@ -23,7 +23,7 @@
     </div>
 }
 <h2>Accessories</h2>
-@foreach (var i in Model.Where(i => i.ClothesType == "Accessory"))
+@foreach (var i in Model.Clothes.Where(i => i.ClothesType == "Accessory"))
 {
     <div style="width:min-content;height:min-content" class="card ">
         <h3>@i.Name</h3>
@@ -31,3 +31,38 @@
         <img src="@i.ImageUrl">
     </div>
 }
+<div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            @if (Model.CurrentPage > 1)
+            {
+
+                <li class="page-item">
+                    <a class="page-link" href="/AllClothes/ShowSearchedItems?currentPage =@Model.CurrentPage-1" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            }
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                if (i == Model.CurrentPage)
+                {
+
+                    <li xclass="page-item"><a class="page-link active" href="/AllClothes/ShowSearchedItems?currentPage=@i">@i</a></li>
+                }
+                else
+                {
+                    <li xclass="page-item"><a class="page-link " href="/AllClothes/ShowSearchedItems?currentPage=@i">@i</a></li>
+                }
+            }
+            @if (Model.CurrentPage < Model.TotalPages)
+            {
+
+                <li class="page-item">
+                    <a class="page-link" href="/AllClothes/ShowSearchedItems?currentPage=@Model.CurrentPage+1" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+</div>
