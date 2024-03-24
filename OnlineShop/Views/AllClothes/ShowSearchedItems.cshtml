@@ -1,0 +1,33 @@
+﻿@model List<ClothesViewModel>
+@{
+    ViewBag.Title = "Your Result";
+}
+<h1>@ViewBag.Title</h1>
+
+<h2>Garments</h2>
+@foreach(var i in Model.Where(i=>i.ClothesType=="Garment"))
+{
+    <div style="width:min-content;height:min-content"  class="card ">
+         <h3>@i.Name</h3>
+         <p>@i.Price</p>
+         <img src="@i.ImageUrl">
+    </div>
+}
+<h2>Shoes</h2>
+@foreach (var i in Model.Where(i => i.ClothesType == "Shoe"))
+{
+    <div style="width:min-content;height:min-content" class="card ">
+        <h3>@i.Name</h3>
+        <p>@i.Price</p>
+        <img src="@i.ImageUrl">
+    </div>
+}
+<h2>Accessories</h2>
+@foreach (var i in Model.Where(i => i.ClothesType == "Accessory"))
+{
+    <div style="width:min-content;height:min-content" class="card ">
+        <h3>@i.Name</h3>
+        <p>@i.Price</p>
+        <img src="@i.ImageUrl">
+    </div>
+}

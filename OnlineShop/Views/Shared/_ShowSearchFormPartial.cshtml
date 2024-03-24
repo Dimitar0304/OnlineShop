@@ -1,6 +1,4 @@
-﻿@model string
-@{
-}
+﻿
 
 
 <nav style="border:#666633" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 text-black">
@@ -16,10 +14,15 @@
             }
         </style>
 
-        <form method="post" class="form-horizontal" asp-controller="AllClothes" asp-action="SearchAllByName">
-            <input type="text" class="form-control" id="search-popup-submit" value="Search by product name">
-
-            <input type="submit"><img src="~/images/search-icon.png">
+        <form asp-controller="AllClothes" asp-action="ShowSearchedItems">
+            <div class="row">
+                <div class="col-md-8">
+                    <input name="term" class="form-control" placeholder="Search by name" />
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-info">Search</button>
+                </div>
+            </div>
         </form>
         @if (User.IsInRole("Admin"))
         {
