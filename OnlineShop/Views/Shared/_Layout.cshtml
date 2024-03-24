@@ -40,13 +40,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
                         </li>
-                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                        {
-
-                            <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-black" asp-area="" asp-controller="Garment" asp-action="Add">Add Garment</a>
-                            </li>
-                        }
+              
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item mx-2">
@@ -62,7 +56,7 @@
                                 <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Brand" asp-action="All">All Brands</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-primary  " asp-area="" asp-controller="Cart" asp-action="MyShoppingCart">My Shoping Cart<span class="badge">6</span></a>
+                                <a class="nav-link btn btn-sm custom-button-color text-primary  " asp-area="" asp-controller="Cart" asp-action="MyShoppingCart">My Shoping Cart<span class="badge">7</span></a>
                             </li>
 
 

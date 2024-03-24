@@ -1,0 +1,23 @@
+﻿@model GarmentSizeViewModel;
+@{
+    ViewBag.Title = "Chose size";
+}
+<h1 class="text-black">@ViewBag.Title</h1>
+
+<h3>Pick garment size!</h3>
+<form id="optionForm">
+
+    @foreach (SizeViewModel size in Model.Sizes)
+    {
+
+        <input type="radio" id="@size.Name" name="option" value="@size.Name">
+        <label for="@size.Name">@size.Name</label>
+
+        <br>
+
+    }
+    <button type="submit">Submit</button>
+</form>
+
+
+

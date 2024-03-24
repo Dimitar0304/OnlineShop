@@ -1,14 +1,8 @@
-using Habanero.Util;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
-using OnlineShop.ModelBinders;
-using OnlineShop.Services.Contracts;
-using OnlineShop.Services.GarmentService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +35,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireUppercase = false;
     options.Password.RequireNonAlphanumeric = false;
 })
+    .AddRoles<IdentityRole>()
+    .AddUserManager<UserManager<IdentityUser>>()
+    .AddRoleManager<RoleManager<IdentityRole>>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 

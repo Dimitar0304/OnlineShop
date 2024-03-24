@@ -46,8 +46,8 @@
                 <p>@s.Price BGN</p>
                 <img src="@s.ImageUrl">
                 <p>@s.BrandName</p>
-                <form class="input-group-sm" asp-controller="Garment" asp-action="AddToCart" asp-route-id="@s.Id">
-                    <input type="submit" value="Add to cart" class="fs-6 btn btn-success mb-2 w-100 p-3 fw-bold" width="60" />
+                <form class="input-group-sm" asp-controller="Garment" asp-action="PickSize" asp-route-id="@s.Id">
+                    <input type="submit" value="Pick size" class="fs-6 btn btn-success mb-2 w-100 p-3 fw-bold" width="60" />
                 </form>
                 <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@s.Id">
                     <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold " width="60" />

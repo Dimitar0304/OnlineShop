@@ -41,7 +41,7 @@
             <div class="mb-3">
                 <label asp-for="@Model.TypeId" class="form-label-add-edit">Select Type</label>
                 <select asp-for="@Model.TypeId" class="form-control" aria-required="true">
-                    <option disabled selected value="">Select Brand...</option>
+                    <option disabled selected value="">Select Type...</option>
                     @foreach (var type in Model.Types)
                     {
                         <option value="@type.Id">@type.Name</option>

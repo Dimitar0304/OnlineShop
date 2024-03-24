@@ -192,16 +192,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FybWVudFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lasss/Documents/GitHub/OnlineShop/OnlineShop/Views/Garment/AddToCart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FybWVudFxBZGRUb0NhcnQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/lasss/Documents/GitHub/OnlineShop/OnlineShop/Views/Garment/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FybWVudFxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/lasss/Documents/GitHub/OnlineShop/OnlineShop/Views/Garment/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FybWVudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lasss/Documents/GitHub/OnlineShop/OnlineShop/Views/Garment/PickSize.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FybWVudFxQaWNrU2l6ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/lasss/Documents/GitHub/OnlineShop/OnlineShop/Views/Home/Index.cshtml]
