@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Core.Models.Account;
 using OnlineShop.Core.Models.User;
 using OnlineShop.Infrastructure.Data.Models;
 
@@ -66,6 +67,47 @@ namespace OnlineShop.Controllers
         }
         [HttpGet]
         [AllowAnonymous]
+        public IActionResult RegisterUser(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> RegisterUser(RegisterUserFormModel model, string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            if (ModelState.IsValid)
+            {
+                var user = new User
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    RegistrationDate = DateTime.UtcNow.ToLocalTime()
+                };
+
+                var result = await this.userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    this.logger.LogInformation("User created a new account with password.");
+
+                    var code = await this.userManager.GenerateEmailConfirmationTokenAsync(user);
+
+                    await this.signManager.SignInAsync(user, isPersistent: false);
+                    this.logger.LogInformation("User created a new account with password.");
+                    return RedirectToLocal(returnUrl);
+                }
+                AddErrors(result);
+            }
+
+            return View(model);
+        }
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Lockout()
         {
             return View();
@@ -79,6 +121,13 @@ namespace OnlineShop.Controllers
             else
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
+        }
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
             }
         }
     }
