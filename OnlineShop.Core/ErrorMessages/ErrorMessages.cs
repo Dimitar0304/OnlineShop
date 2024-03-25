@@ -23,5 +23,14 @@
         /// Price range error message
         /// </summary>
         public const string PriceRangeErrorMessage = "Range must be between 0.00 and 5000.00";
+
+        /// <summary>
+        /// User name is required exeption
+        /// </summary>
+        public const string UserNameRequired = "UserName is required";
+        /// <summary>
+        /// Password is required exeption
+        /// </summary>
+        public const string PasswordRequired = "Password is required";
     }
 }

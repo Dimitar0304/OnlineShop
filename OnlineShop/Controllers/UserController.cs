@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol;
+using OnlineShop.Infrastructure.Data.Models;
 
 namespace OnlineShop.Controllers
 {
@@ -8,12 +10,17 @@ namespace OnlineShop.Controllers
    
     public class UserController : Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
+        private readonly UserManager<User> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
-        public UserController(UserManager<IdentityUser> _userManager, RoleManager<IdentityRole> _roleManager)
+        public UserController(UserManager<User> _userManager, RoleManager<IdentityRole> _roleManager)
         {
             userManager = _userManager;
             roleManager = _roleManager;
+        }
+
+        public async Task<IActionResult> Login()
+        {
+
         }
         
         public async Task<IActionResult> AddUserToRole(string email,string roleName)
@@ -50,5 +57,7 @@ namespace OnlineShop.Controllers
             }
             
         }
+
+
     }
 }
