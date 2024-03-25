@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
+using OnlineShop.Infrastructure.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +29,7 @@ builder.Services.AddApplicationService();
 
 
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+builder.Services.AddIdentity<User,IdentityRole>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
     options.Password.RequireDigit = false;
@@ -36,7 +37,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireNonAlphanumeric = false;
 })
     .AddRoles<IdentityRole>()
-    .AddUserManager<UserManager<IdentityUser>>()
+    .AddUserManager<UserManager<User>>()
     .AddRoleManager<RoleManager<IdentityRole>>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
@@ -83,7 +84,7 @@ app.UseAuthorization();
 
 
 app.MapDefaultControllerRoute();
-app.MapRazorPages();
+
 
 
 

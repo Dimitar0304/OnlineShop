@@ -38,7 +38,7 @@ namespace OnlineShop.Infrastructure.Data.Models
         /// </summary>
         [Required]
         [Comment("Order user type")]
-        public IdentityUser User { get; set; } = null!;
+        public User User { get; set; } = null!;
 
         /// <summary>
         /// Order PhoneNumber

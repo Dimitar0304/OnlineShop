@@ -9,7 +9,7 @@ namespace OnlineShop.Infrastructure
     /// <summary>
     /// ApplicationDb Context
     /// </summary>
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         /// <summary>
         /// ApplicationDb Context Ctor

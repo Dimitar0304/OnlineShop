@@ -24,7 +24,7 @@ namespace OnlineShop.Infrastructure.Data.Models
         /// </summary>
         [Required]
         [Comment("User type")]
-        public IdentityUser User { get; set; } = null!;
+        public User User { get; set; } = null!;
 
         /// <summary>
         /// Order Identifier
