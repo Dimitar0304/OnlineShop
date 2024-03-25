@@ -175,6 +175,17 @@
             /// </summary>
             public const int MaxAddressLenght = 20;
         }
-       
+        
+        /// <summary>
+        /// Custom user constants
+        /// </summary>
+        public static class User
+        {
+            public const int FirstNameMinLenght = 3;
+            public const int FirstNameMaxLenght = 50;
+
+            public const int LastNameMinLenght = 3;
+            public const int LastNameMaxLenght = 50;
+        }
     }
 }
