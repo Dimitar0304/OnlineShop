@@ -28,5 +28,9 @@ namespace OnlineShop.Core.Models.Account
         public string LastName { get; set; } = null!;
         [Required(ErrorMessage =ErrorMessages.PasswordRequired)]
         public string Password { get; set; } = null!;
+        [Required(ErrorMessage = ErrorMessages.PasswordRequired)]
+        public string ConfirmPassword { get; set; } = null!;
+        
+        public string? PhoneNumber { get; set; }
     }
 }

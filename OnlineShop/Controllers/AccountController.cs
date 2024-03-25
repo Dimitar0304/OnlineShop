@@ -12,14 +12,14 @@ namespace OnlineShop.Controllers
     {
         private readonly SignInManager<User> signManager;
         private readonly UserManager<User> userManager;
-        private readonly ILogger logger;
+    
         public AccountController(SignInManager<User> _signManager,
-            UserManager<User> _userManager,
-            ILogger _logger)
+            UserManager<User> _userManager
+         )
         {
             signManager = _signManager;
             userManager = _userManager;
-            logger = _logger;
+           
         }
         [HttpGet]
         [AllowAnonymous]
@@ -46,13 +46,13 @@ namespace OnlineShop.Controllers
                     var result = await signManager.PasswordSignInAsync(user, model.Password,true, lockoutOnFailure: false);
                     if (result.Succeeded)
                     {
-                        this.logger.LogInformation("User logged in.");
+                       
                         return RedirectToLocal(returnUrl);
                     }
 
                     if (result.IsLockedOut)
                     {
-                        this.logger.LogWarning("User account locked out.");
+                       
                         return RedirectToAction(nameof(Lockout));
                     }
                     else
@@ -93,12 +93,12 @@ namespace OnlineShop.Controllers
 
                 if (result.Succeeded)
                 {
-                    this.logger.LogInformation("User created a new account with password.");
+                   
 
                     var code = await this.userManager.GenerateEmailConfirmationTokenAsync(user);
 
                     await this.signManager.SignInAsync(user, isPersistent: false);
-                    this.logger.LogInformation("User created a new account with password.");
+                    
                     return RedirectToLocal(returnUrl);
                 }
                 AddErrors(result);

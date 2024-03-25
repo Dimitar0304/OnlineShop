@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
 <ul class="navbar-nav">
     
@@ -54,7 +54,7 @@
                     font-size: 16px;
                 }
             </style>
-            <a class="nav-link text-primary" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link text-primary" asp-controller="Account" asp-action="RegisterUser">Register</a>
         </li1>
         <li2 class="nav-item">
 

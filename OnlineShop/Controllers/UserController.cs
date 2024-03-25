@@ -18,11 +18,7 @@ namespace OnlineShop.Controllers
             roleManager = _roleManager;
         }
 
-        public async Task<IActionResult> Login()
-        {
-
-        }
-        
+       
         public async Task<IActionResult> AddUserToRole(string email,string roleName)
         {
             
