@@ -49,7 +49,8 @@
                 <form class="input-group-sm" asp-controller="Garment" asp-action="PickSize" asp-route-id="@s.Id">
                     <input type="submit" value="Pick size" class="fs-6 btn btn-success mb-2 w-100 p-3 fw-bold" width="60" />
                 </form>
-                <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@s.Id">
+                <form class="input-group-sm" asp-controller="Garment" asp-action="Details" asp-route-id="@s.Id"
+                asp-route-information="@s.GetInformation()">
                     <input type="submit" value="Details" class="fs-6 btn btn-muted mb-2 w-100 p-3 fw-bold " width="60" />
                 </form>
             </div>

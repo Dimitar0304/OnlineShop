@@ -1,4 +1,5 @@
 ﻿using OnlineShop.Core.Models.Type;
+using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure;
 using OnlineShop.Models.Brand;
 using OnlineShop.Validations;
@@ -9,7 +10,7 @@ namespace OnlineShop.Models.Garment
     /// <summary>
     /// Garment view model
     /// </summary>
-    public class GarmentViewModel
+    public class GarmentViewModel:IProductModel
     {
 
         /// <summary>

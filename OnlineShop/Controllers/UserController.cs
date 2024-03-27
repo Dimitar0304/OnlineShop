@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol;
+using NuGet.Protocol.Core.Types;
 using OnlineShop.Infrastructure.Data.Models;
 
 namespace OnlineShop.Controllers
@@ -54,6 +55,6 @@ namespace OnlineShop.Controllers
             
         }
 
-
+        
     }
 }

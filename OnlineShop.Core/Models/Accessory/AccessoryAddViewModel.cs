@@ -54,6 +54,10 @@ namespace OnlineShop.Core.Models.Accessory
         [Required(ErrorMessage=ErrorMessages.RequiredField)]
         [Display(Name ="Accessory Brand")]
         public int BrandId { get; set; }
+        /// <summary>
+        /// Brand name
+        /// </summary>
+        public string BrandName { get; set; } = "Default";
 
         /// <summary>
         /// Collection of possible brands

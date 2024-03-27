@@ -107,7 +107,8 @@ namespace OnlineShop.Services.GarmentService
                 TypeId = g.TypeId,
                 BrandId = g.BrandId,
                 Price = g.Price,
-                Color = g.Color
+                Color = g.Color,
+                BrandName= g.Brand.Name,
 
             }).Where(g => g.Id == id)
             .FirstAsync();

@@ -29,7 +29,7 @@ builder.Services.AddApplicationService();
 
 
 
-builder.Services.AddIdentity<User,IdentityRole>(options =>
+builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
     options.Password.RequireDigit = false;
@@ -82,8 +82,16 @@ app.UseAuthorization();
 //app.UseAddAdmin();
 
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "Garment All",
+        pattern: "/Garment/All/{id}/{information}",
+        defaults: new { Controller = "Garment", Action = "All" });
 
-app.MapDefaultControllerRoute();
+    app.MapDefaultControllerRoute();
+});
+
 
 
 

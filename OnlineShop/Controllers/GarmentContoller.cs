@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Garment;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Extentions;
@@ -120,11 +121,11 @@ namespace OnlineShop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(int id,string information)
         {
-            if (id < 0)
+            if (id < 0&&service.GetByIdAsync(id)==null)
             {
-                return RedirectToAction("All", "Garment");
+                return BadRequest();
             }
             var entity = await service.GetByIdAsync(id);
             if (entity == null)
@@ -136,11 +137,15 @@ namespace OnlineShop.Controllers
                 Name = entity.Name,
                 TypeName = service.GetTypes().Result.Where(t => t.Id == entity.TypeId).FirstOrDefault().Name,
                 Price = entity.Price,
-                Brand = entity.BrandName,
+                BrandName = entity.BrandName,
                 Color = entity.Color,
                 AvailableSizes = await service.GetSizeViewModels(id)
 
             };
+            if (information != model.GetInformation())
+            {
+                return BadRequest();
+            }
             return View(model);
         }
     }
