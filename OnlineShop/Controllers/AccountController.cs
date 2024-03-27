@@ -23,19 +23,19 @@ namespace OnlineShop.Controllers
         }
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(string returnUrl = null)
+        public async Task<IActionResult> Login(string? returnUrl = null)
         {
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
-            ViewData[returnUrl] = returnUrl;
+            ViewData["ReturnUrl"] = returnUrl;
 
             return View();
         }
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginFormModel model, string returnUrl = null)
+        public async Task<IActionResult> Login(LoginFormModel model, string? returnUrl = null)
         {
-            ViewBag[returnUrl] = returnUrl;
+            //ViewBag["ReturnUrl"] = returnUrl;
 
             if (ModelState.IsValid)
             {
