@@ -75,7 +75,7 @@ namespace OnlineShop.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> RegisterUser(RegisterUserFormModel model, string returnUrl = null)
+        public async Task<IActionResult> RegisterUser(RegisterUserFormModel model, string? returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
@@ -86,7 +86,8 @@ namespace OnlineShop.Controllers
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    RegistrationDate = DateTime.UtcNow.ToLocalTime()
+                    RegistrationDate = DateTime.UtcNow.ToLocalTime(),
+                    PhoneNumber = model.PhoneNumber,
                 };
 
                 var result = await this.userManager.CreateAsync(user, model.Password);
@@ -111,6 +112,13 @@ namespace OnlineShop.Controllers
         public IActionResult Lockout()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await this.signManager.SignOutAsync();
+            
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
         private IActionResult RedirectToLocal(string returnUrl)
         {
