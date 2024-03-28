@@ -5,13 +5,13 @@
 <h1 class="text-black">@ViewBag.Title</h1>
 
 <h3>Pick garment size!</h3>
-<form id="optionForm">
+<form id="optionForm" asp-controller="Garment" asp-action="AddToCart" asp-route-id="@Model.GarmentId"asp-route-sizeName="@Model.SizeName">
 
     @foreach (SizeViewModel size in Model.Sizes)
     {
 
         <input type="radio" id="@size.Name" name="option" value="@size.Name">
-        <label for="@size.Name">@size.Name</label>
+        <label for="@size.Name"class="id=sizeName">@size.Name</label>
 
         <br>
 

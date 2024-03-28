@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Accessory;
 using OnlineShop.Core.Services.Contracts;
 
@@ -59,7 +60,8 @@ namespace OnlineShop.Controllers
             else
             {
                 await service.AddAccessoryToDbAsync(model);
-                return View("All");
+                var models = await service.GetAllAccessoryAsync();
+                return RedirectToAction("All",models);
             }
             
         }
@@ -73,6 +75,27 @@ namespace OnlineShop.Controllers
             var models = await service.GetAllAccessoryAsync();
 
             return View(models);
+        }
+
+        public async Task<IActionResult> Details(int id, string information)
+        {
+            if (await service.GetByIdAsync(id)==null)
+            {
+                return BadRequest();
+            }
+            var entity = await service.GetByIdAsync(id);
+            var model = new AccessoryDetailsViewModel()
+            {
+                Name = entity.Name,
+                Price = entity.Price,
+                BrandName= service.GetBrands().Result.FirstOrDefault(b=>b.Id==entity.BrandId).Name,
+                ImageUrl = entity.ImageUrl
+            };
+            if (information!=model.GetInformation())
+            {
+                return BadRequest();
+            }
+            return View(model);
         }
     }
 }

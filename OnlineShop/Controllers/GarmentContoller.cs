@@ -113,7 +113,7 @@ namespace OnlineShop.Controllers
 
         }
         
-        public async Task<IActionResult> AddToCart(string sizeName)
+        public async Task<IActionResult> AddToCart(int id,string sizeName)
         {
 
             return RedirectToAction("Index", "Home");
