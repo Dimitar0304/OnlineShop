@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Shoe;
 using OnlineShop.Core.Services.Contracts;
 
@@ -102,6 +103,30 @@ namespace OnlineShop.Controllers
                 return RedirectToAction("All");
             }
             return RedirectToAction("All");
+        }
+
+        public async Task<IActionResult> Details(int id, string information)
+        {
+            if ( await service.GetByIdAsync(id)==null)
+            {
+                return BadRequest();
+            }
+            var entity = await service.GetByIdAsync(id);
+            var model = new ShoeDetailsViewModel()
+            {
+                Name = entity.Name,
+                Price = entity.Price,
+                ImageUrl = entity.ImageUrl,
+                Color = entity.Color,
+                TypeName = service.GetTypes().FirstOrDefault(t=>t.Id==entity.TypeId).Name,
+                BrandName = entity.BrandName,
+                AvailableSizes = await service.GetSizeViewModels(id)
+            };
+            if (information!=model.GetInformation())
+            {
+                return BadRequest();
+            }
+            return View(model);
         }
     }
 }

@@ -85,9 +85,19 @@ app.UseAuthorization();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
-        name: "Garment All",
-        pattern: "/Garment/All/{id}/{information}",
-        defaults: new { Controller = "Garment", Action = "All" });
+        name: "Garment Details",
+        pattern: "/Garment/Details/{id}/{information}",
+        defaults: new { Controller = "Garment", Action = "Details" });
+
+    endpoints.MapControllerRoute(
+     name: "Shoe Details",
+     pattern: "/Shoe/Details/{id}/{information}",
+     defaults: new { Controller = "Shoe", Action = "Details" });
+
+    endpoints.MapControllerRoute(
+     name: "Accessory Details",
+     pattern: "/Accessory/Details/{id}/{information}",
+     defaults: new { Controller = "Accessory", Action = "Details" });
 
     app.MapDefaultControllerRoute();
 });

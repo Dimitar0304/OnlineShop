@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineShop.Core.Models.Type;
+using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
@@ -12,7 +13,7 @@ namespace OnlineShop.Core.Models.Shoe
     /// <summary>
     /// Shoe add view model
     /// </summary>
-    public class ShoeAddViewModel
+    public class ShoeAddViewModel:IProductModel
     {
         /// <summary>
         /// Shoe view model Entity

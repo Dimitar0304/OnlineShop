@@ -11,7 +11,9 @@ namespace OnlineShop.Core.Models.Garment
         public string Name { get; set; } = null!;
         public decimal Price { get; set; }
         public string BrandName { get; set; } = null!;
-        
+
+        public string ImageUrl { get; set; } = null!;
+
         public string TypeName { get; set; } = null!;
         public string Color { get; set; } = null!;
         public List<SizeViewModel> AvailableSizes { get; set; } = new List<SizeViewModel>();

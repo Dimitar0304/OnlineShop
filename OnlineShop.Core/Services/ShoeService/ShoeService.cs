@@ -6,6 +6,7 @@ using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
+using OnlineShop.Models.Garment;
 
 namespace OnlineShop.Core.Services.ShoeService
 {
@@ -104,17 +105,19 @@ namespace OnlineShop.Core.Services.ShoeService
         /// <returns></returns>
         public async Task<ShoeAddViewModel> GetByIdAsync(int id)
         {
-            var model = await repository.GetByIdAsync<Shoe>(id);
-            return new ShoeAddViewModel()
+            var s = await repository.All<Shoe>().Select(s => new ShoeAddViewModel()
             {
-                Id = model.Id,
-                Name = model.Model,
-                Price = model.Price,
-                Color = model.Color,
-                BrandId = model.BrandId,
-                TypeId = model.TypeId,
-                ImageUrl = model.ImageUrl,
-            };
+                Id = id,
+                Name = s.Model,
+                TypeId = s.TypeId,
+                BrandId = s.BrandId,
+                Price = s.Price,
+                Color = s.Color,
+                BrandName = s.Brand.Name,
+
+            }).Where(s => s.Id == id)
+           .FirstAsync();
+            return s;
         }
 
         /// <summary>
@@ -200,6 +203,18 @@ namespace OnlineShop.Core.Services.ShoeService
                 return true;
             }
             return false;
+        }
+        public async Task<List<SizeViewModel>> GetSizeViewModels(int shoeId)
+        {
+            var availableSizes = await repository.All<ShoeSize>()
+               .Where(g => g.ShoeId == shoeId)
+               .Select(s => new SizeViewModel()
+               {
+
+                   Name = s.Size.ToString()
+               })
+               .ToListAsync();
+            return availableSizes;
         }
 
     }

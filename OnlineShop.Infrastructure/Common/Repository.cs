@@ -114,6 +114,7 @@ namespace OnlineShop.Infrastructure.Common
         public async Task<T> GetByIdAsync<T>(int id) where T : class
         {
             var entity = await GetSet<T>().FindAsync(id);
+           
             if (entity != null)
             {
 
