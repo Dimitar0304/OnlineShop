@@ -217,5 +217,12 @@ namespace OnlineShop.Core.Services.ShoeService
             return availableSizes;
         }
 
+        public async Task SoftDelete(int id)
+        {
+            var entity = await repository.GetByIdAsync<Shoe>(id);
+            entity.IsActive = false;
+            await repository.UpdateAsync(entity);
+            await repository.SaveChangesAsync();
+        }
     }
 }

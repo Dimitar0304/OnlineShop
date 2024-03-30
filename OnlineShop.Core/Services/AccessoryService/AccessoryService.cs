@@ -154,6 +154,14 @@ namespace OnlineShop.Core.Services.AccessoryService
             };
         }
 
+        public async Task SoftDelete(int id)
+        {
+            var entity = await repository.GetByIdAsync<Accessory>(id);
+            entity.IsActive = false;
+            await repository.UpdateAsync(entity);
+            await repository.SaveChangesAsync();
+        }
+
         /// <summary>
         /// Method for update accessory in db
         /// </summary>

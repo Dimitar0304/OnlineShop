@@ -108,7 +108,7 @@ namespace OnlineShop.Services.GarmentService
                 BrandId = g.BrandId,
                 Price = g.Price,
                 Color = g.Color,
-                BrandName= g.Brand.Name,
+                BrandName = g.Brand.Name,
 
             }).Where(g => g.Id == id)
             .FirstAsync();
@@ -132,6 +132,7 @@ namespace OnlineShop.Services.GarmentService
                 g.Price = model.Price;
                 g.Color = model.Color;
                 g.TypeId = model.TypeId;
+                
 
 
                 await repository.UpdateAsync<Garment>(g);
@@ -220,7 +221,7 @@ namespace OnlineShop.Services.GarmentService
             var garments = await repository.All<Garment>()
                 .Where(g => g.Model.ToLower() == model.Name.ToLower())
                 .ToListAsync();
-            if (garments.Count() >= 1&&garments!=null)
+            if (garments.Count() >= 1 && garments != null)
             {
                 return true;
             }
@@ -244,7 +245,15 @@ namespace OnlineShop.Services.GarmentService
                 })
                 .ToListAsync();
             return availableSizes;
-                
+
+        }
+
+        public async Task SoftDelete(int id)
+        {
+            var entity = await repository.GetByIdAsync<Garment>(id);
+            entity.IsActive = false;
+            await repository.UpdateAsync<Garment>(entity);
+            await repository.SaveChangesAsync();
         }
     }
 }

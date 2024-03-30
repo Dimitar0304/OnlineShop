@@ -22,5 +22,7 @@ namespace OnlineShop.Services.Contracts
         public Task<bool> IsGarmentExist(GarmentViewModel model);
 
         public Task<List<SizeViewModel>> GetSizeViewModels(int modelId);
+
+        public Task SoftDelete(int id);
     }
 }

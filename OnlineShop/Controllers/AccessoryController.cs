@@ -97,5 +97,16 @@ namespace OnlineShop.Controllers
             }
             return View(model);
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (await service.GetByIdAsync(id)==null)
+            {
+                return BadRequest();
+            }
+            await service.SoftDelete(id);
+            var models = await service.GetAllAccessoryAsync();
+            return RedirectToAction("All",models);
+        }
     }
 }

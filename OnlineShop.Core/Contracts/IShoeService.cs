@@ -18,5 +18,6 @@ namespace OnlineShop.Core.Services.Contracts
         public List<TypeAllViewModel> GetTypes();
         public bool ShoeIsExistInDb(ShoeAddViewModel model);
         public  Task<List<SizeViewModel>> GetSizeViewModels(int shoeId);
+        public Task SoftDelete(int id);
     }
 }

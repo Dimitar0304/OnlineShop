@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.VisualBasic;
 using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Garment;
 using OnlineShop.Core.Services.Contracts;
@@ -112,8 +113,8 @@ namespace OnlineShop.Controllers
             return View(model);
 
         }
-        
-        public async Task<IActionResult> AddToCart(int id,string sizeName)
+
+        public async Task<IActionResult> AddToCart(int id, string sizeName)
         {
 
             return RedirectToAction("Index", "Home");
@@ -121,9 +122,9 @@ namespace OnlineShop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Details(int id,string information)
+        public async Task<IActionResult> Details(int id, string information)
         {
-            if (id < 0&&service.GetByIdAsync(id)==null)
+            if (id < 0 && service.GetByIdAsync(id) == null)
             {
                 return BadRequest();
             }
@@ -147,6 +148,52 @@ namespace OnlineShop.Controllers
                 return BadRequest();
             }
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (await service.GetByIdAsync(id) == null)
+            {
+                return BadRequest();
+            }
+            GarmentViewModel model = await service.GetByIdAsync(id);
+            //if (information != model.GetInformation())
+            //{
+            //    return BadRequest();
+            //}
+            model.Brands =await service.GetBrands();
+            model.Types = await service.GetTypes();
+
+            return View("Edit",model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit(GarmentViewModel model)
+        {
+            if (model == null)
+            {
+                return BadRequest();
+            }
+            if (ModelState.IsValid == false)
+            {
+                model.Brands = await service.GetBrands();
+                model.Types = await service.GetTypes();
+                return View(model);
+            }
+            await service.UpdateGarmentToDbAsync(model);
+            return RedirectToAction("All", "Garment");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (await service.GetByIdAsync(id)==null)
+            {
+                return BadRequest();
+            }
+            await service.SoftDelete(id);
+            var models = await service.GetAllGarmentsAsync();
+            return RedirectToAction("All", models);
         }
     }
 }

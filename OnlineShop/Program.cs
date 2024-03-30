@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Data.Models;
+using OnlineShop.ModelBinders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,7 +47,8 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 builder.Services.AddControllersWithViews()
     .AddMvcOptions(o =>
     {
-        // o.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+        o.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+        o.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
     });
 
 
@@ -98,6 +101,11 @@ app.UseEndpoints(endpoints =>
      name: "Accessory Details",
      pattern: "/Accessory/Details/{id}/{information}",
      defaults: new { Controller = "Accessory", Action = "Details" });
+
+    endpoints.MapControllerRoute(
+     name: "Garment Edit",
+     pattern: "/Garment/Edit/{id}/{information}",
+     defaults: new { Controller = "Garment", Action = "Edit" });
 
     app.MapDefaultControllerRoute();
 });

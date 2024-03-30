@@ -12,5 +12,6 @@ namespace OnlineShop.Core.Services.Contracts
         Task<AccessoryAddViewModel> GetByIdAsync(int id);
         public Task<List<BrandViewModel>> GetBrands();
         public bool AccessoryIsExistInDb(AccessoryAddViewModel model);
+        public Task SoftDelete(int id);
     }
 }
