@@ -42,16 +42,16 @@ namespace OnlineShop.Controllers
             int totalPages = (int)Math.Ceiling(models.Count / (decimal)pageSize);
 
             //set currentPage index
-            model.CurrentPage= currentPage;
+            model.CurrentPage = currentPage;
 
             //set entities per page size
             model.PageSize = pageSize;
 
             //set totalpages
-            model.TotalPages=totalPages;
+            model.TotalPages = totalPages;
 
             //get list of entities for currentPage
-            model.Shoes = models.Skip((currentPage-1) * pageSize).Take(pageSize).ToList();
+            model.Shoes = models.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
 
             if (models.Count != null && models.Count > 0)
             {
@@ -97,7 +97,7 @@ namespace OnlineShop.Controllers
                 var shoeId = service.GetAllShoeAsync().Result.Last().Id;
 
                 //add for each  size shoesize model in db
-                await shoeSizeService.AddShoeSizeModels(shoeId); 
+                await shoeSizeService.AddShoeSizeModels(shoeId);
 
                 //return to all shoes view
                 return RedirectToAction("All");
@@ -107,7 +107,7 @@ namespace OnlineShop.Controllers
 
         public async Task<IActionResult> Details(int id, string information)
         {
-            if ( await service.GetByIdAsync(id)==null)
+            if (await service.GetByIdAsync(id) == null)
             {
                 return BadRequest();
             }
@@ -118,11 +118,11 @@ namespace OnlineShop.Controllers
                 Price = entity.Price,
                 ImageUrl = entity.ImageUrl,
                 Color = entity.Color,
-                TypeName = service.GetTypes().FirstOrDefault(t=>t.Id==entity.TypeId).Name,
+                TypeName = service.GetTypes().FirstOrDefault(t => t.Id == entity.TypeId).Name,
                 BrandName = entity.BrandName,
                 AvailableSizes = await service.GetSizeViewModels(id)
             };
-            if (information!=model.GetInformation())
+            if (information != model.GetInformation())
             {
                 return BadRequest();
             }
@@ -131,11 +131,22 @@ namespace OnlineShop.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            if (await service.GetByIdAsync(id)==null)
+            if (await service.GetByIdAsync(id) == null)
             {
                 return BadRequest();
             }
             await service.SoftDelete(id);
+            var models = await service.GetAllShoeAsync();
+            return RedirectToAction("All", models);
+        }
+
+        public async Task<IActionResult> DeleteFromDb(int id)
+        {
+            if (await service.GetByIdAsync(id) == null)
+            {
+                return BadRequest();
+            }
+           await service.DeleteShoeToDbAsync(id);
             var models = await service.GetAllShoeAsync();
             return RedirectToAction("All", models);
         }

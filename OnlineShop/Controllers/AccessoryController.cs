@@ -108,5 +108,16 @@ namespace OnlineShop.Controllers
             var models = await service.GetAllAccessoryAsync();
             return RedirectToAction("All",models);
         }
+
+        public async Task<IActionResult> DeleteFromDb(int id)
+        {
+            if (await service.GetByIdAsync(id) == null)
+            {
+                return BadRequest();
+            }
+            await service.DeleteAccessoryToDbAsync(id);
+            var models = await service.GetAllAccessoryAsync();
+            return RedirectToAction("All", models);
+        }
     }
 }

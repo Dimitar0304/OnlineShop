@@ -10,7 +10,7 @@ namespace OnlineShop.Services.Contracts
     {
         Task AddGarmentToDbAsync(GarmentViewModel model);
         Task UpdateGarmentToDbAsync(GarmentViewModel model);
-        void DeleteGarmentToDbAsync(int id);
+        Task DeleteGarmentToDbAsync(int id);
         Task<List<GarmentViewModel>> GetAllGarmentsAsync();
         Task<GarmentViewModel> GetByIdAsync(int id);
         public  Task<List<BrandViewModel>> GetBrands();

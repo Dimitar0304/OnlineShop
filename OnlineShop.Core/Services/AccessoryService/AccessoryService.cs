@@ -48,8 +48,8 @@ namespace OnlineShop.Core.Services.AccessoryService
                 })
                 .ToList();
 
-
-            if (entities.Contains(model))
+            var existingModel = entities.FirstOrDefault(e => e.Name == model.Name);
+            if (existingModel != null)
             {
 
                 return true;
@@ -86,11 +86,16 @@ namespace OnlineShop.Core.Services.AccessoryService
         /// Method for delete accessory 
         /// </summary>
         /// <param name="id"></param>
-        public void DeleteAccessoryToDbAsync(int id)
+        public async Task DeleteAccessoryToDbAsync(int id)
         {
-            var accessory = repository.GetByIdAsync<Accessory>(id);
+            var accessory = await repository.GetByIdAsync<Accessory>(id);
 
-            repository.Delete(accessory);
+            if (accessory != null)
+            {
+
+                await repository.Delete(accessory);
+                await repository.SaveChangesAsync();
+            }
         }
 
         /// <summary>

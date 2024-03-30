@@ -51,11 +51,15 @@ namespace OnlineShop.Core.Services.ShoeService
         /// Method for delete shoe in db context
         /// </summary>
         /// <param name="id"></param>
-        public void DeleteShoeToDbAsync(int id)
+        public async Task DeleteShoeToDbAsync(int id)
         {
-            var shoe = repository.GetByIdAsync<Shoe>(id);
+            var shoe = await repository.GetByIdAsync<Shoe>(id);
+            if (shoe != null)
+            {
 
-            repository.Delete(shoe);
+                await repository.Delete(shoe);
+                await repository.SaveChangesAsync();
+            }
         }
 
         /// <summary>
@@ -65,18 +69,18 @@ namespace OnlineShop.Core.Services.ShoeService
         public async Task<List<ShoeAddViewModel>> GetAllShoeAsync()
         {
             return await repository.All<Shoe>()
-                .Where(s=>s.IsActive==true)
+                .Where(s => s.IsActive == true)
                 .Select(s => new ShoeAddViewModel()
-            {
-                Id = s.Id,
-                Name = s.Model,
-                Price = s.Price,
-                Color = s.Color,
-                BrandId = s.BrandId,
-                TypeId = s.TypeId,
-                ImageUrl = s.ImageUrl,
-                BrandName = s.Brand.Name
-            })
+                {
+                    Id = s.Id,
+                    Name = s.Model,
+                    Price = s.Price,
+                    Color = s.Color,
+                    BrandId = s.BrandId,
+                    TypeId = s.TypeId,
+                    ImageUrl = s.ImageUrl,
+                    BrandName = s.Brand.Name
+                })
                  .ToListAsync();
 
         }
@@ -181,9 +185,9 @@ namespace OnlineShop.Core.Services.ShoeService
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public  bool ShoeIsExistInDb(ShoeAddViewModel model)
+        public bool ShoeIsExistInDb(ShoeAddViewModel model)
         {
-            List<ShoeAddViewModel> entities =  repository.AllReadOnly<Shoe>()
+            List<ShoeAddViewModel> entities = repository.AllReadOnly<Shoe>()
                 .Select(s => new ShoeAddViewModel()
                 {
                     Id = s.Id,
@@ -196,8 +200,8 @@ namespace OnlineShop.Core.Services.ShoeService
                 })
                 .ToList();
 
-
-            if (entities.Contains(model))
+            var existingModel = entities.FirstOrDefault(s => s.Name == model.Name);
+            if (existingModel != null)
             {
 
                 return true;

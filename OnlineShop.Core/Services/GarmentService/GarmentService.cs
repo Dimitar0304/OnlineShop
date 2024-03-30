@@ -50,14 +50,14 @@ namespace OnlineShop.Services.GarmentService
         /// Garment remove method
         /// </summary>
         /// <param name="id"></param>
-        public void DeleteGarmentToDbAsync(int id)
+        public async Task DeleteGarmentToDbAsync(int id)
         {
-            var g = repository.GetByIdAsync<Garment>(id);
+            var g = await repository.GetByIdAsync<Garment>(id);
             if (g != null)
             {
 
-                repository.Delete(g);
-                repository.SaveChangesAsync();
+                await repository.Delete(g);
+                await repository.SaveChangesAsync();
             }
 
         }
@@ -132,7 +132,7 @@ namespace OnlineShop.Services.GarmentService
                 g.Price = model.Price;
                 g.Color = model.Color;
                 g.TypeId = model.TypeId;
-                
+
 
 
                 await repository.UpdateAsync<Garment>(g);

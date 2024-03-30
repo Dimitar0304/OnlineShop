@@ -9,7 +9,7 @@ namespace OnlineShop.Core.Services.Contracts
     {
         Task AddShoeToDbAsync(ShoeAddViewModel model);
         Task UpdateShoeToDbAsync(ShoeAddViewModel model);
-        void DeleteShoeToDbAsync(int id);
+        Task DeleteShoeToDbAsync(int id);
         Task<List<ShoeAddViewModel>> GetAllShoeAsync();
         Task<ShoeAddViewModel> GetByIdAsync(int id);
         public List<BrandViewModel> GetBrands();
