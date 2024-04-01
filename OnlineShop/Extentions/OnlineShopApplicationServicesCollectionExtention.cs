@@ -35,13 +35,24 @@ namespace OnlineShop.Extentions
             services.AddScoped<IGarmentSizeService, GarmentSizeService>();
 
             //Add shoeSize service
-            services.AddScoped<IShoeSizeService,ShoeSizeService>();
+            services.AddScoped<IShoeSizeService, ShoeSizeService>();
 
             //Add accessory service
             services.AddScoped<IAccessoryService, AccessoryService>();
 
-            
+            services.AddDatabaseDeveloperPageExceptionFilter();
+            //Add Cache Data
+            services.AddDistributedMemoryCache();
+            //Add Session with options
+            services.AddSession(options =>
+            {
+                options.IOTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+            });
 
+            //Add compression
+            services.AddResponseCompression();
+           
             return services;
 
         }

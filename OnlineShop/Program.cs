@@ -15,9 +15,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
+
+
+
 
 //Adding session options
 builder.Services.ConfigureApplicationCookie(o =>
@@ -74,7 +75,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 //Session option functionality
-//app.UseSession()
+app.UseSession();
+app.UseResponseCompression();
 
 app.UseRouting();
 
