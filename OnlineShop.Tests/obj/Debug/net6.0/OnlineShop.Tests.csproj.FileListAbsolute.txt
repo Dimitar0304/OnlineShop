@@ -350,3 +350,4 @@ C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Tests\bin\Debug\net6.0\Onl
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Tests\bin\Debug\net6.0\OnlineShop.Infrastructure.pdb
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Tests\bin\Debug\net6.0\xunit.assert.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Tests\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Tests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll

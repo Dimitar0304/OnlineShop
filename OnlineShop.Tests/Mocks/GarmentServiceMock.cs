@@ -1,13 +1,22 @@
 ﻿using Moq;
+using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 
 namespace OnlineShop.Tests.Mocks
 {
     public static class GarmentServiceMock
     {
-        public static Mock<IGarmentService> Instance()
+        public static IGarmentService Instance
         {
-            return new Mock<IGarmentService> ();
+            get
+            {
+                var garmentService = new Mock<IGarmentService>();
+
+
+
+                return garmentService.Object;
+             }
+
         }
     }
 }

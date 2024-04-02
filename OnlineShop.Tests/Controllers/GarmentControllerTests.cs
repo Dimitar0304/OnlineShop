@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 using OnlineShop.Controllers;
+using OnlineShop.Tests.Mocks;
 using Xunit;
 using Assert = NUnit.Framework.Assert;
 
@@ -10,16 +11,12 @@ namespace OnlineShop.Tests.Controllers
     public class GarmentControllerTests
     {
         
-
-                
-        
-
         [Test]
         public void AllMethodShouldReturnPageWithGarments()
         {
             //arange 
           
-            var controller = new GarmentController(null,null);
+            var controller = new GarmentController(GarmentServiceMock.Instance,null);
 
             //act 
              var result = controller.All(1);

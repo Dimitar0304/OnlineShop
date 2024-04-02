@@ -1407,11 +1407,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/6.0.27": {
+      "Microsoft.EntityFrameworkCore/6.0.28": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.27",
-          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.27",
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.28",
+          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.28",
           "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
           "Microsoft.Extensions.Logging": "6.0.0",
@@ -1432,7 +1432,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/6.0.27": {
+      "Microsoft.EntityFrameworkCore.Abstractions/6.0.28": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -1445,13 +1445,29 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/6.0.27": {
+      "Microsoft.EntityFrameworkCore.Analyzers/6.0.28": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
         },
         "runtime": {
           "lib/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/6.0.28": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.28"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/6.0.27": {
@@ -5540,10 +5556,10 @@
         "microsoft.dotnet.scaffolding.shared.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/6.0.27": {
-      "sha512": "HY4o8koPh+PXpOq5L9S8QLw5Svq/AZJhLoppCio244N8LAgAWBMQ9edfVh8r/1IQbEj5Xj6M7ZyzcrSOsRwAzA==",
+    "Microsoft.EntityFrameworkCore/6.0.28": {
+      "sha512": "B0/OgYIf4Jy+ZXxU1tQ29m235K63h6wadL9lnUPN7lFAeJRrwNXynFFAGDibgUjJvimZvbGxtF+AiJaODoRrig==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/6.0.27",
+      "path": "microsoft.entityframeworkcore/6.0.28",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5551,36 +5567,50 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.6.0.27.nupkg.sha512",
+        "microsoft.entityframeworkcore.6.0.28.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/6.0.27": {
-      "sha512": "AzJrXp9CVtZK65uTkinEFgR/iMmtATeLFlh//L2a5Y8Nrngcrbo7FCCJaUv0UdfZNwcZQmIGnSyoBX+lHuMeNw==",
+    "Microsoft.EntityFrameworkCore.Abstractions/6.0.28": {
+      "sha512": "qLfDuiCvcoIY7IWbXuHCqILYyzV2rXcAh1tnkmYxA5ZfJq0wHIZrRoYP7LNJZttpq5cFyWRK5X6R2tP/M4M+Lw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/6.0.27",
+      "path": "microsoft.entityframeworkcore.abstractions/6.0.28",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.6.0.27.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.6.0.28.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/6.0.27": {
-      "sha512": "T3c1wpLrkRKTJzeHWFLK09y3CPW9siGyNEqmiqcr7B6CTgaqIajKtXr3XRbIGU04BiO+KqVvcCYv+Zqh661gJA==",
+    "Microsoft.EntityFrameworkCore.Analyzers/6.0.28": {
+      "sha512": "9Y6RC2WMVvNGkhUEcxQGTpYgoebuoIm63acQYEzFVqxZeN9el47aXnypW5JJW3L7/tBkGMvDcQ8hG4t+SJmpHg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/6.0.27",
+      "path": "microsoft.entityframeworkcore.analyzers/6.0.28",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.6.0.27.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.6.0.28.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/6.0.28": {
+      "sha512": "s0UR0xf/ynIju27HgQepB4WsG3VL/aNsTQEo8XZZcXfTFWweReZdV+3z0c6NCEqnHc0H7pvYtbbyROkxrapncw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/6.0.28",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.6.0.28.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.27": {
@@ -9976,6 +10006,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Microsoft.EntityFrameworkCore.InMemory >= 6.0.28",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
       "Moq >= 4.20.70",
       "NUnit >= 3.13.3",
@@ -10032,6 +10063,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[6.0.28, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.5.0, )"

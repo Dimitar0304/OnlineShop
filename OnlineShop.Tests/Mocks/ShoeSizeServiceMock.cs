@@ -1,5 +1,6 @@
 ﻿using Moq;
 using OnlineShop.Core.Services.Contracts;
+using OnlineShop.Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,17 @@ namespace OnlineShop.Tests.Mocks
 {
     public static class ShoeSizeServiceMock
     {
-        public static Mock<IShoeService> Instance()
+        public static IShoeSizeService Instance
         {
-            return new Mock<IShoeService>();
+            get
+            {
+                var shoeSizeService = new Mock<IShoeSizeService>();
+
+
+
+                return shoeSizeService.Object;
+            }
+
         }
     }
 }
