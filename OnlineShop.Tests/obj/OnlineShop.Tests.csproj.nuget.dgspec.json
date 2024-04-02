@@ -59,6 +59,10 @@
             "X.PagedList": {
               "target": "Package",
               "version": "[8.4.7, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.7.0, )"
             }
           },
           "imports": [
@@ -136,6 +140,10 @@
             "X.PagedList": {
               "target": "Package",
               "version": "[8.4.7, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.7.0, )"
             }
           },
           "imports": [
@@ -229,6 +237,10 @@
             "coverlet.collector": {
               "target": "Package",
               "version": "[3.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.7.0, )"
             },
             "xunit.extensibility.core": {
               "target": "Package",
@@ -337,6 +349,10 @@
             "X.PagedList": {
               "target": "Package",
               "version": "[8.4.7, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.7.0, )"
             }
           },
           "imports": [

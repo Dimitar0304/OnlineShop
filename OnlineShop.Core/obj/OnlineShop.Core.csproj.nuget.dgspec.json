@@ -59,6 +59,10 @@
             "X.PagedList": {
               "target": "Package",
               "version": "[8.4.7, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.7.0, )"
             }
           },
           "imports": [
@@ -136,6 +140,10 @@
             "X.PagedList": {
               "target": "Package",
               "version": "[8.4.7, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.7.0, )"
             }
           },
           "imports": [

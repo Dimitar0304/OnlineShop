@@ -13,3 +13,5 @@ C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Core\obj\Debug\net6.0\Onli
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Core\obj\Debug\net6.0\refint\OnlineShop.Core.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Core\obj\Debug\net6.0\OnlineShop.Core.pdb
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Core\obj\Debug\net6.0\ref\OnlineShop.Core.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Core\bin\Debug\net6.0\OnlineShop.Core.runtimeconfig.json
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Core\obj\Debug\net6.0\OnlineShop.Core.genruntimeconfig.cache

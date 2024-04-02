@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KQC7AuOAVtuEK6KqsC/P/Sp1JbZayuXSuWTlI6qifC+azFJBEbA8yKqvcXLBFjjwqCj3EAJGl38RBGqdBqXoFg==",
+  "dgSpecHash": "JMYlvrRLqBy7SG3zuu1MJN6KjrZ4VDAn/MZPVUojyzUt+VbUYQ0iOS5EUEt75QRXXFN1vmJOkB2R4KrzBa70DA==",
   "success": true,
   "projectFilePath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
   "expectedPackageFiles": [
@@ -201,8 +201,13 @@
     "C:\\Users\\lasss\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\x.pagedlist\\8.4.7\\x.pagedlist.8.4.7.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\xunit\\2.7.0\\xunit.2.7.0.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
-    "C:\\Users\\lasss\\.nuget\\packages\\xunit.extensibility.core\\2.7.0\\xunit.extensibility.core.2.7.0.nupkg.sha512"
+    "C:\\Users\\lasss\\.nuget\\packages\\xunit.analyzers\\1.11.0\\xunit.analyzers.1.11.0.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\xunit.assert\\2.7.0\\xunit.assert.2.7.0.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\xunit.core\\2.7.0\\xunit.core.2.7.0.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\xunit.extensibility.core\\2.7.0\\xunit.extensibility.core.2.7.0.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\xunit.extensibility.execution\\2.7.0\\xunit.extensibility.execution.2.7.0.nupkg.sha512"
   ],
   "logs": [
     {

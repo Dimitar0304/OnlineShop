@@ -25,6 +25,7 @@
     <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
     <PackageReference Include="Syncfusion.EJ2.MVC5" Version="24.2.3" />
     <PackageReference Include="X.PagedList" Version="8.4.7" />
+    <PackageReference Include="xunit" Version="2.7.0" />
   </ItemGroup>
 
   <ItemGroup>

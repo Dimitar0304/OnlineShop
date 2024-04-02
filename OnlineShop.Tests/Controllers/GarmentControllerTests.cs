@@ -1,9 +1,8 @@
-﻿using Moq;
+﻿using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 using OnlineShop.Controllers;
-using OnlineShop.Core.Services.Contracts;
-using OnlineShop.Services.Contracts;
-using OnlineShop.Services.GarmentService;
+using Xunit;
+using Assert = NUnit.Framework.Assert;
 
 namespace OnlineShop.Tests.Controllers
 {
@@ -11,8 +10,7 @@ namespace OnlineShop.Tests.Controllers
     public class GarmentControllerTests
     {
         
-        private readonly Mock<IGarmentService> service=new Mock<IGarmentService>();
-        private readonly Mock<IGarmentSizeService> sizeService = new Mock<IGarmentSizeService>();
+
                 
         
 
@@ -20,15 +18,20 @@ namespace OnlineShop.Tests.Controllers
         public void AllMethodShouldReturnPageWithGarments()
         {
             //arange 
-            var controller = new GarmentController(service.Object, sizeService.Object);
+          
+            var controller = new GarmentController(null,null);
 
             //act 
-             var result = controller.All(1).Result;
+             var result = controller.All(1);
 
             //assert
-            Assert.That(result, Is.Positive);
-
+            Assert.AreNotEqual(result, null);
+            Assert.AreEqual(result.Result,Is.TypeOf<IActionResult>());
+            
         }
+        
+        
+        
         
         
 
