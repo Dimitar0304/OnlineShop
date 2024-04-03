@@ -1,6 +1,7 @@
 ﻿using Moq;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
+using X.PagedList;
 
 namespace OnlineShop.Tests.Mocks
 {
@@ -12,7 +13,9 @@ namespace OnlineShop.Tests.Mocks
             {
                 var garmentService = new Mock<IGarmentService>();
 
+                var models = new List<GarmentViewModel>();
 
+               
 
                 return garmentService.Object;
              }

@@ -12,18 +12,20 @@ namespace OnlineShop.Tests.Controllers
     {
         
         [Test]
-        public void AllMethodShouldReturnPageWithGarments()
+        public  void AllMethodWithoutObjectsShouldReturnRedirectToActionResult()
         {
             //arange 
           
-            var controller = new GarmentController(GarmentServiceMock.Instance,null);
+            var controller = 
+                new GarmentController(GarmentServiceMock.Instance,GarmentSizeServiceMock.Instance);
 
             //act 
-             var result = controller.All(1);
+            
+             var result =  controller.All(1).Result;
 
             //assert
             Assert.AreNotEqual(result, null);
-            Assert.AreEqual(result.Result,Is.TypeOf<IActionResult>());
+            Assert.AreEqual(result,Is.TypeOf<ViewResult>());
             
         }
         
