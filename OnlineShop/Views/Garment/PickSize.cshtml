@@ -5,19 +5,17 @@
 <h1 class="text-black">@ViewBag.Title</h1>
 
 <h3>Pick garment size!</h3>
-<form id="optionForm" asp-controller="Garment" asp-action="AddToCart" asp-route-id="@Model.GarmentId"asp-route-sizeName="@Model.SizeName">
-
-    @foreach (SizeViewModel size in Model.Sizes)
-    {
-
-        <input type="radio" id="@size.Name" name="option" value="@size.Name">
-        <label for="@size.Name"class="id=sizeName">@size.Name</label>
-
-        <br>
-
-    }
-    <button type="submit">Submit</button>
-</form>
+<div class="mb-3">
+    <label asp-for="@Model.SizeName" class="form-label-add-edit">Select Brand</label>
+    <select asp-for="@Model.SizeName" class="form-control" aria-required="true">
+        <option disabled selected value="">Select Brand...</option>
+        @foreach (var brand in Model.Sizes)
+        {
+            <option value="@brand.Id">@brand.Name</option>
+        }
+    </select>
+    <span asp-validation-for="@Model.SizeName" class="text-danger"></span>
+</div>
 
 
 

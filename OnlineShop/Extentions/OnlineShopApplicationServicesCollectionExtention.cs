@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Logging;
+using OnlineShop.Core.Contracts;
 using OnlineShop.Core.Services.AccessoryService;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Core.Services.GarmentService;
+using OnlineShop.Core.Services.OrderService;
 using OnlineShop.Core.Services.ShoeService;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
@@ -39,6 +41,9 @@ namespace OnlineShop.Extentions
 
             //Add accessory service
             services.AddScoped<IAccessoryService, AccessoryService>();
+
+            //Add order service
+            services.AddScoped<IOrderService,OrderService>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
             //Add Cache Data

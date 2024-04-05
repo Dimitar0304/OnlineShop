@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.VisualBasic;
 using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Garment;
+using OnlineShop.Core.Models.Order;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Extentions;
 using OnlineShop.Models.Garment;
@@ -106,7 +107,7 @@ namespace OnlineShop.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> PickSize(int id)
         {
             var model = new GarmentSizeViewModel();
@@ -116,8 +117,8 @@ namespace OnlineShop.Controllers
             return View(model);
 
         }
-
-        public async Task<IActionResult> AddToCart(int id, string sizeName)
+        [HttpPost]
+        public async Task<IActionResult> AddToCart(OrderDetailModel model)
         {
 
             return RedirectToAction("Index", "Home");
