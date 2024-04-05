@@ -13,7 +13,7 @@ namespace OnlineShop.Tests.Mocks
             {
                 var garmentService = new Mock<IGarmentService>();
 
-                var models = new List<GarmentViewModel>();
+                
 
                
 

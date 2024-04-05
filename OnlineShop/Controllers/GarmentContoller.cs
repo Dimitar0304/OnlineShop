@@ -27,30 +27,33 @@ namespace OnlineShop.Controllers
         public async Task<IActionResult> All(int currentPage)
         {
             var model = new AllGarmentViewModel();
-
-            int totalRecords = service.GetAllGarmentsAsync().Result.Count;
-            var pageSize = 3;
-            var totalPages = (int)Math.Ceiling(totalRecords / (decimal)pageSize);
-
-            model.CurrentPage = currentPage;
-            model.PageSize = pageSize;
-            model.TotalPages = totalPages;
-
-
-            var garments = service.GetAllGarmentsAsync().Result
-                .ToList();
-
-            garments = garments.Skip((currentPage - 1) * (pageSize))
-                .Take(pageSize)
-                .ToList();
-
-            model.Garments = garments;
-
-            if (garments.Count != null && garments.Count > 0)
+            if (service.GetAllGarmentsAsync().Result.Count > 0)
             {
 
-                return View(model);
+                int totalRecords = service.GetAllGarmentsAsync().Result.Count;
+                var pageSize = 3;
+                var totalPages = (int)Math.Ceiling(totalRecords / (decimal)pageSize);
+
+                model.CurrentPage = currentPage;
+                model.PageSize = pageSize;
+                model.TotalPages = totalPages;
+
+
+                var garments = service.GetAllGarmentsAsync().Result
+                    .ToList();
+
+                garments = garments.Skip((currentPage - 1) * (pageSize))
+                    .Take(pageSize)
+                    .ToList();
+                model.Garments = garments;
+                if (garments.Count != null && garments.Count > 0)
+                {
+
+                    return View(model);
+                }
             }
+
+
             return RedirectToAction("Index", "Home");
 
         }
@@ -162,10 +165,10 @@ namespace OnlineShop.Controllers
             //{
             //    return BadRequest();
             //}
-            model.Brands =await service.GetBrands();
+            model.Brands = await service.GetBrands();
             model.Types = await service.GetTypes();
 
-            return View("Edit",model);
+            return View("Edit", model);
         }
         [HttpGet]
         public async Task<IActionResult> Edit(GarmentViewModel model)
@@ -187,7 +190,7 @@ namespace OnlineShop.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            if (await service.GetByIdAsync(id)==null)
+            if (await service.GetByIdAsync(id) == null)
             {
                 return BadRequest();
             }
