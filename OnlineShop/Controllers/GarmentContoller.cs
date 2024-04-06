@@ -7,6 +7,7 @@ using OnlineShop.Core.Models.Garment;
 using OnlineShop.Core.Models.Order;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Extentions;
+using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 using Syncfusion.EJ2.Linq;
@@ -107,7 +108,7 @@ namespace OnlineShop.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
 
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> PickSize(int id)
         {
             var model = new GarmentSizeViewModel();
@@ -118,11 +119,32 @@ namespace OnlineShop.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> AddToCart(OrderDetailModel model)
+        public async Task<IActionResult> AddToCart(int sizeId, int garmentId)
         {
+            if (sizeId == null || garmentId == null)
+            {
 
-            return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home");
+            }
+           var model = await garmentSizeService.AddGarmentToCart(sizeId, garmentId);
 
+           var viewModel = new GarmentSizeViewModel()
+           {
+               GarmentId = model.GarmentId,
+               SizeName = model.Size.Name
+           };
+
+            var notFinalizedOrder = new OrderDetailModel()
+            {
+                UserId = ClaimsPrincipalExtentions.Id(this.User),
+                UserName = User.Identity.Name,
+                
+                Garments = new List<GarmentSizeViewModel>()
+               {
+                   viewModel
+               }
+           };
+            return RedirectToAction("Cart", "Order",notFinalizedOrder);
         }
 
         [HttpPost]

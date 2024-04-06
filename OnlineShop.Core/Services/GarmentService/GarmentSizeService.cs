@@ -22,6 +22,23 @@ namespace OnlineShop.Core.Services.GarmentService
             repository = _repository;
         }
 
+        public async Task<GarmentSize> AddGarmentToCart(int sizeId, int garmentId)
+        {
+            //geting model
+            var model = await repository.All<GarmentSize>()
+                .FirstOrDefaultAsync(g=>g.GarmentId==garmentId
+                &&g.SizeId==sizeId);
+
+            //remove 1 garment of this garment with this size
+            model.Quantity--;
+            //Update to Db with removed quantity
+            await repository.UpdateAsync(model);
+            await repository.SaveChangesAsync();
+
+            return model;
+
+        }
+
         /// <summary>
         /// Method for add garmentSize model with each size in set
         /// </summary>

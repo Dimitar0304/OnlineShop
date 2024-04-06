@@ -23,6 +23,8 @@ namespace OnlineShop.Models.Garment
         /// </summary>
         public string SizeName { get; set; } = null!;
 
-        
+        public decimal Price { get; set; }
+
+
     }
 }
