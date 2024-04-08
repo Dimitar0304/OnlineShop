@@ -1,28 +1,23 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Protocol;
-using NuGet.Protocol.Core.Types;
 using OnlineShop.Infrastructure.Data.Models;
 
-namespace OnlineShop.Controllers
+namespace OnlineShop.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-   
-    public class UserController : Controller
+    public class RoleController : BaseAdminController
     {
         private readonly UserManager<User> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
-        public UserController(UserManager<User> _userManager, RoleManager<IdentityRole> _roleManager)
+        public RoleController(UserManager<User> _userManager, RoleManager<IdentityRole> _roleManager)
         {
             userManager = _userManager;
             roleManager = _roleManager;
         }
 
-       
-        public async Task<IActionResult> AddUserToRole(string email,string roleName)
+
+        public async Task<IActionResult> AddUserToRole(string email, string roleName)
         {
-            
+
 
             var user = await userManager.FindByEmailAsync(email);
             if (user != null)
@@ -32,7 +27,7 @@ namespace OnlineShop.Controllers
 
                     var roles = roleManager.Roles.ToList();
                     var role = roles.FirstOrDefault(r => r.Name == roleName);
-                    if (role!=null)
+                    if (role != null)
                     {
                         await userManager.AddToRoleAsync(user, roleName);
 
@@ -52,9 +47,7 @@ namespace OnlineShop.Controllers
             {
                 return BadRequest();
             }
-            
-        }
 
-        
+        }
     }
 }

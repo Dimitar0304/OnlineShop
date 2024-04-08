@@ -8,6 +8,7 @@ using OnlineShop.Infrastructure.Data.Models;
 
 namespace OnlineShop.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : Controller
     {
         private readonly SignInManager<User> signManager;

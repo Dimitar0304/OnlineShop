@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Garment\Edit.cshtml" />
+    <Content Remove="Areas\Admin\Views\Garment\Edit.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,15 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Garment\Edit.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Views\Garment\Edit.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Views\Garment\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Garment\Edit.cshtml" />
   </ItemGroup>
 
 </Project>

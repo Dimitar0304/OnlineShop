@@ -15,8 +15,8 @@ using X.PagedList;
 
 namespace OnlineShop.Controllers
 {
-    [Authorize]
-    public class GarmentController : Controller
+    
+    public class GarmentController : BaseController
     {
         private readonly IGarmentService service;
         private readonly IGarmentSizeService garmentSizeService;
@@ -26,6 +26,11 @@ namespace OnlineShop.Controllers
             garmentSizeService = _garmentSizeService;
         }
 
+        /// <summary>
+        /// Method for get all garments
+        /// </summary>
+        /// <param name="currentPage"></param>
+        /// <returns></returns>
         public async Task<IActionResult> All(int currentPage)
         {
             var model = new AllGarmentViewModel();
@@ -59,55 +64,12 @@ namespace OnlineShop.Controllers
             return RedirectToAction("Index", "Home");
 
         }
-        [HttpGet]
-        // [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Add()
-        {
-            var model = new GarmentViewModel();
-            model.Brands = await service.GetBrands();
-            model.Types = await service.GetTypes();
-            return View(model);
-        }
-        [HttpPost]
-        //[Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Add(GarmentViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-
-                model.Brands = await service.GetBrands();
-                model.Types = await service.GetTypes();
-                return View(model);
-            }
-            if (await service.IsGarmentExist(model))
-            {
-                ModelState.AddModelError("Error", "");
-                model.Brands = await service.GetBrands();
-                model.Types = await service.GetTypes();
-                return View(model);
-            }
-
-            else
-            {
-                //add garment to db
-                await service.AddGarmentToDbAsync(model);
-
-                //Get identifier of last added garment
-                var lastAddedGarmentId = service.GetAllGarmentsAsync().Result.Last().Id;
-
-                //Add garmentSize models with last added garment in db
-                await garmentSizeService.AddGarmentWithSizes(lastAddedGarmentId);
-                //return view
-                return RedirectToAction("Index", "Home");
-            }
-        }
-
+        
         /// <summary>
-        /// Action for add garment with chosen size to db
+        /// Method for pick size to current garment
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-
         [HttpPost]
         public async Task<IActionResult> PickSize(int id)
         {
@@ -118,6 +80,13 @@ namespace OnlineShop.Controllers
             return View(model);
 
         }
+
+        /// <summary>
+        /// Method for add current garmentSize model to user cart
+        /// </summary>
+        /// <param name="sizeId"></param>
+        /// <param name="garmentId"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> AddToCart(int sizeId, int garmentId)
         {
@@ -147,6 +116,13 @@ namespace OnlineShop.Controllers
             return RedirectToAction("Cart", "Order",notFinalizedOrder);
         }
 
+
+        /// <summary>
+        /// Method for show details to current garment
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="information"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Details(int id, string information)
         {
@@ -176,60 +152,6 @@ namespace OnlineShop.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id)
-        {
-            if (await service.GetByIdAsync(id) == null)
-            {
-                return BadRequest();
-            }
-            GarmentViewModel model = await service.GetByIdAsync(id);
-            //if (information != model.GetInformation())
-            //{
-            //    return BadRequest();
-            //}
-            model.Brands = await service.GetBrands();
-            model.Types = await service.GetTypes();
-
-            return View("Edit", model);
-        }
-        [HttpGet]
-        public async Task<IActionResult> Edit(GarmentViewModel model)
-        {
-            if (model == null)
-            {
-                return BadRequest();
-            }
-            if (ModelState.IsValid == false)
-            {
-                model.Brands = await service.GetBrands();
-                model.Types = await service.GetTypes();
-                return View(model);
-            }
-            await service.UpdateGarmentToDbAsync(model);
-            return RedirectToAction("All", "Garment");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Delete(int id)
-        {
-            if (await service.GetByIdAsync(id) == null)
-            {
-                return BadRequest();
-            }
-            await service.SoftDelete(id);
-            var models = await service.GetAllGarmentsAsync();
-            return RedirectToAction("All", models);
-        }
-        public async Task<IActionResult> DeleteFromDb(int id)
-        {
-            if (await service.GetByIdAsync(id) == null)
-            {
-                return BadRequest();
-            }
-            await service.DeleteGarmentToDbAsync(id);
-            var models = await service.GetAllGarmentsAsync();
-            return RedirectToAction("All", models);
-        }
+      
     }
 }

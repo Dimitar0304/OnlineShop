@@ -6,11 +6,11 @@ using OnlineShop.Core.Services.Contracts;
 
 namespace OnlineShop.Controllers
 {
-    [Authorize]
+    
     /// <summary>
     /// Shoe contoller class
     /// </summary>
-    public class ShoeController : Controller
+    public class ShoeController : BaseController
     {
         /// <summary>
         /// Inject service using dependency injection
@@ -62,49 +62,11 @@ namespace OnlineShop.Controllers
         }
 
         /// <summary>
-        /// Action for add shoe to db
+        /// Method for show details to current shoe
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="information"></param>
         /// <returns></returns>
-        [HttpGet]
-        public IActionResult Add()
-        {
-            var model = new ShoeAddViewModel();
-            model.Brands = service.GetBrands();
-            model.Types = service.GetTypes();
-            return View(model);
-        }
-        [HttpPost]
-        public async Task<IActionResult> Add(ShoeAddViewModel model)
-        {
-
-            if (!ModelState.IsValid)
-            {
-                model = new ShoeAddViewModel();
-                model.Brands = service.GetBrands();
-                model.Types = service.GetTypes();
-                return View(model);
-            }
-            if (service.ShoeIsExistInDb(model))
-            {
-                ModelState.AddModelError("Error", "");
-            }
-            else
-            {
-                //add shoe to db
-                await service.AddShoeToDbAsync(model);
-
-                //get last shoe added identitfier
-                var shoeId = service.GetAllShoeAsync().Result.Last().Id;
-
-                //add for each  size shoesize model in db
-                await shoeSizeService.AddShoeSizeModels(shoeId);
-
-                //return to all shoes view
-                return RedirectToAction("All");
-            }
-            return RedirectToAction("All");
-        }
-
         public async Task<IActionResult> Details(int id, string information)
         {
             if (await service.GetByIdAsync(id) == null)
@@ -129,26 +91,5 @@ namespace OnlineShop.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Delete(int id)
-        {
-            if (await service.GetByIdAsync(id) == null)
-            {
-                return BadRequest();
-            }
-            await service.SoftDelete(id);
-            var models = await service.GetAllShoeAsync();
-            return RedirectToAction("All", models);
-        }
-
-        public async Task<IActionResult> DeleteFromDb(int id)
-        {
-            if (await service.GetByIdAsync(id) == null)
-            {
-                return BadRequest();
-            }
-           await service.DeleteShoeToDbAsync(id);
-            var models = await service.GetAllShoeAsync();
-            return RedirectToAction("All", models);
-        }
     }
 }

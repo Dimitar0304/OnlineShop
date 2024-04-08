@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Models.AllClothes;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Services.Contracts;
 
 namespace OnlineShop.Controllers
 {
-    public class AllClothesController : Controller
+    
+    public class AllClothesController : BaseController
     {
         private readonly IGarmentService garmentService;
         private readonly IShoeService shoeService;

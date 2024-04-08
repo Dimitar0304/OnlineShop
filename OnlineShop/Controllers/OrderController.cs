@@ -4,7 +4,7 @@ using OnlineShop.Extentions;
 
 namespace OnlineShop.Controllers
 {
-    public class OrderController : Controller
+    public class OrderController : BaseController
     {
         private readonly IOrderService orderService;
         public OrderController(IOrderService _orderService)

@@ -6,11 +6,10 @@ using OnlineShop.Core.Services.Contracts;
 
 namespace OnlineShop.Controllers
 {
-    [Authorize]
     /// <summary>
     /// Accessory controller
     /// </summary>
-    public class AccessoryController : Controller
+    public class AccessoryController : BaseController
     {
         /// <summary>
         /// Add service to controller injecting it with dependency injection
@@ -20,52 +19,6 @@ namespace OnlineShop.Controllers
         {
             service = _service;
         }
-
-        /// <summary>
-        /// Method for add accessory
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public async Task<IActionResult> Add()
-        {
-            var model = new AccessoryAddViewModel();
-
-            model.Brands = await service.GetBrands();
-
-            return View(model);
-        }
-
-        /// <summary>
-        /// Post add method for add accessory in db
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<IActionResult> Add(AccessoryAddViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                model = new AccessoryAddViewModel();
-
-                model.Brands = await service.GetBrands();
-                return View(model);
-            }
-            if (service.AccessoryIsExistInDb(model))
-            {
-
-                ModelState.AddModelError("Error", "");
-                model.Brands = await service.GetBrands();
-                return View(model);
-            }
-            else
-            {
-                await service.AddAccessoryToDbAsync(model);
-                var models = await service.GetAllAccessoryAsync();
-                return RedirectToAction("All",models);
-            }
-            
-        }
-
         /// <summary>
         /// Method for get all accessories
         /// </summary>
@@ -77,6 +30,12 @@ namespace OnlineShop.Controllers
             return View(models);
         }
 
+        /// <summary>
+        /// Method for get details to current accessory
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="information"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int id, string information)
         {
             if (await service.GetByIdAsync(id)==null)
@@ -96,28 +55,6 @@ namespace OnlineShop.Controllers
                 return BadRequest();
             }
             return View(model);
-        }
-
-        public async Task<IActionResult> Delete(int id)
-        {
-            if (await service.GetByIdAsync(id)==null)
-            {
-                return BadRequest();
-            }
-            await service.SoftDelete(id);
-            var models = await service.GetAllAccessoryAsync();
-            return RedirectToAction("All",models);
-        }
-
-        public async Task<IActionResult> DeleteFromDb(int id)
-        {
-            if (await service.GetByIdAsync(id) == null)
-            {
-                return BadRequest();
-            }
-            await service.DeleteAccessoryToDbAsync(id);
-            var models = await service.GetAllAccessoryAsync();
-            return RedirectToAction("All", models);
         }
     }
 }
