@@ -534,4 +534,4 @@ C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\xunit.abs
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\xunit.assert.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\xunit.core.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\xunit.execution.dotnet.dll
-C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\MainAdmin\_AdminLayout.cshtml.rz.scp.css
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css

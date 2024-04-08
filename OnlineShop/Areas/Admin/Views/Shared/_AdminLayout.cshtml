@@ -37,15 +37,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
-                        </li>
+                       
               
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Garment" asp-action="All"data="1">All Garments</a>
-                            </li>
+                        
+
                             <li class="nav-item mx-2">
                                 <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Shoe" asp-action="All">All Shoes</a>
                             </li>
@@ -55,19 +50,17 @@
                             <li class="nav-item mx-2">
                                 <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Brand" asp-action="All">All Brands</a>
                             </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-primary" style="right" asp-area="" asp-controller="Cart" asp-action="MyShoppingCart">My Shoping Cart<span class="badge">7</span></a>
-                            </li>
+                            
 
 
-                        }
+                        
 
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
-        @Html.Partial("_ShowSearchFormPartial")
+        
     </header>
 
     <div class="container">
@@ -85,16 +78,7 @@
         </label>
 
     </footer>
-        <content>
-
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div style="width:fit-content;margin-right:initial" class="alert alert-info">
-                    <strong>Info!</strong> You are authenticated with this username @User.Identity.Name
-                </div>
-
-            }
-        </content>
+        
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

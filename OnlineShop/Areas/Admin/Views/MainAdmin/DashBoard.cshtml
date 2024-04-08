@@ -1,5 +1,55 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
+    ViewBag.Title = "Admin workspace";
 }
+
+<h1 class="text-center text-primary">@ViewBag.Title</h1>
+
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Garments Modifies
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Garment" asp-action="Add">Add</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Garment" asp-action="Edit">Edit</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Garment" asp-action="Delete">Delete</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Garment" asp-action="DeleteFromDb">DeleteFromDb</a></li>
+    </ul>
+</div>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Shoe Modifies
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Shoe" asp-action="Add">Add</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Shoe" asp-action="Edit">Edit</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Shoe" asp-action="Delete">Delete</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Shoe" asp-action="DeleteFromDb">DeleteFromDb</a></li>
+    </ul>
+</div>
+
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Accessory Modifies
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Accessory" asp-action="Add">Add</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Accessory" asp-action="Edit">Edit</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Accessory" asp-action="Delete">Delete</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Accessory" asp-action="DeleteFromDb">DeleteFromDb</a></li>
+    </ul>
+</div>
+
+
