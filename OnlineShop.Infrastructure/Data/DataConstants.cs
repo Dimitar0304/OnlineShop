@@ -187,5 +187,11 @@
             public const int LastNameMinLenght = 3;
             public const int LastNameMaxLenght = 50;
         }
+
+        public static class RoleConstants
+        {
+            public const string AdminRoleName = "Admin";
+            public const string UserRoleName = "User";
+        }
     }
 }
