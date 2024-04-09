@@ -13,7 +13,7 @@ Just download or clone the repository and run it in Visual Studio on your local 
 Features
 </h3>
 Common
-* Register normal user/n
+* Register normal user <br>
 * Login
 * Logout
 * Search from Garment,Shoe and Accessory tables with search bar-registered users only
