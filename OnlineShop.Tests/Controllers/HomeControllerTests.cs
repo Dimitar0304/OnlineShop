@@ -16,11 +16,11 @@ namespace OnlineShop.Tests.Controllers
             var controller = new HomeController(null);
 
             //act
-            ViewResult result = controller.RenderSearchBar() as ViewResult;
+            ActionResult result = controller.RenderSearchBar() ;
 
             //assert 
 
-            Assert.AreEqual(result.ViewName, "RenderSearchBar");
+            Assert.AreEqual(result.GetType().Name, "PartialViewResult");
         }
     }
 }

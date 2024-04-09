@@ -1,4 +1,5 @@
 ﻿using Moq;
+using OnlineShop.Core.Models.Accessory;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Services.Contracts;
 
@@ -12,6 +13,7 @@ namespace OnlineShop.Tests.Mocks
             {
                 var accessoryService = new Mock<IAccessoryService>();
 
+               
 
 
                 return accessoryService.Object;

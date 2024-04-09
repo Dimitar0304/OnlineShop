@@ -15,8 +15,13 @@ namespace OnlineShop.Tests.Mocks
             get
             {
                 var dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
+                    
                     .UseInMemoryDatabase(Guid.NewGuid().ToString())
-                    .Options;
+                    .Options
+                    ;
+                
+                   
+                
                 return new ApplicationDbContext(dbContextOptions);
             }
         }
