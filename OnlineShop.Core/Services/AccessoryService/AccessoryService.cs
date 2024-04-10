@@ -187,6 +187,7 @@ namespace OnlineShop.Core.Services.AccessoryService
                 accessory.BrandId = model.BrandId;
             }
             await repository.UpdateAsync<Accessory>(accessory);
+            await repository.SaveChangesAsync();
 
 
 

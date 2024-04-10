@@ -57,7 +57,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             {
                 await service.AddAccessoryToDbAsync(model);
                 var models = await service.GetAllAccessoryAsync();
-                return RedirectToAction("All", models);
+                return RedirectToAction("All","Accessory", new { area = "" });
             }
 
         }
@@ -115,7 +115,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                 return View(model);
             }
             await service.UpdateAccessoryToDbAsync(model);
-            return RedirectToAction("All", "Garment");
+            return RedirectToAction("All", "Accessory", new {area=""});
         }
     }
 }

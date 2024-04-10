@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Shoe;
 using OnlineShop.Core.Services.Contracts;
 
@@ -56,9 +57,9 @@ namespace OnlineShop.Areas.Admin.Controllers
                 await shoeSizeService.AddShoeSizeModels(shoeId);
 
                 //return to all shoes view
-                return RedirectToAction("All");
+                return RedirectToAction("All","Shoe", new { area = "" });
             }
-            return RedirectToAction("All");
+            return RedirectToAction("All","Shoe", new { area = "" });
         }
 
         public async Task<IActionResult> Delete(int id)
@@ -81,6 +82,41 @@ namespace OnlineShop.Areas.Admin.Controllers
             await service.DeleteShoeToDbAsync(id);
             var models = await service.GetAllShoeAsync();
             return RedirectToAction("All", models);
+        }
+
+        public async Task<IActionResult> Edit(int id, string information)
+        {
+            if (await service.GetByIdAsync(id) == null)
+            {
+                return BadRequest();
+            }
+            var model = await service.GetByIdAsync(id);
+            if (information != model.GetInformation())
+            {
+                return BadRequest();
+            }
+            model.Brands = service.GetBrands();
+            model.Types = service.GetTypes();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(ShoeAddViewModel model)
+        {
+            if (model == null)
+            {
+                return BadRequest();
+            }
+            if (ModelState.IsValid == false)
+            {
+                model.Brands = service.GetBrands();
+                model.Types = service.GetTypes();
+
+                return View(model);
+            }
+            await service.UpdateShoeToDbAsync(model);
+            return RedirectToAction("All", "Shoe", new {area=""});
         }
     }
 }

@@ -52,7 +52,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                 //Add garmentSize models with last added garment in db
                 await garmentSizeService.AddGarmentWithSizes(lastAddedGarmentId);
                 //return view
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("All", "Garment", new { area = "" });
             }
         }
 
@@ -88,7 +88,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                 return View(model);
             }
             await service.UpdateGarmentToDbAsync(model);
-            return RedirectToAction("All", "Garment");
+            return RedirectToAction("All", "Garment",new {area= ""});
         }
 
         [HttpPost]
