@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
@@ -55,24 +56,25 @@ namespace OnlineShop.Areas.Admin.Controllers
             }
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id)
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id,string information)
         {
             if (await service.GetByIdAsync(id) == null)
             {
                 return BadRequest();
             }
             GarmentViewModel model = await service.GetByIdAsync(id);
-            //if (information != model.GetInformation())
-            //{
-            //    return BadRequest();
-            //}
+            
+            if (information != model.GetInformation())
+            {
+                return BadRequest();
+            }
             model.Brands = await service.GetBrands();
             model.Types = await service.GetTypes();
 
             return View("Edit", model);
         }
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> Edit(GarmentViewModel model)
         {
             if (model == null)

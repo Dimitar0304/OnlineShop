@@ -1,4 +1,5 @@
-﻿using OnlineShop.Infrastructure;
+﻿using OnlineShop.Core.Services.Contracts;
+using OnlineShop.Infrastructure;
 using OnlineShop.Models.Brand;
 using OnlineShop.Validations;
 using System;
@@ -13,7 +14,7 @@ namespace OnlineShop.Core.Models.Accessory
     /// <summary>
     /// Accessory all view model
     /// </summary>
-    public class AccessoryAddViewModel
+    public class AccessoryAddViewModel:IProductModel
     {
         /// <summary>
         /// accessory identifier

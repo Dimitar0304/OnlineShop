@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Areas\Admin\Views\Garment\Edit.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Habanero" Version="3.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.27" />
@@ -36,10 +32,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Attributes\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Areas\Admin\Views\Garment\Edit.cshtml" />
   </ItemGroup>
 
 </Project>

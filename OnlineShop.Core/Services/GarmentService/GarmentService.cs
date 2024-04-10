@@ -100,6 +100,7 @@ namespace OnlineShop.Services.GarmentService
 
         public async Task<GarmentViewModel> GetByIdAsync(int id)
         {
+            
             var g = await repository.All<Garment>().Select(g => new GarmentViewModel()
             {
                 Id = id,

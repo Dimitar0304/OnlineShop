@@ -104,10 +104,10 @@ app.UseEndpoints(endpoints =>
      pattern: "/Accessory/Details/{id}/{information}",
      defaults: new { Controller = "Accessory", Action = "Details" });
 
-    endpoints.MapControllerRoute(
-     name: "Garment Edit",
-     pattern: "/Garment/Edit/{id}/{information}",
-     defaults: new { Controller = "Garment", Action = "Edit" });
+    //endpoints.MapControllerRoute(
+    // name: "Garment Edit",
+    // pattern: "/Garment/Edit/{id}/{information}",
+    // defaults: new { Controller = "Garment", Action = "Edit" });
 
     endpoints.MapControllerRoute(
            name: "areas",

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Accessory;
 using OnlineShop.Core.Services.Contracts;
+using OnlineShop.Models.Garment;
 
 namespace OnlineShop.Areas.Admin.Controllers
 {
@@ -82,5 +84,38 @@ namespace OnlineShop.Areas.Admin.Controllers
             return RedirectToAction("All", models);
         }
 
+        public async Task<IActionResult> Edit(int id, string information)
+        {
+            if (await service.GetByIdAsync(id) == null)
+            {
+                return BadRequest();
+            }
+            AccessoryAddViewModel model = await service.GetByIdAsync(id);
+
+            if (information != model.GetInformation())
+            {
+                return BadRequest();
+            }
+            model.Brands = await service.GetBrands();
+           
+
+            return View("Edit", model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(AccessoryAddViewModel model)
+        {
+            if (model == null)
+            {
+                return BadRequest();
+            }
+            if (ModelState.IsValid == false)
+            {
+                model.Brands = await service.GetBrands();
+                
+                return View(model);
+            }
+            await service.UpdateAccessoryToDbAsync(model);
+            return RedirectToAction("All", "Garment");
+        }
     }
 }

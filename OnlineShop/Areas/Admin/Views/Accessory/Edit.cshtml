@@ -1,6 +1,6 @@
-﻿@model GarmentViewModel
+﻿@model AccessoryAddViewModel
 @{
-    ViewBag.Title = "Edit Garment";
+    ViewBag.Title = "Edit Accessory";
 }
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
@@ -9,7 +9,7 @@
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
         <form asp-action="Edit" method="post">
             <div class="mb-3">
-                <label asp-for="@Model.Name" class="form-label-add-edit">Garment Model</label>
+                <label asp-for="@Model.Name" class="form-label-add-edit">Accessory Model</label>
                 <input asp-for="@Model.Name" class="form-control" aria-required="true" />
                 <span asp-validation-for="@Model.Name" class="text-danger"></span>
             </div>
@@ -19,9 +19,9 @@
                 <span asp-validation-for="@Model.Price" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="@Model.Color" class="form-label-add-edit">Color</label>
-                <input asp-for="@Model.Color" class="form-control" aria-required="true" rows="5">
-                <span asp-validation-for="@Model.Color" class="text-danger"></span>
+                <label asp-for="@Model.Type" class="form-label-add-edit">Color</label>
+                <input asp-for="@Model.Type" class="form-control" aria-required="true" rows="5">
+                <span asp-validation-for="@Model.Type" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="@Model.ImageUrl" class="form-label-add-edit">Image</label>
@@ -40,19 +40,9 @@
                 </select>
                 <span asp-validation-for="@Model.BrandId" class="text-danger"></span>
             </div>
+            
             <div class="mb-3">
-                <label asp-for="@Model.TypeId" class="form-label-add-edit">Select Type</label>
-                <select asp-for="@Model.TypeId" class="form-control" aria-required="true">
-                    <option disabled selected value="">Select Type...</option>
-                    @foreach (var type in Model.Types)
-                    {
-                        <option value="@type.Id">@type.Name</option>
-                    }
-                </select>
-                <span asp-validation-for="@Model.TypeId" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <input class="btn btn-outline-danger mb-2 w-100 p-3 fw-bold" type="submit" value="Edit Garment" />
+                <input class="btn btn-outline-danger mb-2 w-100 p-3 fw-bold" type="submit" value="Edit Accessory" />
             </div>
         </form>
     </div>
