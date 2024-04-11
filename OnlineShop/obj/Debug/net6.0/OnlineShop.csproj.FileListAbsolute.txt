@@ -535,3 +535,10 @@ C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\xunit.ass
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\xunit.core.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\xunit.execution.dotnet.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

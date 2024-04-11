@@ -188,10 +188,12 @@
             public const int LastNameMaxLenght = 50;
         }
 
-        public static class RoleConstants
+        public static class AdminConstants
         {
             public const string AdminRoleName = "Admin";
-            public const string UserRoleName = "User";
+            public const string AreaName = "Admin";
+
+
         }
     }
 }

@@ -5,8 +5,8 @@ using OnlineShop.Infrastructure.Data.Models;
 
 namespace OnlineShop.Areas.Admin.Controllers
 {
-    [Area(DataConstants.RoleConstants.AdminRoleName)]
-    [Authorize(Roles ="Admin")]
+    [Area(DataConstants.AdminConstants.AdminRoleName)]
+    [Authorize(Roles =DataConstants.AdminConstants.AreaName)]
     public  class BaseAdminController:Controller
     {
     }

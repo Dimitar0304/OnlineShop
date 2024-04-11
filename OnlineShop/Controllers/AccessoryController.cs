@@ -3,12 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Accessory;
 using OnlineShop.Core.Services.Contracts;
+using SendGrid.Helpers.Errors.Model;
+using System.Linq.Expressions;
+using System.Net;
+using System.Web.Mvc;
 
 namespace OnlineShop.Controllers
 {
     /// <summary>
     /// Accessory controller
     /// </summary>
+
     public class AccessoryController : BaseController
     {
         /// <summary>
@@ -23,6 +28,7 @@ namespace OnlineShop.Controllers
         /// Method for get all accessories
         /// </summary>
         /// <returns></returns>
+
         public async Task<IActionResult> All()
         {
             var models = await service.GetAllAccessoryAsync();
@@ -36,25 +42,41 @@ namespace OnlineShop.Controllers
         /// <param name="id"></param>
         /// <param name="information"></param>
         /// <returns></returns>
+        [HandleError]
         public async Task<IActionResult> Details(int id, string information)
         {
-            if (await service.GetByIdAsync(id)==null)
+            try
             {
-                return BadRequest();
+
+
+                if (await service.GetByIdAsync(id) == null)
+                {
+                    throw new BadRequestException("");
+                }
+                var entity = await service.GetByIdAsync(id);
+                var model = new AccessoryDetailsViewModel()
+                {
+                    Name = entity.Name,
+                    Price = entity.Price,
+                    BrandName = service.GetBrands().Result.FirstOrDefault(b => b.Id == entity.BrandId).Name,
+                    ImageUrl = entity.ImageUrl
+                };
+                if (information != model.GetInformation())
+                {
+                    throw new BadRequestException("");
+                }
+
+                return View(model);
             }
-            var entity = await service.GetByIdAsync(id);
-            var model = new AccessoryDetailsViewModel()
+            catch (BadRequestException ex)
             {
-                Name = entity.Name,
-                Price = entity.Price,
-                BrandName= service.GetBrands().Result.FirstOrDefault(b=>b.Id==entity.BrandId).Name,
-                ImageUrl = entity.ImageUrl
-            };
-            if (information!=model.GetInformation())
-            {
-                return BadRequest();
+                
+                return RedirectToAction("BadRequest", "Error");
             }
-            return View(model);
+            catch(NotFoundException nfE)
+            {
+                return RedirectToAction("NotFound", "Error");
+            }
         }
     }
 }

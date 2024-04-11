@@ -20,6 +20,9 @@ builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
 
 
+
+
+
 //Adding session options
 builder.Services.ConfigureApplicationCookie(o =>
 {
@@ -70,6 +73,7 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

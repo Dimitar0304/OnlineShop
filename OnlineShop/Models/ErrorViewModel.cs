@@ -1,6 +1,3 @@
-using OnlineShop.Extentions;
-using System.Security.Claims;
-
 namespace OnlineShop.Models
 {
     public class ErrorViewModel

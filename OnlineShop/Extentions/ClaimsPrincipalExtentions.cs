@@ -11,7 +11,7 @@ namespace OnlineShop.Extentions
         }
         public static bool IsAdmin(this ClaimsPrincipal user)
         {
-            return user.IsInRole(DataConstants.RoleConstants.AdminRoleName);
+            return user.IsInRole(DataConstants.AdminConstants.AdminRoleName);
         }
 
     }
