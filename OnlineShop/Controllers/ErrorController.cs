@@ -6,14 +6,25 @@ namespace OnlineShop.Controllers
     [AllowAnonymous]
     public class ErrorController : Controller
     {
-        public IActionResult NotFound()
+        [Route("Error/{statusCode}")]
+        public IActionResult HttpStatusCodeHandler(int statusCode)
         {
-            return View();
-        }
+            
+            switch (statusCode)
+            {
+                case 404:
+                    ViewBag.ErrorMessage = "Sorry, the resource you requested could not be found.";
+                    break;
 
-        public IActionResult BadRequest()
-        {
-            return View();
+                case 500:
+                        ViewBag.ErrorMessage = "Bad Request";
+                    break;
+                
+                default:
+                    ViewBag.ErrorMessage = "Oops! Something went wrong.";
+                    break;
+            }
+            return View("Error");
         }
     }
 }

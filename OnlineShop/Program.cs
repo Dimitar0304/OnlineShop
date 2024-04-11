@@ -63,8 +63,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
 
-    //use status code page
-    app.UseStatusCodePages();
+    app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
 }
 else
