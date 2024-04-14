@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Extentions;
 using OnlineShop.Models;
 using System.Diagnostics;
 
@@ -15,6 +16,10 @@ namespace OnlineShop.Controllers
 
         public IActionResult Index()
         {
+            if (User.IsAdmin())
+            {
+                return RedirectToAction("Dashboard","MainAdmin",new {area = "Admin"});
+            }
             return View();
         }
 

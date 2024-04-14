@@ -45,7 +45,7 @@ namespace OnlineShop.Tests.Web.Controllers
         }
 
         [Test]
-        public async Task AllActionShoudReturnAllView()
+        public async Task AllActionShoudReturnAllAccessories()
         {
             //Arrange
             var controller = new AccessoryController(accessoryService);
@@ -56,7 +56,8 @@ namespace OnlineShop.Tests.Web.Controllers
 
             //Assert
             Assert.AreEqual(accessories.Count(), 1);
-            Assert.AreEqual(result.GetType(), typeof(IActionResult));
+            Assert.AreEqual(result.GetType(), typeof(ViewResult));
+            
         }
     }
 }

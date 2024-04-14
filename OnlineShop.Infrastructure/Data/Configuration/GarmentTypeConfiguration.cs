@@ -42,7 +42,12 @@ namespace OnlineShop.Infrastructure.Data.Configuration
                  {
                      Id = 6,
                      Name = "Coat"
-                 });
+                 },
+            new GarmentType()
+            {
+                Id = 7,
+                Name = "Sweatshirts"
+            });
         }
     }
 }

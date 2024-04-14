@@ -70,7 +70,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             }
             await service.SoftDelete(id);
             var models = await service.GetAllShoeAsync();
-            return RedirectToAction("All", models);
+            return RedirectToAction("All", "Shoe", new {area=""});
         }
 
         public async Task<IActionResult> DeleteFromDb(int id)

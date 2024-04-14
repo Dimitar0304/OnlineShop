@@ -109,18 +109,22 @@ namespace OnlineShop.Core.Services.ShoeService
         /// <returns></returns>
         public async Task<ShoeAddViewModel> GetByIdAsync(int id)
         {
-            var s = await repository.All<Shoe>().Select(s => new ShoeAddViewModel()
-            {
-                Id = id,
-                Name = s.Model,
-                TypeId = s.TypeId,
-                BrandId = s.BrandId,
-                Price = s.Price,
-                Color = s.Color,
-                BrandName = s.Brand.Name,
+            var allShoes = await repository.All<Shoe>().ToListAsync();
+            var s = allShoes
+                .Where(s=>s.Id==id)
+                .Select(s => new ShoeAddViewModel()
+                {
+                    Id = id,
+                    BrandName = s.Brand.Name,
+                    ImageUrl = s.ImageUrl,
+                    Color = s.Color,
+                    Name = s.Model,
+                    Price = s.Price,
+                    BrandId = s.BrandId
 
-            }).Where(s => s.Id == id)
-           .FirstAsync();
+                }).First()
+                ;
+                
             return s;
         }
 
