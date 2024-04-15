@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Accessory;
 using OnlineShop.Core.Services.Contracts;
+using OnlineShop.Models.Garment;
 using SendGrid.Helpers.Errors.Model;
 using System.Linq.Expressions;
 using System.Net;
@@ -29,11 +30,37 @@ namespace OnlineShop.Controllers
         /// </summary>
         /// <returns></returns>
 
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(int currentPage)
         {
-            var models = await service.GetAllAccessoryAsync();
+            var model = new AllAccessoryViewModel();
+            if (service.GetAllAccessoryAsync().Result.Count > 0)
+            {
 
-            return View(models);
+                int totalRecords = service.GetAllAccessoryAsync().Result.Count;
+                var pageSize = 3;
+                var totalPages = (int)Math.Ceiling(totalRecords / (decimal)pageSize);
+
+                model.CurrentPage = currentPage;
+                model.PageSize = pageSize;
+                model.TotalPages = totalPages;
+
+
+                var accessories = service.GetAllAccessoryAsync().Result
+                    .ToList();
+
+                accessories = accessories.Skip((currentPage - 1) * (pageSize))
+                    .Take(pageSize)
+                    .ToList();
+                model.Accessories = accessories;
+                if (accessories.Count != null && accessories.Count > 0)
+                {
+
+                    return View(model);
+                }
+            }
+
+
+            return RedirectToAction("Index", "Home");
         }
 
         /// <summary>

@@ -1,38 +1,38 @@
-﻿@model List<AccessoryAllViewModel>
+﻿@model AllAccessoryViewModel
 @{
 }
 <head>
-<title>@ViewBag.Title</title>
-<style>
-    .card {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-        margin: 10px;
-        width: 300px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-    }
-
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    <title>@ViewBag.Title</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
         }
 
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
 
-    .card img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-    }
-</style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <div class="container">
-    @foreach (AccessoryAllViewModel s in Model)
+    @foreach (AccessoryAllViewModel s in Model.Accessories)
     {
         
 
@@ -70,5 +70,43 @@
 
 
 </div>
+        <div>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    @if (Model.CurrentPage > 1)
+                    {
+
+                        <li class="page-item">
+                            <a class="page-link" href="/Accessory/All?currentPage =@Model.CurrentPage-1" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    }
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        if (i == Model.CurrentPage)
+                        {
+
+                            <li xclass="page-item"><a class="page-link active" href="/Accessory/All?currentPage=@i">@i</a></li>
+                        }
+                        else
+                        {
+                            <li xclass="page-item"><a class="page-link " href="/Accessory/All?currentPage=@i">@i</a></li>
+                        }
+                    }
+                    @if (Model.CurrentPage < Model.TotalPages)
+                    {
+
+                        <li class="page-item">
+                            <a class="page-link" href="/Accessory/All?currentPage=@Model.CurrentPage+1" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </nav>
+        </div>
 
 
