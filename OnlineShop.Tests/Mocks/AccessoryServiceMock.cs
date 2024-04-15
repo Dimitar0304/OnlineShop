@@ -35,6 +35,7 @@ namespace OnlineShop.Tests.Mocks
                             BrandName = "TestBrandName",
                             ImageUrl = TestConstants.AccessoryConstants.ImageUrl,
                             Price = TestConstants.AccessoryConstants.Price
+                            
                         }
                     });
 

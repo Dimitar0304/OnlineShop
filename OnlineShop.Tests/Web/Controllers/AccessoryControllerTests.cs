@@ -69,5 +69,21 @@ namespace OnlineShop.Tests.Web.Controllers
             
             
         }
+
+        [Test]
+        public void DetailsMethodWithWrongInformationMustThrowError()
+        {
+            //Arrange
+            var controller = new AccessoryController(accessoryService);
+
+            //Act
+            var result = controller.Details(1, "SomethingWrong").Result as ActionResult;
+
+
+            //Assert
+
+            Assert.AreEqual(result.GetType(), typeof(RedirectToActionResult));
+        }
+
     }
 }

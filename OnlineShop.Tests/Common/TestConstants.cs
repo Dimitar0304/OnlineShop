@@ -18,5 +18,15 @@ namespace OnlineShop.Tests.Common
             public const bool IsActive = true;
             public const int Quantity = 10;
         }
+        public static class GarmentConstants
+        {
+            public const string Name = "GarmentTestName";
+            public const int TypeId = 2;
+            public const int BrandId = 1;
+            public const decimal Price = 49.99m;
+            public const string Color = "Black";
+            public const bool IsActive = true;
+            public const string ImageUrl = "https://i.pinimg.com/564x/80/99/0a/80990a58b79edaf9ae83578d19a39a";
+        }
     }
 }
