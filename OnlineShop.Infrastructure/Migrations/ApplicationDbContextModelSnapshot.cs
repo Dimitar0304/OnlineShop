@@ -51,14 +51,14 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "4a90aeb0-a17d-4c09-9da4-74454c650470",
-                            ConcurrencyStamp = "d2a31a8d-9199-454b-8cd4-04cadf8bc414",
+                            Id = "9377871c-540e-4037-8930-6ccdf6db0eeb",
+                            ConcurrencyStamp = "7c6a2803-3cf1-4c93-a452-e04a32410875",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "01dcc46d-d918-4998-972e-91203f6a5052",
-                            ConcurrencyStamp = "7e901012-e309-453c-ac50-7d701607cecc",
+                            Id = "76862245-fe0d-42fb-b1ab-9e5c02bc3363",
+                            ConcurrencyStamp = "448bbb61-bdbf-4c3b-bdcb-980fe1fa9fc5",
                             Name = "User"
                         });
                 });
@@ -391,6 +391,11 @@ namespace OnlineShop.Infrastructure.Migrations
                         {
                             Id = 6,
                             Name = "Coat"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Sweatshirts"
                         });
                 });
 
