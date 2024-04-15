@@ -52,14 +52,14 @@ namespace OnlineShop.Infrastructure.Migrations
                         new
                         {
                             Id = "f05308b9-55ff-4b20-8e57-9a2b89573525",
-                            ConcurrencyStamp = "344409b6-2e9f-4738-88e0-60c46be1a042",
+                            ConcurrencyStamp = "6a840e70-751f-44a2-bde7-1a9203bd2fbf",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "322a7bf2-124a-4ce7-bdf8-43eba64446b5",
-                            ConcurrencyStamp = "9ab17067-6c4a-4e01-a5a8-4c3a1a7e6b82",
+                            ConcurrencyStamp = "34c0fce0-db77-42b0-995e-7c3570889786",
                             Name = "User",
                             NormalizedName = "User"
                         });
