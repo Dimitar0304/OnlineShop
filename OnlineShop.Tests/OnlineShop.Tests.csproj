@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <Folder Include="Web\Areas\Admin\" />
+    <Folder Include="Web\Areas\Admin\" />
   </ItemGroup>
 
 </Project>

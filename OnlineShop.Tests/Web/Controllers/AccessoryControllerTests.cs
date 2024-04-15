@@ -1,25 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Moq;
 using NUnit.Framework;
 using OnlineShop.Controllers;
-using OnlineShop.Core.Models.Accessory;
-using OnlineShop.Core.Services.AccessoryService;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure;
-using OnlineShop.Infrastructure.Data.Models;
-using OnlineShop.Tests.Common;
 using OnlineShop.Tests.Mocks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace OnlineShop.Tests.Web.Controllers
 {
-    
+
     public class AccessoryControllerTests
     {
         private readonly IAccessoryService accessoryService;
@@ -51,12 +41,32 @@ namespace OnlineShop.Tests.Web.Controllers
             var controller = new AccessoryController(accessoryService);
 
             //Act
-            var result = controller.All().Result;
+            var result = controller.All(1).Result as ViewResult;
             var accessories = accessoryService.GetAllAccessoryAsync().Result;
 
             //Assert
             Assert.AreEqual(accessories.Count(), 1);
             Assert.AreEqual(result.GetType(), typeof(ViewResult));
+            Assert.NotNull(result.Model);
+           
+            
+        }
+
+        [Test]
+        public async Task DetailsActionShoudReturnInfoForCurrentAccessory()
+        {
+            //Arrange
+            var controller = new AccessoryController(accessoryService);
+            
+
+            //Act
+            var result = controller.Details(1, "AccessoryTestNameNike").Result as ViewResult;
+            var attributes = controller.GetType().GetCustomAttributes(true);
+
+            //Assert
+            attributes.Any(a => a.GetType() == typeof(System.Web.Mvc.HandleErrorAttribute));
+            Assert.IsNotNull(result.Model);
+            
             
         }
     }
