@@ -51,14 +51,14 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9377871c-540e-4037-8930-6ccdf6db0eeb",
-                            ConcurrencyStamp = "7c6a2803-3cf1-4c93-a452-e04a32410875",
+                            Id = "24ed2e77-9b16-4ea1-becc-b00215d3a6e3",
+                            ConcurrencyStamp = "ec7f42ac-3663-46fa-85fa-b495dd8e0799",
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = "76862245-fe0d-42fb-b1ab-9e5c02bc3363",
-                            ConcurrencyStamp = "448bbb61-bdbf-4c3b-bdcb-980fe1fa9fc5",
+                            Id = "edd92318-e9f0-4708-af00-1b3c844eebd6",
+                            ConcurrencyStamp = "9c02f7c1-65ac-41bb-8b9d-8594d3975390",
                             Name = "User"
                         });
                 });
@@ -215,6 +215,52 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.ToTable("Accessories");
 
                     b.HasComment("Accessory data entity");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BrandId = 5,
+                            ImageUrl = "https://i.pinimg.com/564x/f5/7f/c3/f57fc31f3e0629c3ef481e8459e99cf0.jpg",
+                            IsActive = true,
+                            Name = "Champion winter hat",
+                            Price = 30.00m,
+                            Quantity = 5,
+                            Type = "Hat"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BrandId = 1,
+                            ImageUrl = "https://i.pinimg.com/564x/90/52/13/905213317d3bed8971d4164f0323fb04.jpg",
+                            IsActive = true,
+                            Name = "Nike cap",
+                            Price = 45.00m,
+                            Quantity = 5,
+                            Type = "Cap"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BrandId = 1,
+                            ImageUrl = "https://i.pinimg.com/564x/60/32/b3/6032b3977c6e276780b9b39d89ac705a.jpg",
+                            IsActive = true,
+                            Name = "Nike Thermo Mask",
+                            Price = 50.00m,
+                            Quantity = 5,
+                            Type = "Mask"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BrandId = 1,
+                            ImageUrl = "https://i.pinimg.com/564x/e9/b7/ce/e9b7ceb439600eb81285255fa00ce157.jpg",
+                            IsActive = true,
+                            Name = "Nike long socks",
+                            Price = 20.00m,
+                            Quantity = 10,
+                            Type = "Socks"
+                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Infrastructure.Data.Models.Brand", b =>
@@ -528,6 +574,19 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.ToTable("Shoes");
 
                     b.HasComment("Shoe data entity");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BrandId = 1,
+                            Color = "Black and White",
+                            ImageUrl = "https://i.pinimg.com/564x/f7/0c/21/f70c21947cf4630a184d9728e7077bdf.jpg",
+                            IsActive = true,
+                            Model = "Nike Air Max 97",
+                            Price = 420.00m,
+                            TypeId = 1
+                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Infrastructure.Data.Models.ShoeSize", b =>

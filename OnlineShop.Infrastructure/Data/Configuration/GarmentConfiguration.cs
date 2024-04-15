@@ -11,29 +11,10 @@ namespace OnlineShop.Infrastructure.Data.Configuration
 {
     public class GarmentConfiguration : IEntityTypeConfiguration<Garment>
     {
+        SeedData seed = new SeedData();
         public void Configure(EntityTypeBuilder<Garment> builder)
         {
-            builder.HasData(SeedGarments());
-        }
-        private List<Garment> SeedGarments()
-        {
-            var garments= new List<Garment>();
-
-            var lacosteSweatshirt = new Garment()
-            {
-                Id = 1,
-                Model = "Zip Sweatshirts",
-                BrandId = 3,
-                TypeId = 7,
-                Color = "Dark Blue",
-                ImageUrl = "https://i.pinimg.com/564x/93/d7/b2/93d7b28cfb66f9daa650559600a0abd1.jpg",
-                Price = 100.00m,
-                IsActive = true
-                
-            };
-            garments.Add(lacosteSweatshirt);
-
-            return garments;    
+            builder.HasData(new List<Garment>() { seed.lacosteSweatshirt });
         }
     }
 }

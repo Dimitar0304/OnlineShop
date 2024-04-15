@@ -33,6 +33,6 @@ namespace OnlineShop.Infrastructure.Data.Models
         /// <summary>
         /// List of orders of User
         /// </summary>
-        public List<Order> Orders { get; set; } = new List<Order>();
+        public List<Order>? Orders { get; set; } = new List<Order>();
     }
 }

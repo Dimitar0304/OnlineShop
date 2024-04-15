@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "I6iqJotbMVZVQ5rz9HgZFkB7XVu6jeP21+XVHfQGmXSxEwt9SdzOaaBBo+XB0IzgXI9lGWTjll06HKuGfOJyDA==",
+  "dgSpecHash": "bF7V6+g7E8KubwcOYf71zylmYlwPGiLscr9Z60FcDjCA//0GdO6AIX1eNWRM3fOkBPtP0GkVOd/O+2GYMxuj0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop.Infrastructure\\OnlineShop.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\lasss\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\jetbrains.annotations\\2022.3.1\\jetbrains.annotations.2022.3.1.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.27\\microsoft.aspnetcore.cryptography.internal.6.0.27.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.27\\microsoft.aspnetcore.cryptography.keyderivation.6.0.27.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.27\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.27.nupkg.sha512",
@@ -14,8 +16,10 @@
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.27\\microsoft.entityframeworkcore.6.0.27.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.27\\microsoft.entityframeworkcore.abstractions.6.0.27.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.27\\microsoft.entityframeworkcore.analyzers.6.0.27.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.27\\microsoft.entityframeworkcore.design.6.0.27.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.27\\microsoft.entityframeworkcore.relational.6.0.27.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.27\\microsoft.entityframeworkcore.sqlserver.6.0.27.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.27\\microsoft.entityframeworkcore.tools.6.0.27.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
@@ -62,6 +66,16 @@
     "C:\\Users\\lasss\\.nuget\\packages\\xunit.extensibility.execution\\2.7.0\\xunit.extensibility.execution.2.7.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

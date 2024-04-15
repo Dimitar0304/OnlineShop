@@ -112,6 +112,24 @@ namespace OnlineShop.Infrastructure
             //Seed size configuration
             builder.ApplyConfiguration(new SizeConfiguration());
 
+            //Seed Users
+            //builder.ApplyConfiguration(new UserConfiguration());
+
+            ////Seed Garment
+            //builder.ApplyConfiguration(new GarmentConfiguration());
+
+            ////Seed Garmetn with sies
+            //builder.ApplyConfiguration(new GarmentSizeConfiguration());
+
+            //Seed Shoe 
+            builder.ApplyConfiguration(new ShoeConfiguration());
+
+            ////Seed Shoes with sizes
+            //builder.ApplyConfiguration(new ShoeSizesConfiguration());
+
+            //Seed Accessories
+            builder.ApplyConfiguration(new AccessoryConfiguration());
+
             base.OnModelCreating(builder);
         }
     }

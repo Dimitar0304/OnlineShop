@@ -828,3 +828,4 @@ C:\Users\lasss\Downloads\OnlineShop-main\OnlineShop-main\OnlineShop\obj\Debug\ne
 C:\Users\lasss\Downloads\OnlineShop-main\OnlineShop-main\OnlineShop\obj\Debug\net6.0\OnlineShop.pdb
 C:\Users\lasss\Downloads\OnlineShop-main\OnlineShop-main\OnlineShop\obj\Debug\net6.0\OnlineShop.genruntimeconfig.cache
 C:\Users\lasss\Downloads\OnlineShop-main\OnlineShop-main\OnlineShop\obj\Debug\net6.0\ref\OnlineShop.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
