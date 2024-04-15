@@ -99,8 +99,8 @@ namespace OnlineShop.Areas.Admin.Controllers
                 return BadRequest();
             }
             await service.SoftDelete(id);
-            var models = await service.GetAllGarmentsAsync();
-            return RedirectToAction("All", models);
+            
+            return RedirectToAction("DashBoard", "MainAdmin",new { area="Admin"});
         }
         public async Task<IActionResult> DeleteFromDb(int id)
         {
@@ -109,8 +109,8 @@ namespace OnlineShop.Areas.Admin.Controllers
                 return BadRequest();
             }
             await service.DeleteGarmentToDbAsync(id);
-            var models = await service.GetAllGarmentsAsync();
-            return RedirectToAction("All", models);
+            
+            return RedirectToAction("DashBoard", "MainAdmin", new { area = "Admin" });
         }
 
     }

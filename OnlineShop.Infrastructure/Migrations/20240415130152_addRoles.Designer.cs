@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineShop.Infrastructure;
 
@@ -11,9 +12,10 @@ using OnlineShop.Infrastructure;
 namespace OnlineShop.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240415130152_addRoles")]
+    partial class addRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,14 +54,14 @@ namespace OnlineShop.Infrastructure.Migrations
                         new
                         {
                             Id = "f05308b9-55ff-4b20-8e57-9a2b89573525",
-                            ConcurrencyStamp = "344409b6-2e9f-4738-88e0-60c46be1a042",
+                            ConcurrencyStamp = "b4bd58ca-f2f8-4c34-b784-1f1a4b229de5",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "322a7bf2-124a-4ce7-bdf8-43eba64446b5",
-                            ConcurrencyStamp = "9ab17067-6c4a-4e01-a5a8-4c3a1a7e6b82",
+                            ConcurrencyStamp = "5d75c59a-213f-43b2-8884-851e61786a6f",
                             Name = "User",
                             NormalizedName = "User"
                         });
@@ -363,19 +365,6 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.ToTable("Garments");
 
                     b.HasComment("Garment data entity");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BrandId = 3,
-                            Color = "DarkBlue",
-                            ImageUrl = "https://i.pinimg.com/564x/93/d7/b2/93d7b28cfb66f9daa650559600a0abd1.jpg",
-                            IsActive = true,
-                            Model = "Zip Sweatshirts",
-                            Price = 100.00m,
-                            TypeId = 7
-                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Infrastructure.Data.Models.GarmentSize", b =>

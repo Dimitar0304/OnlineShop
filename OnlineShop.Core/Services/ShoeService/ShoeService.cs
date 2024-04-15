@@ -111,11 +111,13 @@ namespace OnlineShop.Core.Services.ShoeService
         {
             var allShoes = await repository.All<Shoe>().ToListAsync();
             var s = allShoes
+                
                 .Where(s=>s.Id==id)
+                
                 .Select(s => new ShoeAddViewModel()
                 {
                     Id = id,
-                    BrandName = s.Brand.Name,
+                    BrandName = GetBrands().FirstOrDefault(b=>b.Id==s.BrandId).Name,
                     ImageUrl = s.ImageUrl,
                     Color = s.Color,
                     Name = s.Model,

@@ -69,8 +69,8 @@ namespace OnlineShop.Areas.Admin.Controllers
                 return BadRequest();
             }
             await service.SoftDelete(id);
-            var models = await service.GetAllShoeAsync();
-            return RedirectToAction("All", "Shoe", new {area=""});
+            
+            return RedirectToAction("DashBoard", "MainAdmin", new { area = "Admin" });
         }
 
         public async Task<IActionResult> DeleteFromDb(int id)
@@ -80,8 +80,8 @@ namespace OnlineShop.Areas.Admin.Controllers
                 return BadRequest();
             }
             await service.DeleteShoeToDbAsync(id);
-            var models = await service.GetAllShoeAsync();
-            return RedirectToAction("All", models);
+            
+            return RedirectToAction("DashBoard", "MainAdmin", new { area = "Admin" });
         }
 
         public async Task<IActionResult> Edit(int id, string information)

@@ -21,15 +21,25 @@ namespace OnlineShop.Infrastructure.Data.Configuration
         public Accessory arc2 { get; set; }
         public Accessory arc3 { get; set; }
         public Accessory arc4 { get; set; }
+
+        public IdentityRole User { get; set; }
+        public IdentityRole Admin { get; set; }
+
+        public List<GarmentSize> GarmentSizes { get; set; } = new List<GarmentSize>();
+
+        public List<ShoeSize> ShoeSizes { get; set; } = new List<ShoeSize>();
+
         public SeedData()
         {
             SeedUsers();
+            SeedRoles();
+
             SeedGarments();
-            
             SeedShoes();
-            SeedShoes();
-            
             SeedAccessories();
+
+            
+
         }
         private void SeedUsers()
         {
@@ -50,6 +60,7 @@ namespace OnlineShop.Infrastructure.Data.Configuration
                 
             };
             justUser.PasswordHash = hasher.HashPassword(justUser, "User123");
+            
 
             //Admin user
             var justAdmin = new User()
@@ -77,10 +88,11 @@ namespace OnlineShop.Infrastructure.Data.Configuration
                 Model = "Zip Sweatshirts",
                 BrandId = 3,
                 TypeId = 7,
-                Color = "Dark Blue",
+                Color = "DarkBlue",
                 ImageUrl = "https://i.pinimg.com/564x/93/d7/b2/93d7b28cfb66f9daa650559600a0abd1.jpg",
                 Price = 100.00m,
-                IsActive = true
+                IsActive = true,
+                
 
             };
         }
@@ -100,9 +112,21 @@ namespace OnlineShop.Infrastructure.Data.Configuration
 
             };
         }
-
-        
-
+        private void SeedRoles()
+        {
+            User = new IdentityRole()
+            {
+                Name ="User",
+                NormalizedName = "User",
+                Id = "322a7bf2-124a-4ce7-bdf8-43eba64446b5"
+            };
+            Admin = new IdentityRole()
+            {
+               Name="Admin",
+               NormalizedName = "Admin",
+               Id = "f05308b9-55ff-4b20-8e57-9a2b89573525"
+            };
+        }
         private void SeedAccessories()
         {
              acr1 = new Accessory()
@@ -156,6 +180,11 @@ namespace OnlineShop.Infrastructure.Data.Configuration
             };
             
         }
+
+       
+
+
+       
     }
 }
 

@@ -86,7 +86,7 @@ namespace OnlineShop.Infrastructure.Data.Models
         /// Garment Size Collection
         /// </summary>
         [Comment("Garment size collection")]
-        public IEnumerable<GarmentSize> ClothesSizes { get; set; } = null!;
+        public  IEnumerable<GarmentSize> ClothesSizes { get; set; } = null!;
 
 
 

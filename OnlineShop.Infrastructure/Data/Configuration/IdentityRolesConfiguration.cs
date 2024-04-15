@@ -11,11 +11,11 @@ namespace OnlineShop.Infrastructure.Data.Configuration
 {
     public class IdentityRolesConfiguration : IEntityTypeConfiguration<IdentityRole>
     {
+        SeedData seed = new SeedData();
         public void Configure(EntityTypeBuilder<IdentityRole> builder)
         {
-            builder.HasData(
-                new IdentityRole("Admin"),
-                new IdentityRole("User"));
+            builder.HasData(new List<IdentityRole> { seed.Admin,seed.User});
+               
         }
     }
 }

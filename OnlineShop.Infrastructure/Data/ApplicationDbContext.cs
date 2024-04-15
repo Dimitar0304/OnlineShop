@@ -116,16 +116,14 @@ namespace OnlineShop.Infrastructure
             //builder.ApplyConfiguration(new UserConfiguration());
 
             ////Seed Garment
-            //builder.ApplyConfiguration(new GarmentConfiguration());
+            builder.ApplyConfiguration(new GarmentConfiguration());
 
-            ////Seed Garmetn with sies
-            //builder.ApplyConfiguration(new GarmentSizeConfiguration());
+           
 
             //Seed Shoe 
             builder.ApplyConfiguration(new ShoeConfiguration());
 
-            ////Seed Shoes with sizes
-            //builder.ApplyConfiguration(new ShoeSizesConfiguration());
+            
 
             //Seed Accessories
             builder.ApplyConfiguration(new AccessoryConfiguration());
