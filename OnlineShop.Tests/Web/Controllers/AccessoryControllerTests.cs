@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Moq;
 using NUnit.Framework;
 using OnlineShop.Controllers;
 using OnlineShop.Core.Services.Contracts;
@@ -49,6 +50,28 @@ namespace OnlineShop.Tests.Web.Controllers
             Assert.AreEqual(result.GetType(), typeof(ViewResult));
             Assert.NotNull(result.Model);
            
+            
+        }
+
+        [Test]
+        public async Task AllMethodWithoutAccessoriesShoudReturnHomeController()
+        {
+            //Arrange 
+            var emptyService = new Mock<IAccessoryService>();
+
+            //setup it
+            emptyService.Setup(s => s.GetAllAccessoryAsync())
+                .ReturnsAsync(new List<Core.Models.Accessory.AccessoryAllViewModel>());
+
+            var controller = new AccessoryController(emptyService.Object);
+
+            //Act
+            var result = controller.All(1).Result as RedirectToActionResult;
+
+            //Assert
+            
+            Assert.AreEqual(result.ActionName, "Index");
+            Assert.AreEqual(result.ControllerName, "Home"); 
             
         }
 

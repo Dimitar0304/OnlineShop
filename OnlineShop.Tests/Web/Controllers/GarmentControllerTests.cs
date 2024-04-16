@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Moq;
 using NUnit.Framework;
 using OnlineShop.Controllers;
+using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Services.Contracts;
 using OnlineShop.Tests.Mocks;
 
@@ -77,6 +79,28 @@ namespace OnlineShop.Tests.Web.Controllers
             Assert.AreEqual(result.GetType(),typeof( BadRequestResult));
         }
 
+
+        [Test]
+        public async Task AllMethodWithoutGarmentsShoudReturnHomeController()
+        {
+            //Arrange 
+            var emptyService = new Mock<IGarmentService>();
+
+            //setup it
+            emptyService.Setup(s => s.GetAllGarmentsAsync())
+                .ReturnsAsync(new List<Models.Garment.GarmentViewModel>());
+
+            var controller = new GarmentController(emptyService.Object,null);
+
+            //Act
+            var result = controller.All(1).Result as RedirectToActionResult;
+
+            //Assert
+
+            Assert.AreEqual(result.ActionName, "Index");
+            Assert.AreEqual(result.ControllerName, "Home");
+
+        }
 
 
 
