@@ -79,6 +79,19 @@ namespace OnlineShop.Tests.Web.Controllers
             Assert.AreEqual(result.GetType(),typeof( BadRequestResult));
         }
 
+        [Test]
+        public void DetailsMethodWithWrongIdShoudReturnBadRequest()
+        {
+            //Arrange
+            var controller = new GarmentController(service, null);
+
+            //Act
+            var result = controller.Details(4444, "GarmentTestNameNike").Result as ActionResult;
+
+            //Assert
+            Assert.AreEqual(result.GetType(), typeof(BadRequestResult));
+        }
+
 
         [Test]
         public async Task AllMethodWithoutGarmentsShoudReturnHomeController()

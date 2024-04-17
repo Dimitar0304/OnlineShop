@@ -72,38 +72,29 @@ namespace OnlineShop.Controllers
         [HandleError]
         public async Task<IActionResult> Details(int id, string information)
         {
-            try
-            {
 
 
-                if (await service.GetByIdAsync(id) == null)
-                {
-                    throw new BadRequestException("");
-                }
-                var entity = await service.GetByIdAsync(id);
-                var model = new AccessoryDetailsViewModel()
-                {
-                    Name = entity.Name,
-                    Price = entity.Price,
-                    BrandName = service.GetBrands().Result.FirstOrDefault(b => b.Id == entity.BrandId).Name,
-                    ImageUrl = entity.ImageUrl
-                };
-                if (information != model.GetInformation())
-                {
-                    throw new BadRequestException("");
-                }
 
-                return View(model);
-            }
-            catch (BadRequestException ex)
+            if (await service.GetByIdAsync(id) == null)
             {
-                
-                return RedirectToAction("BadRequest", "Error");
+                return BadRequest();
             }
-            catch(NotFoundException nfE)
+            var entity = await service.GetByIdAsync(id);
+            var model = new AccessoryDetailsViewModel()
             {
-                return RedirectToAction("NotFound", "Error");
+                Name = entity.Name,
+                Price = entity.Price,
+                BrandName = service.GetBrands().Result.FirstOrDefault(b => b.Id == entity.BrandId).Name,
+                ImageUrl = entity.ImageUrl
+            };
+            if (information != model.GetInformation())
+            {
+                return BadRequest();
             }
+
+            return View(model);
+
+
         }
     }
 }

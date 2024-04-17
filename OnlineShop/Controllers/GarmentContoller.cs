@@ -126,7 +126,7 @@ namespace OnlineShop.Controllers
         [HttpPost]
         public async Task<IActionResult> Details(int id, string information)
         {
-            if (id < 0 && service.GetByIdAsync(id) == null)
+            if (await service.GetByIdAsync(id) == null)
             {
                 return BadRequest();
             }

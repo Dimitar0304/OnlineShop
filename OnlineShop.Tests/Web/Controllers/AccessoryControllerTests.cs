@@ -105,7 +105,20 @@ namespace OnlineShop.Tests.Web.Controllers
 
             //Assert
 
-            Assert.AreEqual(result.GetType(), typeof(RedirectToActionResult));
+            Assert.AreEqual(result.GetType(), typeof(BadRequestResult));
+        }
+
+        [Test]
+        public void DetailsMethodWithWrongIdShoudReturnBadRequest()
+        {
+            //Arrange
+            var controller = new AccessoryController(accessoryService);
+
+            //Act
+            var result = controller.Details(4444, "AccessoryTestNameNike").Result as ActionResult;
+
+            //Assert
+            Assert.AreEqual(result.GetType(), typeof(BadRequestResult));
         }
 
     }

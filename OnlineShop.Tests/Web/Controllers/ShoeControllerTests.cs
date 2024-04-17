@@ -75,11 +75,35 @@ namespace OnlineShop.Tests.Web.Controllers
             var result = controller.Details(1, "ShoeTestNameNike").Result as ViewResult;
 
             //Assert
+            Assert.IsNotNull(result.Model);
+            Assert.AreEqual(result.Model.GetType(), typeof(ShoeDetailsViewModel));
             
-           
-            Assert.AreEqual(result.ViewData.ModelMetadata.GetType(),typeof(ShoeDetailsViewModel));
 
         }
-        
+        [Test]
+        public void DetailsMethodWithWrongRootElmentsForInformationShouldReturnBadRequest()
+        {
+            //Arrange
+            var controller = new ShoeController(service, null);
+
+            //Act
+            var result = controller.Details(1, "WrongInformation").Result as ActionResult;
+
+            //Assert
+            Assert.AreEqual(result.GetType(), typeof(BadRequestResult));
+           
+        }
+        [Test]
+        public void DetailsMethodWithWrongIdShoudReturnBadRequest()
+        {
+            //Arrange
+            var controller = new ShoeController(service, null);
+
+            //Act
+            var result = controller.Details(4444, "ShoeTestNameNike").Result as ActionResult;
+
+            //Assert
+            Assert.AreEqual(result.GetType(), typeof(BadRequestResult));
+        }
     }
 }
