@@ -1,15 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineShop.Core.Models.Accessory;
-using OnlineShop.Core.Models.Shoe;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineShop.Core.Services.AccessoryService
 {
@@ -96,6 +90,7 @@ namespace OnlineShop.Core.Services.AccessoryService
                 await repository.Delete(accessory);
                 await repository.SaveChangesAsync();
             }
+
         }
 
         /// <summary>
@@ -147,24 +142,32 @@ namespace OnlineShop.Core.Services.AccessoryService
         public async Task<AccessoryAddViewModel> GetByIdAsync(int id)
         {
             var accessory = await repository.GetByIdAsync<Accessory>(id);
-
-            return new AccessoryAddViewModel()
+            if (accessory != null)
             {
-                Id = accessory.Id,
-                Name = accessory.Name,
-                ImageUrl = accessory.ImageUrl,
-                Price = accessory.Price,
-                Type = accessory.Type,
-                BrandId = accessory.BrandId
-            };
+
+                return new AccessoryAddViewModel()
+                {
+                    Id = accessory.Id,
+                    Name = accessory.Name,
+                    ImageUrl = accessory.ImageUrl,
+                    Price = accessory.Price,
+                    Type = accessory.Type,
+                    BrandId = accessory.BrandId
+                };
+            }
+            return null;
         }
 
         public async Task SoftDelete(int id)
         {
             var entity = await repository.GetByIdAsync<Accessory>(id);
-            entity.IsActive = false;
-            await repository.UpdateAsync(entity);
-            await repository.SaveChangesAsync();
+            if (entity != null)
+            {
+
+                entity.IsActive = false;
+                await repository.UpdateAsync(entity);
+                await repository.SaveChangesAsync();
+            }
         }
 
         /// <summary>
@@ -175,6 +178,9 @@ namespace OnlineShop.Core.Services.AccessoryService
         /// <exception cref="NotImplementedException"></exception>
         public async Task UpdateAccessoryToDbAsync(AccessoryAddViewModel model)
         {
+            if (model!=null)
+            {
+
             var accessory = await repository.GetByIdAsync<Accessory>(model.Id);
 
             if (accessory != null)
@@ -185,10 +191,11 @@ namespace OnlineShop.Core.Services.AccessoryService
                 accessory.Price = model.Price;
                 accessory.Type = model.Type;
                 accessory.BrandId = model.BrandId;
+                await repository.UpdateAsync<Accessory>(accessory);
+                await repository.SaveChangesAsync();
             }
-            await repository.UpdateAsync<Accessory>(accessory);
-            await repository.SaveChangesAsync();
 
+            }
 
 
         }

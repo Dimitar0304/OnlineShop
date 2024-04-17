@@ -32,6 +32,9 @@ namespace OnlineShop.Core.Services.ShoeService
         /// <returns></returns>
         public async Task AddShoeToDbAsync(ShoeAddViewModel model)
         {
+            if (model!=null)
+            {
+
             var shoe = new Shoe()
             {
                 Id = model.Id,
@@ -45,6 +48,7 @@ namespace OnlineShop.Core.Services.ShoeService
             };
             await repository.AddAsync<Shoe>(shoe);
             await repository.SaveChangesAsync();
+            }
         }
 
         /// <summary>
@@ -124,10 +128,15 @@ namespace OnlineShop.Core.Services.ShoeService
                     Price = s.Price,
                     BrandId = s.BrandId
 
-                }).First()
+                })
                 ;
                 
-            return s;
+            if (s.Count()>0)
+            {
+
+            return s.First();
+            }
+            return null;
         }
 
         /// <summary>
@@ -167,6 +176,9 @@ namespace OnlineShop.Core.Services.ShoeService
         /// <returns></returns>
         public async Task UpdateShoeToDbAsync(ShoeAddViewModel model)
         {
+            if (model!=null)
+            {
+
             var shoe = await repository.GetByIdAsync<Shoe>(model.Id);
 
             if (shoe != null)
@@ -182,6 +194,7 @@ namespace OnlineShop.Core.Services.ShoeService
                 await repository.UpdateAsync(shoe);
                 await repository.SaveChangesAsync();
 
+            }
             }
 
         }
@@ -230,9 +243,13 @@ namespace OnlineShop.Core.Services.ShoeService
         public async Task SoftDelete(int id)
         {
             var entity = await repository.GetByIdAsync<Shoe>(id);
+            if (entity!=null)
+            {
+
             entity.IsActive = false;
             await repository.UpdateAsync(entity);
             await repository.SaveChangesAsync();
+            }
         }
     }
 }

@@ -24,6 +24,7 @@ namespace OnlineShop.Tests.Mocks
 
                 var db = new ApplicationDbContext(dbContextOptions);
 
+                //Seed Garments
                 db.Garments.AddAsync(
               new Infrastructure.Data.Models.Garment()
               {
@@ -53,7 +54,49 @@ namespace OnlineShop.Tests.Mocks
                 });
                 db.SaveChangesAsync();
 
+                db.Sizes.Add(new Size()
+                {
+                    Id = 1,
+                    Name = "S"
+                });
+                db.SaveChangesAsync();
 
+                //Seed Shoes
+                db.Shoes.Add(new Shoe()
+                {
+                    Id = 1,
+                    Model = TestConstants.ShoeConstants.Name,
+                    BrandId = 1,
+                    TypeId = 2,
+                    Color = TestConstants.ShoeConstants.Color,
+                    ImageUrl = TestConstants.ShoeConstants.ImageUrl,
+                    IsActive = true,
+                    Price = TestConstants.ShoeConstants.Price,
+
+                });
+                db.SaveChangesAsync();
+
+                //Seed Accessory
+                db.Accessories.Add(new Accessory()
+                {
+                    Id = 1,
+                    Name = TestConstants.AccessoryConstants.Name,
+                    BrandId = 1,
+                    Type = TestConstants.AccessoryConstants.Type,
+                    Quantity = TestConstants.AccessoryConstants.Quantity,
+                    ImageUrl = TestConstants.AccessoryConstants.ImageUrl,
+                    IsActive = true,
+                    Price = TestConstants.AccessoryConstants.Price
+                    
+                });
+                db.SaveChangesAsync();
+
+                db.ShoesTypes.Add(new ShoeType()
+                {
+                    Id = 2,
+                    Name = "Sneakers",
+                });
+                db.SaveChangesAsync();
 
 
                 return db;

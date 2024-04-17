@@ -62,6 +62,7 @@ namespace OnlineShop.Services.GarmentService
                 await repository.SaveChangesAsync();
             }
 
+
         }
         /// <summary>
         /// Method for returns all garments async
@@ -113,14 +114,14 @@ namespace OnlineShop.Services.GarmentService
                     Color = s.Color,
                     Name = s.Model,
                     Price = s.Price,
-                    TypeId=s.TypeId,
-                    BrandName =  brands.Find(b => b.Id == s.BrandId).Name,
+                    TypeId = s.TypeId,
+                    BrandName = brands.Find(b => b.Id == s.BrandId).Name,
                 })
                 ;
 
-           var f = s.ToList();
+            var f = s.ToList();
 
-            return  s.FirstOrDefault<GarmentViewModel>();
+            return s.FirstOrDefault<GarmentViewModel>();
         }
         /// <summary>
         /// Method that update exist garment model
@@ -130,11 +131,11 @@ namespace OnlineShop.Services.GarmentService
 
         public async Task UpdateGarmentToDbAsync(GarmentViewModel model)
         {
-            Garment g = await repository.GetByIdAsync<Garment>(model.Id);
 
 
-            if (g != null)
+            if (model != null)
             {
+                Garment g = await repository.GetByIdAsync<Garment>(model.Id);
                 g.Model = model.Name;
                 g.BrandId = model.BrandId;
                 g.Price = model.Price;
@@ -162,7 +163,7 @@ namespace OnlineShop.Services.GarmentService
                     Id = b.Id,
                     Name = b.Name
                 })
-                
+
                 .ToListAsync();
             return brands;
         }
@@ -228,12 +229,16 @@ namespace OnlineShop.Services.GarmentService
         /// <exception cref="NotImplementedException"></exception>
         public async Task<bool> IsGarmentExist(GarmentViewModel model)
         {
-            var garments = await repository.All<Garment>()
-                .Where(g => g.Model.ToLower() == model.Name.ToLower())
-                .ToListAsync();
-            if (garments.Count() >= 1 && garments != null)
+            if (model != null)
             {
-                return true;
+
+                var garments = await repository.All<Garment>()
+                    .Where(g => g.Model.ToLower() == model.Name.ToLower())
+                    .ToListAsync();
+                if (garments.Count() >= 1 && garments != null)
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -261,9 +266,12 @@ namespace OnlineShop.Services.GarmentService
         public async Task SoftDelete(int id)
         {
             var entity = await repository.GetByIdAsync<Garment>(id);
-            entity.IsActive = false;
-            await repository.UpdateAsync<Garment>(entity);
-            await repository.SaveChangesAsync();
+            if (entity != null)
+            {
+                entity.IsActive = false;
+                await repository.UpdateAsync<Garment>(entity);
+                await repository.SaveChangesAsync();
+            }
         }
     }
 }

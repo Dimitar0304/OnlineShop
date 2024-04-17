@@ -120,7 +120,7 @@ namespace OnlineShop.Infrastructure.Common
 
                 return entity;
             }
-            throw new ArgumentNullException(nameof(entity));
+            return null;
         }
 
         /// <summary>
