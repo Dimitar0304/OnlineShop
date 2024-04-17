@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnlineShop.Core.Models.Shoe;
 using OnlineShop.Core.Models.Size;
 using OnlineShop.Core.Models.Type;
 using OnlineShop.Infrastructure.Common;
@@ -6,6 +7,7 @@ using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
+using X.PagedList;
 
 namespace OnlineShop.Services.GarmentService
 {
@@ -100,20 +102,25 @@ namespace OnlineShop.Services.GarmentService
 
         public async Task<GarmentViewModel> GetByIdAsync(int id)
         {
-            
-            var g = await repository.All<Garment>().Select(g => new GarmentViewModel()
-            {
-                Id = id,
-                Name = g.Model,
-                TypeId = g.TypeId,
-                BrandId = g.BrandId,
-                Price = g.Price,
-                Color = g.Color,
-                BrandName = g.Brand.Name,
+            var brands = GetBrands().Result;
+            var allShoes = await repository.All<Garment>().Where(s => s.Id == id).ToListAsync();
+            var s = allShoes
+                .Select(s => new GarmentViewModel()
+                {
+                    Id = id,
+                    BrandId = s.BrandId,
+                    ImageUrl = s.ImageUrl,
+                    Color = s.Color,
+                    Name = s.Model,
+                    Price = s.Price,
+                    TypeId=s.TypeId,
+                    BrandName =  brands.Find(b => b.Id == s.BrandId).Name,
+                })
+                ;
 
-            }).Where(g => g.Id == id)
-            .FirstAsync();
-            return g;
+           var f = s.ToList();
+
+            return  s.FirstOrDefault<GarmentViewModel>();
         }
         /// <summary>
         /// Method that update exist garment model
@@ -148,14 +155,16 @@ namespace OnlineShop.Services.GarmentService
         /// <returns></returns>
         public async Task<List<BrandViewModel>> GetBrands()
         {
-            return await repository.All<Brand>()
+
+            var brands = await repository.All<Brand>()
                 .Select(b => new BrandViewModel()
                 {
                     Id = b.Id,
                     Name = b.Name
                 })
-                .AsNoTracking()
+                
                 .ToListAsync();
+            return brands;
         }
 
         /// <summary>

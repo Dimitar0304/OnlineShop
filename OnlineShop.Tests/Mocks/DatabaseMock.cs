@@ -24,19 +24,35 @@ namespace OnlineShop.Tests.Mocks
 
                 var db = new ApplicationDbContext(dbContextOptions);
 
-                //setup accessory model in db 
-                db.Accessories.Add(new Accessory()
-                {
-                    Name = TestConstants.AccessoryConstants.Name,
-                    Type = TestConstants.AccessoryConstants.Type,
-                    BrandId = TestConstants.AccessoryConstants.BrandId,
-                    ImageUrl = TestConstants.AccessoryConstants.ImageUrl,
-                    IsActive = TestConstants.AccessoryConstants.IsActive,
-                    Price = TestConstants.AccessoryConstants.Price,
-                    Quantity = TestConstants.AccessoryConstants.Quantity
-                });
+                db.Garments.AddAsync(
+              new Infrastructure.Data.Models.Garment()
+              {
+                  Id = 1,
+                  Model = TestConstants.GarmentConstants.Name,
+                  BrandId = 1,
+                  Color = TestConstants.GarmentConstants.Color,
+                  ImageUrl = TestConstants.GarmentConstants.ImageUrl,
+                  Price = TestConstants.GarmentConstants.Price,
+                  IsActive = true,
+                  TypeId = TestConstants.GarmentConstants.TypeId,
 
-                db.SaveChanges();
+              });
+                db.SaveChangesAsync();
+
+                db.Brands.AddAsync(new Brand()
+                {
+                    Id = 1,
+                    Name = "Nike"
+                });
+                db.SaveChangesAsync();
+
+                db.GarmentsTypes.Add(new GarmentType()
+                {
+                    Id = 2,
+                    Name="Shirt"
+                });
+                db.SaveChangesAsync();
+
 
 
 

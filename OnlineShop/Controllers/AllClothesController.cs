@@ -37,15 +37,15 @@ namespace OnlineShop.Controllers
 
             //Select all garments wich contains current string
             var garments = garmentService.GetAllGarmentsAsync().Result
-                .Where(g => g.Name.ToLower().StartsWith(term));
+                .Where(g => g.Name.ToLower().Contains(term));
 
             //Select all shoes wich contains current string
             var shoes = shoeService.GetAllShoeAsync().Result
-               .Where(g => g.Name.ToLower().StartsWith(term));
+               .Where(g => g.Name.ToLower().Contains(term));
 
             //Select all accssesories wich contains current string
             var accessories = accessoryService.GetAllAccessoryAsync().Result
-                .Where(a => a.Name.ToLower().StartsWith(term));
+                .Where(a => a.Name.ToLower().Contains(term));
 
             //foreach loop to add garments in allClothes list
             foreach (var g in garments)
