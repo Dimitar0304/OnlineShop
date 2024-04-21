@@ -50,7 +50,6 @@ C# <br>
 ASP.NET Core <br>
 Entity Framework Core <br>
 Javascript <br>
-jQuery <br>
 HTML <br>
 CSS <br>
 Bootstrap <br>
