@@ -232,6 +232,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsQ2xvdGhlc1xTaG93U2VhcmNoZWRJdGVtcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/lasss/Documents/GitHub/OnlineShop/OnlineShop/Views/Brand/AllBrands.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQWxsQnJhbmRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lasss/Documents/GitHub/OnlineShop/OnlineShop/Views/Brand/GetClothesForBrand.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcR2V0Q2xvdGhlc0ZvckJyYW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/lasss/Documents/GitHub/OnlineShop/OnlineShop/Views/Garment/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FybWVudFxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

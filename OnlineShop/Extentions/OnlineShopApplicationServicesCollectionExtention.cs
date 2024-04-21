@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using OnlineShop.Core.Contracts;
 using OnlineShop.Core.Services.AccessoryService;
+using OnlineShop.Core.Services.BrandService;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Core.Services.GarmentService;
@@ -44,6 +45,9 @@ namespace OnlineShop.Extentions
 
             //Add order service
             services.AddScoped<IOrderService,OrderService>();
+
+            //Add Brand service
+            services.AddScoped<IBrandService,BrandService>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
             //Add Cache Data

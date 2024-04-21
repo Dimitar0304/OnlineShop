@@ -86,7 +86,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-//My custom MiddleWare for add admin
+
 //app.UseAddAdmin();
 
 

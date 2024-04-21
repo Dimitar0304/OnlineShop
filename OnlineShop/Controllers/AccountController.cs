@@ -115,6 +115,7 @@ namespace OnlineShop.Controllers
             return View();
         }
         [HttpPost]
+
         public async Task<IActionResult> Logout()
         {
             await this.signManager.SignOutAsync();
