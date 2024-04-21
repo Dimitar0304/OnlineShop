@@ -25,7 +25,7 @@ namespace OnlineShop.Models.Garment
         [StringLength(DataConstants.Garment.MaxModelLenght
             , MinimumLength = DataConstants.Garment.MinModelLenght
             , ErrorMessage = ErrorMessages.StringLenghtError)]
-        [Display(Name ="Garment Model")]
+        [Display(Name ="Garment Name")]
         public string Name { get; set; } = null!;
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace OnlineShop.Models.Garment
         /// image url
         /// </summary>
         [Required(ErrorMessage = ErrorMessages.RequiredField)]
-        [Display(Name = "Garment Image")]
+        [Display(Name = "Image")]
         public string ImageUrl { get; set; } = null!;
     }
 }

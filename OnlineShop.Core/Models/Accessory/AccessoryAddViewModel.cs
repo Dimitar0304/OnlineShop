@@ -69,7 +69,7 @@ namespace OnlineShop.Core.Models.Accessory
         /// Accessory Image url 
         /// </summary>
         [Required(ErrorMessage =ErrorMessages.RequiredField)]
-        [Display(Name ="Accessory Image Url")]
+        [Display(Name = "Image")]
         public string ImageUrl { get; set; } = null!;
     }
 }

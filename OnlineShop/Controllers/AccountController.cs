@@ -119,7 +119,7 @@ namespace OnlineShop.Controllers
         {
             await this.signManager.SignOutAsync();
             
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction("Index", "Home");
         }
         private IActionResult RedirectToLocal(string returnUrl)
         {

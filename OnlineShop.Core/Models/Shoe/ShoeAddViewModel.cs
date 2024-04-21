@@ -32,7 +32,7 @@ namespace OnlineShop.Core.Models.Shoe
         [StringLength(DataConstants.Shoe.MaxModelLenght
             , MinimumLength = DataConstants.Shoe.MinModelLenght
             , ErrorMessage = ErrorMessages.StringLenghtError)]
-        [Display(Name = "Shoe Model")]
+        [Display(Name = "Shoe Name")]
         public string Name { get; set; } = null!;
 
         /// <summary>
@@ -80,13 +80,14 @@ namespace OnlineShop.Core.Models.Shoe
         [StringLength(DataConstants.Shoe.MaxColorLenght,
             MinimumLength = DataConstants.Shoe.MinColorLenght
             , ErrorMessage = ErrorMessages.StringLenghtError)]
-        [Display(Name = "Shoe color")]
+        [Display(Name = "Shoe Color")]
         public string Color { get; set; } = null!;
 
         /// <summary>
         /// Shoe Image Url
         /// </summary>
         [Required(ErrorMessage = ErrorMessages.RequiredField)]
+        [Display(Name = "Image")]
         public string ImageUrl { get; set; } = null!;
 
 

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Admin workspace";
 }
 
@@ -12,15 +11,17 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li><a class="dropdown-item" asp-area="Admin" asp-controller="Garment" asp-action="Add">Add</a></li>
-        <br><hr class="dropdown-divider"></br>
+        <li><hr class="dropdown-divider"></li>
+
         <li><a class="dropdown-item" asp-area="" asp-controller="Garment" asp-action="All">Edit</a></li>
-        <br><hr class="dropdown-divider"></br>
+        <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" asp-area="" asp-controller="Garment" asp-action="All">Delete</a></li>
-        <br><hr class="dropdown-divider"></br>
+        <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" asp-area="" asp-controller="Garment" asp-action="All">DeleteFromDb</a></li>
     </ul>
+ 
 </div>
-
+<br />
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         Shoe Modifies
@@ -36,7 +37,7 @@
     </ul>
 </div>
 
-
+<br />
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         Accessory Modifies

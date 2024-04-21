@@ -37,15 +37,18 @@
                     <input asp-for="UserName" class="form-control" />
                     <span asp-validation-for="UserName" class="text-danger"></span>
                 </div>
+                <br />
                 <div class="form-group">
                     <label asp-for="Password"></label>
                     <input asp-for="Password" class="form-control" type="password"/>
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
-                
+                <br />
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Log in</button>
                 </div>
+                <br />
                 <div class="form-group">
                     <p>
                         <a asp-asp-controller="Account" asp-action="RegisterUser">Register as a new user?</a>
