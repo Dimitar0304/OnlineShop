@@ -45,37 +45,41 @@ namespace OnlineShop.Infrastructure.Data.Configuration
         {
             var hasher = new PasswordHasher<User>();
 
-            var justUser = new User()
+             justUser = new User()
             {
                 Id = "bb77b48a-3afa-4050-8b2e-1847bbe5413b",
                 UserName = "JustUser4e",
-                NormalizedUserName = "JustUser4e",
+                NormalizedUserName = "JUSTUSER4E",
                 Email = "JustUser@mail.com",
-                NormalizedEmail = "JustUser@mail.com",
+                NormalizedEmail = "JUSTUSER@mail.com",
                 RegistrationDate = DateTime.Now,
                 FirstName = "Just",
                 LastName = "User4e",
-                PhoneNumber = "08974199990",
-                EmailConfirmed = true
-                
+               
+                EmailConfirmed = true,
+               
+               
+
+
             };
             justUser.PasswordHash = hasher.HashPassword(justUser, "User123");
             
 
             //Admin user
-            var justAdmin = new User()
+             justAdmin = new User()
             {
                 Id = "250f8800-ede3-4210-a8d0-8a0353a67e24",
                 UserName = "JustAdmin4e",
-                NormalizedUserName = "JustAdmin4e",
+                NormalizedUserName = "JUSTADMIN4E",
                 Email = "JustAdmin@mail.com",
-                NormalizedEmail = "JustAdmin@mail.com",
+                NormalizedEmail = "JUSTADMIN@mail.com",
                 RegistrationDate = DateTime.Now,
                 FirstName = "Just",
                 LastName = "Admin4e",
-                PhoneNumber = "08974199990",
-                EmailConfirmed = true
                 
+                EmailConfirmed = true,
+               
+
             };
             justAdmin.PasswordHash = hasher.HashPassword(justAdmin, "Admin123");
         }

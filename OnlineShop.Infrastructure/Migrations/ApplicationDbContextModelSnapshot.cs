@@ -52,14 +52,14 @@ namespace OnlineShop.Infrastructure.Migrations
                         new
                         {
                             Id = "f05308b9-55ff-4b20-8e57-9a2b89573525",
-                            ConcurrencyStamp = "6a840e70-751f-44a2-bde7-1a9203bd2fbf",
+                            ConcurrencyStamp = "500c941c-5ff1-4c45-88eb-63c4e48c323c",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "322a7bf2-124a-4ce7-bdf8-43eba64446b5",
-                            ConcurrencyStamp = "34c0fce0-db77-42b0-995e-7c3570889786",
+                            ConcurrencyStamp = "6aee476c-07c6-4f89-a6f9-e4c604d25705",
                             Name = "User",
                             NormalizedName = "User"
                         });
@@ -802,6 +802,46 @@ namespace OnlineShop.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "bb77b48a-3afa-4050-8b2e-1847bbe5413b",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "be409ee6-7ef8-4412-a652-d0b8b0671c0c",
+                            Email = "JustUser@mail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Just",
+                            LastName = "User4e",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "JUSTUSER@mail.com",
+                            NormalizedUserName = "JUSTUSER4E",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJCNYNJIybIiuphs/SOer0MMRS8kBy8sjZpnhmYic/KtZ90AfOH830hboLANHJOrqg==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationDate = new DateTime(2024, 4, 22, 17, 36, 37, 395, DateTimeKind.Local).AddTicks(4794),
+                            SecurityStamp = "92b53c6e-59a9-4da4-af23-f57efb80d4d4",
+                            TwoFactorEnabled = false,
+                            UserName = "JustUser4e"
+                        },
+                        new
+                        {
+                            Id = "250f8800-ede3-4210-a8d0-8a0353a67e24",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "7632a229-2583-4765-ba6e-c445abb7e5f2",
+                            Email = "JustAdmin@mail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Just",
+                            LastName = "Admin4e",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "JUSTADMIN@mail.com",
+                            NormalizedUserName = "JUSTADMIN4E",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN0j7w0Uc/ZYYUnu4pvuGtq3snUS1JFXvyItMbGdZyBDQRnOFG/9i5ZPdAtft5wGzg==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationDate = new DateTime(2024, 4, 22, 17, 36, 37, 397, DateTimeKind.Local).AddTicks(1221),
+                            SecurityStamp = "172b9f4d-f4ee-4f42-a658-04e584742a0f",
+                            TwoFactorEnabled = false,
+                            UserName = "JustAdmin4e"
+                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Infrastructure.Data.Models.UserOrder", b =>

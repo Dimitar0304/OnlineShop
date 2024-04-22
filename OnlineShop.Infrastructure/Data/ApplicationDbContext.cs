@@ -113,7 +113,7 @@ namespace OnlineShop.Infrastructure
             builder.ApplyConfiguration(new SizeConfiguration());
 
             //Seed Users
-            //builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
 
             ////Seed Garment
             builder.ApplyConfiguration(new GarmentConfiguration());
