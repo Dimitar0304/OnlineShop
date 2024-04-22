@@ -59,6 +59,13 @@ namespace OnlineShop.Core.Services.GarmentService
             }
         }
 
+        public async Task<int> GetSizeId(string sizeName)
+        {
+            var sizes =   GetSizes().Result;
+
+            return sizes.Where(s => s.Name == sizeName).FirstOrDefault().Id;
+        }
+
         /// <summary>
         /// Method for get all garment sizes
         /// </summary>
@@ -76,5 +83,7 @@ namespace OnlineShop.Core.Services.GarmentService
                 .ToListAsync();
 
         }
+
+
     }
 }

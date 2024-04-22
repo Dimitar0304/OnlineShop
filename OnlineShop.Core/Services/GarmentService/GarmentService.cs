@@ -273,5 +273,12 @@ namespace OnlineShop.Services.GarmentService
                 await repository.SaveChangesAsync();
             }
         }
+
+        public decimal GetPriceByGarmentId(int garmentId)
+        {
+           return GetAllGarmentsAsync()
+                .Result.Where(g => g.Id == garmentId)
+                .FirstOrDefault().Price;
+        }
     }
 }

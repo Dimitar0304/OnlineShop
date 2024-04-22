@@ -82,16 +82,7 @@
         </div>
 
     </footer>
-        <content>
-
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div style="width:fit-content;margin-right:initial" class="alert alert-info">
-                    <strong>Info!</strong> You are authenticated with this username @User.Identity.Name
-                </div>
-
-            }
-        </content>
+        
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

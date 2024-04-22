@@ -21,7 +21,7 @@ namespace OnlineShop.Models.Garment
         /// <summary>
         /// Size identifier
         /// </summary>
-        public string SizeName { get; set; } = null!;
+        public int SizeId { get; set; }
 
         public decimal Price { get; set; }
 

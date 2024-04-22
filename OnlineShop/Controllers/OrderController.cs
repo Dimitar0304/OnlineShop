@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Contracts;
+using OnlineShop.Core.Models.Cart;
 using OnlineShop.Extentions;
 
 namespace OnlineShop.Controllers
@@ -11,15 +12,13 @@ namespace OnlineShop.Controllers
         {
             orderService = _orderService;
         }
-        public async  Task<IActionResult> Cart()
+        public async  Task<IActionResult> Cart(CartViewModel model)
         {
-            if (await orderService.GetAllOrdersByUserId(ClaimsPrincipalExtentions.Id(this.User))==null)
+            if (model!=null)
             {
-                return RedirectToAction("Index", "Home");
+                return View(model);
             }
-
-            var models = await orderService.GetAllOrdersByUserId(ClaimsPrincipalExtentions.Id(this.User));
-            return View(models);
+            return RedirectToAction("Index","Home",new {Area=""});
         }
     }
 }

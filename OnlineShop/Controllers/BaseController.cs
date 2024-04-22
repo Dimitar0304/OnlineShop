@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Web.Mvc;
 
 namespace OnlineShop.Controllers
 {
-    [Authorize]
+    [Microsoft.AspNetCore.Authorization.Authorize]
     [AutoValidateAntiforgeryToken]
-    public class BaseController:Controller
+    [HandleError]
+    public class BaseController: Microsoft.AspNetCore.Mvc.Controller
     {
     }
 }

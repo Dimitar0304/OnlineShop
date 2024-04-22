@@ -23,6 +23,8 @@ namespace OnlineShop.Services.Contracts
 
         public Task<List<SizeViewModel>> GetSizeViewModels(int modelId);
 
+        public decimal GetPriceByGarmentId(int garmentId);  
+
         public Task SoftDelete(int id);
     }
 }

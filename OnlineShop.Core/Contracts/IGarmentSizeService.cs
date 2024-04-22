@@ -9,8 +9,11 @@ namespace OnlineShop.Core.Services.Contracts
 {
     public interface IGarmentSizeService
     {
-      public Task AddGarmentWithSizes(int garmentId);
-      public Task<GarmentSize> AddGarmentToCart(int sizeId,int garmentId);
-      
+        public Task AddGarmentWithSizes(int garmentId);
+        public Task<GarmentSize> AddGarmentToCart(int sizeId, int garmentId);
+
+        public Task<int> GetSizeId(string sizeName);
+
+
     }
 }

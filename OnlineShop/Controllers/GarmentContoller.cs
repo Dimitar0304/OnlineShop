@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.VisualBasic;
+﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Extentions;
+using OnlineShop.Core.Models.Cart;
 using OnlineShop.Core.Models.Garment;
 using OnlineShop.Core.Models.Order;
 using OnlineShop.Core.Services.Contracts;
@@ -11,11 +9,11 @@ using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 using Syncfusion.EJ2.Linq;
-using X.PagedList;
+using System.Security.Claims;
 
 namespace OnlineShop.Controllers
 {
-    
+
     public class GarmentController : BaseController
     {
         private readonly IGarmentService service;
@@ -88,32 +86,20 @@ namespace OnlineShop.Controllers
         /// <param name="garmentId"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> AddToCart(int sizeId, int garmentId)
+        public async Task<IActionResult> AddToCart(GarmentSizeViewModel model,int garmentId)
         {
-            if (sizeId == null || garmentId == null)
+            model.GarmentId=garmentId;
+            model.Price = service.GetPriceByGarmentId(garmentId);
+            if (model!=null)
             {
-
-                return RedirectToAction("Index", "Home");
+                if (model.SizeId>0&&model.GarmentId>0)
+                {
+                    var cart = new CartViewModel();
+                    cart.Garments.Add(model);
+                    return RedirectToAction("Cart","Order",cart );
+                }
             }
-           var model = await garmentSizeService.AddGarmentToCart(sizeId, garmentId);
-
-           var viewModel = new GarmentSizeViewModel()
-           {
-               GarmentId = model.GarmentId,
-               SizeName = model.Size.Name
-           };
-
-            var notFinalizedOrder = new OrderDetailModel()
-            {
-                UserId = ClaimsPrincipalExtentions.Id(this.User),
-                UserName = User.Identity.Name,
-                
-                Garments = new List<GarmentSizeViewModel>()
-               {
-                   viewModel
-               }
-           };
-            return RedirectToAction("Cart", "Order",notFinalizedOrder);
+            return View();
         }
 
 
