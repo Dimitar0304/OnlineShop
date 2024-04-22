@@ -1,15 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.Extensions.Logging;
-using OnlineShop.Core.Contracts;
+﻿using OnlineShop.Core.Contracts;
 using OnlineShop.Core.Services.AccessoryService;
 using OnlineShop.Core.Services.BrandService;
 using OnlineShop.Core.Services.Contracts;
-using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Core.Services.GarmentService;
 using OnlineShop.Core.Services.OrderService;
 using OnlineShop.Core.Services.ShoeService;
 using OnlineShop.Infrastructure.Common;
-using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Services.Contracts;
 using OnlineShop.Services.GarmentService;
 
@@ -25,8 +21,7 @@ namespace OnlineShop.Extentions
             //Add role service
             //builder.Services.AddTransient<IRoleService, RoleService>();
 
-            //Add email sender service
-            services.AddTransient<IEmailSender, EmailSenderService>();
+            
 
             //Add shoe service
             services.AddScoped<IShoeService, ShoeService>();

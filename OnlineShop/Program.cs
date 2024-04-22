@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OnlineShop.Core.Services.EmailSender;
 using OnlineShop.Extentions;
 using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Data.Models;
@@ -15,7 +14,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
+
 
 
 

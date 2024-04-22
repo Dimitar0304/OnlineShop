@@ -7,11 +7,6 @@ using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Brand;
 using OnlineShop.Models.Garment;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineShop.Core.Services.BrandService
 {
@@ -121,7 +116,7 @@ namespace OnlineShop.Core.Services.BrandService
                     return new List<ClothesViewModel>();
                 }
             }
-            return null;
+            return clothes;
         }
 
         public async Task<List<GarmentViewModel>> GetGarmentsForCurrentBrand(int brandId)

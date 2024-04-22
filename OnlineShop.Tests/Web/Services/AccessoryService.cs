@@ -1,18 +1,10 @@
 ﻿using NUnit.Framework;
 using OnlineShop.Core.Models.Accessory;
-using OnlineShop.Core.Services.AccessoryService;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Common;
-using OnlineShop.Models.Garment;
-using OnlineShop.Services.Contracts;
 using OnlineShop.Tests.Common;
 using OnlineShop.Tests.Mocks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineShop.Tests.Web.Services
 {
