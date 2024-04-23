@@ -8,15 +8,19 @@ namespace OnlineShop.Controllers
     public class OrderController : BaseController
     {
         private readonly IOrderService orderService;
-        public OrderController(IOrderService _orderService)
+        private readonly IHttpContextAccessor context;
+        public OrderController(IOrderService _orderService, IHttpContextAccessor context)
         {
             orderService = _orderService;
+            this.context = context;
+
         }
-        public async  Task<IActionResult> Cart(CartViewModel model)
+        public async  Task<IActionResult> Cart(CartViewModel context)
         {
-            if (model!=null)
+            //var model = context.HttpContext.Items["Cart"] as CartViewModel;
+            if (context!=null)
             {
-                return View(model);
+                return View(context);
             }
             return RedirectToAction("Index","Home",new {Area=""});
         }

@@ -21,6 +21,9 @@ namespace OnlineShop.Extentions
             //Add role service
             //builder.Services.AddTransient<IRoleService, RoleService>();
 
+
+            //Add HttpContext
+            services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
             
 
             //Add shoe service

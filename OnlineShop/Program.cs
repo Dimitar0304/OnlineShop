@@ -62,7 +62,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
 
-    app.UseStatusCodePagesWithReExecute("/Error/{0}");
+    app.UseStatusCodePagesWithRedirects("/Error/{0}");
 
 }
 else

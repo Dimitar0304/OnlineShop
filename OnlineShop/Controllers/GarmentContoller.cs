@@ -11,6 +11,7 @@ using OnlineShop.Services.Contracts;
 using Syncfusion.EJ2.Linq;
 using System.Security.Claims;
 
+
 namespace OnlineShop.Controllers
 {
 
@@ -18,10 +19,12 @@ namespace OnlineShop.Controllers
     {
         private readonly IGarmentService service;
         private readonly IGarmentSizeService garmentSizeService;
-        public GarmentController(IGarmentService _service, IGarmentSizeService _garmentSizeService)
+        private readonly IHttpContextAccessor context;
+        public GarmentController(IGarmentService _service, IGarmentSizeService _garmentSizeService, IHttpContextAccessor context)
         {
             service = _service;
             garmentSizeService = _garmentSizeService;
+            this.context = context;
         }
 
         /// <summary>
@@ -96,7 +99,12 @@ namespace OnlineShop.Controllers
                 {
                     var cart = new CartViewModel();
                     cart.Garments.Add(model);
-                    return RedirectToAction("Cart","Order",cart );
+                   context.HttpContext.Items.Add("Cart",cart) ;
+                    var res = new RouteValueDictionary();
+                    res.Add("Cart", context.HttpContext.Items["Cart"]);
+
+                   
+                    return RedirectToAction("Cart", "Order", res);
                 }
             }
             return View();
@@ -110,11 +118,12 @@ namespace OnlineShop.Controllers
         /// <param name="information"></param>
         /// <returns></returns>
         [HttpPost]
+        
         public async Task<IActionResult> Details(int id, string information)
         {
             if (await service.GetByIdAsync(id) == null)
             {
-                return BadRequest();
+                return RedirectToAction("Error","500");
             }
             var entity = await service.GetByIdAsync(id);
             if (entity == null)
@@ -133,7 +142,7 @@ namespace OnlineShop.Controllers
             };
             if (information != model.GetInformation())
             {
-                return BadRequest();
+                return RedirectToAction("Error", "500");
             }
             return View(model);
         }

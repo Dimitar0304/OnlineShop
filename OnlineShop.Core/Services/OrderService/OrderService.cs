@@ -3,12 +3,6 @@ using OnlineShop.Core.Contracts;
 using OnlineShop.Core.Models.Order;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Infrastructure.Data.Models;
-using SendGrid.Helpers.Errors.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineShop.Core.Services.OrderService
 {

@@ -2,7 +2,7 @@
 using OnlineShop.Services.Contracts;
 using OnlineShop.Validations;
 
-namespace OnlineShop.Services.RoleService
+namespace OnlineShop.Core.Services.RoleService
 {
     /// <summary>
     /// App Roles Service
@@ -55,23 +55,23 @@ namespace OnlineShop.Services.RoleService
 
                 if (user == null)
                 {
-                   throw new ArgumentNullException(nameof(userId));
+                    throw new ArgumentNullException(nameof(userId));
                 }
                 //check role exist
 
                 if (!await roleManager.RoleExistsAsync(roleName))
                 {
-                   throw new ArgumentNullException();
+                    throw new ArgumentNullException();
                 }
                 //check currentUser is in currentRole
 
-                if (await userManager.IsInRoleAsync(user,roleName))
+                if (await userManager.IsInRoleAsync(user, roleName))
                 {
                     throw new ArgumentException(ErrorMessages.UserIsInThatRoleError);
                 }
                 //best case if all is right and add the role to user
 
-               await userManager.AddToRoleAsync(user, roleName);
+                await userManager.AddToRoleAsync(user, roleName);
             }
         }
     }
