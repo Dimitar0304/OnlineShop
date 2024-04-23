@@ -1,20 +1,11 @@
-﻿using Microsoft.AspNetCore.Http.Metadata;
-using Microsoft.AspNetCore.Mvc;
-using Moq;
+﻿using Moq;
 using NUnit.Framework;
 using OnlineShop.Controllers;
 using OnlineShop.Core.Models.AllClothes;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Services.Contracts;
-using OnlineShop.Services.GarmentService;
 using OnlineShop.Tests.Common;
 using OnlineShop.Tests.Mocks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace OnlineShop.Tests.Web.Controllers
 {

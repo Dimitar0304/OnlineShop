@@ -42,20 +42,15 @@ namespace OnlineShop.Core.Services.RoleService
         /// <exception cref="ArgumentException"></exception>
         public async Task AddUserToRole(string userId, string roleName)
         {
-            if (userId == null || roleName == null)
+            if (userId != null || roleName != null)
             {
-                //throw exp
-
-                throw new ArgumentNullException();
-            }
-            else
-            {
+               
                 var user = await userManager.FindByIdAsync(userId);
                 //check user exist
 
                 if (user == null)
                 {
-                    throw new ArgumentNullException(nameof(userId));
+                    throw new ArgumentNullException();
                 }
                 //check role exist
 
@@ -73,6 +68,8 @@ namespace OnlineShop.Core.Services.RoleService
 
                 await userManager.AddToRoleAsync(user, roleName);
             }
+            
+            
         }
     }
 }

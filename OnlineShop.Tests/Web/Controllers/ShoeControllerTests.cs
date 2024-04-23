@@ -19,7 +19,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void ControllerShoudBeOnlyForAuthorizedUsers()
         {
             //Arrange
-            var controller = new ShoeController(null, null);
+            var controller = new ShoeController(null);
 
             //Act
             var atrributes = controller.GetType().GetCustomAttributes(true);
@@ -32,7 +32,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void AllMethodWithShoesShoudReturnAllViewWithShoes()
         {
             //Arrange
-            var controller = new ShoeController(service, null);
+            var controller = new ShoeController(service);
 
             //Act
             var result = controller.All(1);
@@ -55,7 +55,7 @@ namespace OnlineShop.Tests.Web.Controllers
 
                 });
 
-            var controller = new ShoeController(emptyService.Object,null);
+            var controller = new ShoeController(emptyService.Object);
 
             //Act
             var result = controller.All(1).Result as RedirectToActionResult;
@@ -69,7 +69,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void DetailsMethodShoudReturnInfoForCurrentShoe()
         {
             //Arrange
-            var controller = new ShoeController(service, null);
+            var controller = new ShoeController(service);
 
             //Act
             var result = controller.Details(1, "ShoeTestNameNike").Result as ViewResult;
@@ -84,7 +84,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void DetailsMethodWithWrongRootElmentsForInformationShouldReturnBadRequest()
         {
             //Arrange
-            var controller = new ShoeController(service, null);
+            var controller = new ShoeController(service);
 
             //Act
             var result = controller.Details(1, "WrongInformation").Result as ActionResult;
@@ -97,7 +97,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void DetailsMethodWithWrongIdShoudReturnBadRequest()
         {
             //Arrange
-            var controller = new ShoeController(service, null);
+            var controller = new ShoeController(service);
 
             //Act
             var result = controller.Details(4444, "ShoeTestNameNike").Result as ActionResult;

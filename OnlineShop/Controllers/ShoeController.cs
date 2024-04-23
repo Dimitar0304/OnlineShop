@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Shoe;
 using OnlineShop.Core.Services.Contracts;
 
 namespace OnlineShop.Controllers
 {
-    
+
     /// <summary>
     /// Shoe contoller class
     /// </summary>
@@ -16,11 +15,11 @@ namespace OnlineShop.Controllers
         /// Inject service using dependency injection
         /// </summary>
         private readonly IShoeService service;
-        private readonly IShoeSizeService shoeSizeService;
-        public ShoeController(IShoeService _service, IShoeSizeService _shoeSizeService)
+       
+        public ShoeController(IShoeService _service)
         {
             service = _service;
-            shoeSizeService = _shoeSizeService;
+            
         }
 
         /// <summary>

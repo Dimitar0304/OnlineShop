@@ -1,15 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Extentions;
-using OnlineShop.Core.Models.Cart;
 using OnlineShop.Core.Models.Garment;
-using OnlineShop.Core.Models.Order;
-using OnlineShop.Core.Services.Contracts;
-using OnlineShop.Extentions;
-using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 using Syncfusion.EJ2.Linq;
-using System.Security.Claims;
 
 
 namespace OnlineShop.Controllers
@@ -18,12 +12,12 @@ namespace OnlineShop.Controllers
     public class GarmentController : BaseController
     {
         private readonly IGarmentService service;
-        private readonly IGarmentSizeService garmentSizeService;
+        
         private readonly IHttpContextAccessor context;
-        public GarmentController(IGarmentService _service, IGarmentSizeService _garmentSizeService, IHttpContextAccessor context)
+        public GarmentController(IGarmentService _service, IHttpContextAccessor context)
         {
             service = _service;
-            garmentSizeService = _garmentSizeService;
+            
             this.context = context;
         }
 
@@ -66,51 +60,6 @@ namespace OnlineShop.Controllers
 
         }
         
-        /// <summary>
-        /// Method for pick size to current garment
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<IActionResult> PickSize(int id)
-        {
-            var model = new GarmentSizeViewModel();
-            model.Sizes = await service.GetSizes();
-            model.GarmentId = id;
-
-            return View(model);
-
-        }
-
-        /// <summary>
-        /// Method for add current garmentSize model to user cart
-        /// </summary>
-        /// <param name="sizeId"></param>
-        /// <param name="garmentId"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<IActionResult> AddToCart(GarmentSizeViewModel model,int garmentId)
-        {
-            model.GarmentId=garmentId;
-            model.Price = service.GetPriceByGarmentId(garmentId);
-            if (model!=null)
-            {
-                if (model.SizeId>0&&model.GarmentId>0)
-                {
-                    var cart = new CartViewModel();
-                    cart.Garments.Add(model);
-                   context.HttpContext.Items.Add("Cart",cart) ;
-                    var res = new RouteValueDictionary();
-                    res.Add("Cart", context.HttpContext.Items["Cart"]);
-
-                   
-                    return RedirectToAction("Cart", "Order", res);
-                }
-            }
-            return View();
-        }
-
-
         /// <summary>
         /// Method for show details to current garment
         /// </summary>

@@ -3,11 +3,9 @@ using OnlineShop.Core.Services.AccessoryService;
 using OnlineShop.Core.Services.BrandService;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Core.Services.GarmentService;
-using OnlineShop.Core.Services.OrderService;
 using OnlineShop.Core.Services.ShoeService;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Services.Contracts;
-using OnlineShop.Services.GarmentService;
 
 namespace OnlineShop.Extentions
 {
@@ -32,17 +30,12 @@ namespace OnlineShop.Extentions
             //Add repository
             services.AddScoped<IRepository, Repository>();
 
-            //Add garmentSize service
-            services.AddScoped<IGarmentSizeService, GarmentSizeService>();
-
-            //Add shoeSize service
-            services.AddScoped<IShoeSizeService, ShoeSizeService>();
+           
 
             //Add accessory service
             services.AddScoped<IAccessoryService, AccessoryService>();
 
-            //Add order service
-            services.AddScoped<IOrderService,OrderService>();
+           
 
             //Add Brand service
             services.AddScoped<IBrandService,BrandService>();

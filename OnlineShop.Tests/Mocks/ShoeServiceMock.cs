@@ -1,8 +1,6 @@
 ﻿using Moq;
 using OnlineShop.Core.Models.Type;
 using OnlineShop.Core.Services.Contracts;
-using OnlineShop.Services.Contracts;
-using OnlineShop.Services.GarmentService;
 using OnlineShop.Tests.Common;
 
 namespace OnlineShop.Tests.Mocks

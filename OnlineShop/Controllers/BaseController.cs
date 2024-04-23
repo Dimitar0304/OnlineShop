@@ -7,7 +7,7 @@ namespace OnlineShop.Controllers
     [Microsoft.AspNetCore.Authorization.Authorize]
     [AutoValidateAntiforgeryToken]
     [HandleError]
-    public class BaseController: Microsoft.AspNetCore.Mvc.Controller
+    public abstract class BaseController: Microsoft.AspNetCore.Mvc.Controller
     {
     }
 }

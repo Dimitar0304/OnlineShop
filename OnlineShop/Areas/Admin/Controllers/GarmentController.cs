@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Extentions;
-using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 
@@ -9,11 +8,11 @@ namespace OnlineShop.Areas.Admin.Controllers
     public class GarmentController:BaseAdminController
     {
         private readonly IGarmentService service;
-        private readonly IGarmentSizeService garmentSizeService;
-        public GarmentController(IGarmentService _service, IGarmentSizeService _garmentSizeService)
+        
+        public GarmentController(IGarmentService _service)
         {
             service = _service;
-            garmentSizeService = _garmentSizeService;
+            
         }
         public async Task<IActionResult> Add()
         {
@@ -49,8 +48,6 @@ namespace OnlineShop.Areas.Admin.Controllers
                 //Get identifier of last added garment
                 var lastAddedGarmentId = service.GetAllGarmentsAsync().Result.Last().Id;
 
-                //Add garmentSize models with last added garment in db
-                await garmentSizeService.AddGarmentWithSizes(lastAddedGarmentId);
                 //return view
                 return RedirectToAction("All", "Garment", new { area = "" });
             }

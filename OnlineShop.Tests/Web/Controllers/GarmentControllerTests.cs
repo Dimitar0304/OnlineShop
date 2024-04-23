@@ -21,7 +21,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void ControllerShouldBeOnlyForAuthorizedUsersOnly()
         {
             //Arrange
-            var controller = new GarmentController(null, null,null);
+            var controller = new GarmentController(null,null);
 
             //Act
             var attributes = controller.GetType().GetCustomAttributes(true);
@@ -35,7 +35,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void AllMethodWithObjectsShouldCompletlySuccsesfully()
         {
             //Arrange
-            var controller = new GarmentController(service, null,null);
+            var controller = new GarmentController(service, null);
 
             //Act
             var result = controller.All(1);
@@ -51,7 +51,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void DetailsMethodShouldReturnAcionWithModel()
         {
             //Arrange
-            var controller = new GarmentController(service, null,null);
+            var controller = new GarmentController(service, null);
 
             //Act
             var result = controller.Details(1, "GarmentTestNameNike");
@@ -68,7 +68,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void DetailsMethodWithWrongInformationMustThrowError()
         {
             //Arrange
-            var controller = new GarmentController(service, null,null);
+            var controller = new GarmentController(service,null);
 
             //Act
             var result = controller.Details(1, "SomethingWrong").Result as ActionResult ;
@@ -83,7 +83,7 @@ namespace OnlineShop.Tests.Web.Controllers
         public void DetailsMethodWithWrongIdShoudReturnBadRequest()
         {
             //Arrange
-            var controller = new GarmentController(service, null,null);
+            var controller = new GarmentController(service,null);
 
             //Act
             var result = controller.Details(4444, "GarmentTestNameNike").Result as ActionResult;
@@ -103,7 +103,7 @@ namespace OnlineShop.Tests.Web.Controllers
             emptyService.Setup(s => s.GetAllGarmentsAsync())
                 .ReturnsAsync(new List<Models.Garment.GarmentViewModel>());
 
-            var controller = new GarmentController(emptyService.Object,null,null);
+            var controller = new GarmentController(emptyService.Object,null);
 
             //Act
             var result = controller.All(1).Result as RedirectToActionResult;

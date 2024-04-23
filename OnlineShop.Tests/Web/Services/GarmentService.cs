@@ -1,15 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Moq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Common;
-using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
-using OnlineShop.Services.GarmentService;
 using OnlineShop.Tests.Common;
 using OnlineShop.Tests.Mocks;
-using System.Linq;
 using System.Linq.Dynamic.Core;
 
 namespace OnlineShop.Tests.Web.Services
@@ -29,7 +24,7 @@ namespace OnlineShop.Tests.Web.Services
            
             IRepository repository = new Infrastructure.Common.Repository(context);
            
-            garmentService = new OnlineShop.Services.GarmentService.GarmentService(repository);
+            garmentService = new OnlineShop.Core.Services.GarmentService.GarmentService(repository);
         }
         [Test]
         public void GetByIdMethodWithWrongDataReturnsNull()

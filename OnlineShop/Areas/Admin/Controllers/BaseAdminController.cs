@@ -8,7 +8,7 @@ namespace OnlineShop.Areas.Admin.Controllers
     [Area(DataConstants.AdminConstants.AdminRoleName)]
     [Authorize(Roles =DataConstants.AdminConstants.AreaName)]
     [AutoValidateAntiforgeryToken]
-    public  class BaseAdminController:Controller
+    public abstract  class BaseAdminController:Controller
     {
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Tests.Common;
@@ -12,10 +13,12 @@ namespace OnlineShop.Tests.Mocks
 {
     public static class DatabaseMock
     {
+ 
         public static ApplicationDbContext Instance
         {
             get
             {
+                var hasher = new PasswordHasher<User>();
                 var dbContextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
                     
                     .UseInMemoryDatabase(Guid.NewGuid().ToString())
@@ -90,6 +93,34 @@ namespace OnlineShop.Tests.Mocks
                     
                 });
                 db.SaveChangesAsync();
+
+                //Seed User
+                var user = new User()
+                {
+                    EmailConfirmed = true,
+                    RegistrationDate = DateTime.Now,
+                    FirstName = "Test",
+                    LastName = "Test",
+                    Id = "a9cffa0c-1389-4bd3-abf5-43384a5df48a",
+                    Email = "Test@abv.bg",
+                    UserName = "TestTestov",
+                    NormalizedUserName = "TESTTESTOV",
+                    NormalizedEmail = "TEST@ABV.BG"
+
+                };
+                user.PasswordHash = hasher.HashPassword(user, "Test4eee");
+
+                db.Users.Add(user);
+                db.SaveChanges();
+
+                db.Roles.Add(new IdentityRole()
+                {
+                    Id = "2c2a8bff-989e-4483-8094-338613b2ae3a",
+                    Name = "Admin",
+                    NormalizedName = "ADMIN"
+
+                });
+                db.SaveChanges();
 
                 db.ShoesTypes.Add(new ShoeType()
                 {

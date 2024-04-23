@@ -9,7 +9,7 @@ using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 using X.PagedList;
 
-namespace OnlineShop.Services.GarmentService
+namespace OnlineShop.Core.Services.GarmentService
 {
     /// <summary>
     /// Garment service

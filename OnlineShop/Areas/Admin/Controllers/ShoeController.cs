@@ -11,11 +11,11 @@ namespace OnlineShop.Areas.Admin.Controllers
         /// Inject service using dependency injection
         /// </summary>
         private readonly IShoeService service;
-        private readonly IShoeSizeService shoeSizeService;
-        public ShoeController(IShoeService _service, IShoeSizeService _shoeSizeService)
+        
+        public ShoeController(IShoeService _service)
         {
             service = _service;
-            shoeSizeService = _shoeSizeService;
+            
         }
 
         /// <summary>
@@ -53,8 +53,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                 //get last shoe added identitfier
                 var shoeId = service.GetAllShoeAsync().Result.Last().Id;
 
-                //add for each  size shoesize model in db
-                await shoeSizeService.AddShoeSizeModels(shoeId);
+               
 
                 //return to all shoes view
                 return RedirectToAction("All","Shoe", new { area = "" });
