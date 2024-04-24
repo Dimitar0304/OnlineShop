@@ -16,8 +16,7 @@ namespace OnlineShop.Extentions
             //Add Garment Service
             services.AddScoped<IGarmentService, GarmentService>();
 
-            //Add role service
-            //builder.Services.AddTransient<IRoleService, RoleService>();
+           
 
 
             //Add HttpContext
