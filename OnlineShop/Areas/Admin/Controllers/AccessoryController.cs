@@ -36,6 +36,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         public async Task<IActionResult> Add(AccessoryAddViewModel model)
         {
@@ -108,6 +109,7 @@ namespace OnlineShop.Areas.Admin.Controllers
 
             return View("Edit", model);
         }
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         public async Task<IActionResult> Edit(AccessoryAddViewModel model)
         {

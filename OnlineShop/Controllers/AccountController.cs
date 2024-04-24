@@ -32,6 +32,7 @@ namespace OnlineShop.Controllers
 
             return View();
         }
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginFormModel model, string? returnUrl = null)
@@ -73,7 +74,7 @@ namespace OnlineShop.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
-
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> RegisterUser(RegisterUserFormModel model, string? returnUrl = null)
@@ -114,6 +115,9 @@ namespace OnlineShop.Controllers
         {
             return View();
         }
+        
+
+
         [HttpPost]
 
         public async Task<IActionResult> Logout()

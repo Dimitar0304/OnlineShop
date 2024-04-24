@@ -21,6 +21,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             model.Types = await service.GetTypes();
             return View(model);
         }
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
        
         public async Task<IActionResult> Add(GarmentViewModel model)
@@ -78,6 +79,7 @@ namespace OnlineShop.Areas.Admin.Controllers
 
             return View("Edit", model);
         }
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         public async Task<IActionResult> Edit(GarmentViewModel model)
         {

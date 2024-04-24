@@ -30,6 +30,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             model.Types = service.GetTypes();
             return View(model);
         }
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         public async Task<IActionResult> Add(ShoeAddViewModel model)
         {
@@ -107,6 +108,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(model);
         }
 
+        [AutoValidateAntiforgeryToken]
         [HttpPost]
         public async Task<IActionResult> Edit(ShoeAddViewModel model)
         {
