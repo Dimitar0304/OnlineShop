@@ -52,14 +52,14 @@ namespace OnlineShop.Infrastructure.Migrations
                         new
                         {
                             Id = "f05308b9-55ff-4b20-8e57-9a2b89573525",
-                            ConcurrencyStamp = "500c941c-5ff1-4c45-88eb-63c4e48c323c",
+                            ConcurrencyStamp = "6d64c409-7334-43fc-93a0-3d8178a6666e",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "322a7bf2-124a-4ce7-bdf8-43eba64446b5",
-                            ConcurrencyStamp = "6aee476c-07c6-4f89-a6f9-e4c604d25705",
+                            ConcurrencyStamp = "b37886a6-2e7b-491d-92dd-bc409566a655",
                             Name = "User",
                             NormalizedName = "User"
                         });
@@ -150,6 +150,13 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "250f8800-ede3-4210-a8d0-8a0353a67e24",
+                            RoleId = "f05308b9-55ff-4b20-8e57-9a2b89573525"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -808,7 +815,7 @@ namespace OnlineShop.Infrastructure.Migrations
                         {
                             Id = "bb77b48a-3afa-4050-8b2e-1847bbe5413b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "be409ee6-7ef8-4412-a652-d0b8b0671c0c",
+                            ConcurrencyStamp = "a9a820d3-68d5-43b3-a438-44d66cf52d5c",
                             Email = "JustUser@mail.com",
                             EmailConfirmed = true,
                             FirstName = "Just",
@@ -816,10 +823,10 @@ namespace OnlineShop.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JUSTUSER@mail.com",
                             NormalizedUserName = "JUSTUSER4E",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJCNYNJIybIiuphs/SOer0MMRS8kBy8sjZpnhmYic/KtZ90AfOH830hboLANHJOrqg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAw5U3w9GMCLIs+5U3ihiMHNkCanP/dq1EHezMH0CBBsmUeacqaOhZnmcujHRG5Xkw==",
                             PhoneNumberConfirmed = false,
-                            RegistrationDate = new DateTime(2024, 4, 22, 17, 36, 37, 395, DateTimeKind.Local).AddTicks(4794),
-                            SecurityStamp = "92b53c6e-59a9-4da4-af23-f57efb80d4d4",
+                            RegistrationDate = new DateTime(2024, 4, 25, 0, 34, 18, 50, DateTimeKind.Local).AddTicks(9792),
+                            SecurityStamp = "d3c81a33-36c2-491f-9ccc-11007ffaf383",
                             TwoFactorEnabled = false,
                             UserName = "JustUser4e"
                         },
@@ -827,7 +834,7 @@ namespace OnlineShop.Infrastructure.Migrations
                         {
                             Id = "250f8800-ede3-4210-a8d0-8a0353a67e24",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7632a229-2583-4765-ba6e-c445abb7e5f2",
+                            ConcurrencyStamp = "273bcc51-958b-4261-81aa-6ed4b9c9e26c",
                             Email = "JustAdmin@mail.com",
                             EmailConfirmed = true,
                             FirstName = "Just",
@@ -835,10 +842,10 @@ namespace OnlineShop.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JUSTADMIN@mail.com",
                             NormalizedUserName = "JUSTADMIN4E",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN0j7w0Uc/ZYYUnu4pvuGtq3snUS1JFXvyItMbGdZyBDQRnOFG/9i5ZPdAtft5wGzg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIYsrhi2VPfmbX+NnWTcZ+LQARJFVIYKMRiFqol86l7MxJ8C0dLq2RzIWFogW4YNnw==",
                             PhoneNumberConfirmed = false,
-                            RegistrationDate = new DateTime(2024, 4, 22, 17, 36, 37, 397, DateTimeKind.Local).AddTicks(1221),
-                            SecurityStamp = "172b9f4d-f4ee-4f42-a658-04e584742a0f",
+                            RegistrationDate = new DateTime(2024, 4, 25, 0, 34, 18, 52, DateTimeKind.Local).AddTicks(3486),
+                            SecurityStamp = "5300dc8c-b22e-45a6-a823-2a772aadf1ea",
                             TwoFactorEnabled = false,
                             UserName = "JustAdmin4e"
                         });

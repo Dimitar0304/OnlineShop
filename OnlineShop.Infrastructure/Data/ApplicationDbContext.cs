@@ -123,10 +123,16 @@ namespace OnlineShop.Infrastructure
             //Seed Shoe 
             builder.ApplyConfiguration(new ShoeConfiguration());
 
-            
+            builder.Entity<IdentityUserRole<string>>()
+                .HasData(new IdentityUserRole<string>()
+                {
+                    RoleId = "f05308b9-55ff-4b20-8e57-9a2b89573525",
+                    UserId = "250f8800-ede3-4210-a8d0-8a0353a67e24"
+                });
 
             //Seed Accessories
             builder.ApplyConfiguration(new AccessoryConfiguration());
+
 
             base.OnModelCreating(builder);
         }

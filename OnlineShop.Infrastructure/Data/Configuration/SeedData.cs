@@ -25,6 +25,8 @@ namespace OnlineShop.Infrastructure.Data.Configuration
         public IdentityRole User { get; set; }
         public IdentityRole Admin { get; set; }
 
+        
+
         public List<GarmentSize> GarmentSizes { get; set; } = new List<GarmentSize>();
 
         public List<ShoeSize> ShoeSizes { get; set; } = new List<ShoeSize>();
@@ -83,6 +85,7 @@ namespace OnlineShop.Infrastructure.Data.Configuration
             };
             justAdmin.PasswordHash = hasher.HashPassword(justAdmin, "Admin123");
         }
+
 
         private void SeedGarments()
         {
