@@ -25,6 +25,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //Adding session options
 builder.Services.ConfigureApplicationCookie(o =>
 {
+    //http only for protect of scripts
+    o.Cookie.HttpOnly = true;
     o.ExpireTimeSpan = TimeSpan.FromDays(5);
     o.SlidingExpiration = true;
 });
@@ -78,6 +80,7 @@ app.UseStaticFiles();
 
 //Session option functionality
 app.UseSession();
+
 app.UseResponseCompression();
 
 app.UseRouting();

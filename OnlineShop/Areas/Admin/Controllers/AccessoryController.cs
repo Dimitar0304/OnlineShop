@@ -55,6 +55,12 @@ namespace OnlineShop.Areas.Admin.Controllers
             }
             else
             {
+                if (model.ImageUrl.Contains("<script>"))
+                {
+                    ModelState.AddModelError("Error", "");
+                    model.Brands = await service.GetBrands();
+                    return View(model);
+                }
                 await service.AddAccessoryToDbAsync(model);
                 var models = await service.GetAllAccessoryAsync();
                 return RedirectToAction("All","Accessory", new { area = "" });
@@ -113,6 +119,12 @@ namespace OnlineShop.Areas.Admin.Controllers
             {
                 model.Brands = await service.GetBrands();
                 
+                return View(model);
+            }
+            if (model.ImageUrl.Contains("<script>"))
+            {
+                ModelState.AddModelError("Error", "");
+                model.Brands = await service.GetBrands();
                 return View(model);
             }
             await service.UpdateAccessoryToDbAsync(model);

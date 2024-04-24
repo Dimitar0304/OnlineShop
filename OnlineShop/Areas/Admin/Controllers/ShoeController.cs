@@ -47,6 +47,13 @@ namespace OnlineShop.Areas.Admin.Controllers
             }
             else
             {
+                if (model.ImageUrl.Contains("<script>"))
+                {
+                    ModelState.AddModelError("Error", "");
+                    model.Brands =  service.GetBrands();
+                    model.Types = service.GetTypes();
+                    return View(model);
+                }
                 //add shoe to db
                 await service.AddShoeToDbAsync(model);
 
@@ -112,6 +119,13 @@ namespace OnlineShop.Areas.Admin.Controllers
                 model.Brands = service.GetBrands();
                 model.Types = service.GetTypes();
 
+                return View(model);
+            }
+            if (model.ImageUrl.Contains("<script>"))
+            {
+                ModelState.AddModelError("Error", "");
+                model.Brands = service.GetBrands();
+                model.Types = service.GetTypes();
                 return View(model);
             }
             await service.UpdateShoeToDbAsync(model);
