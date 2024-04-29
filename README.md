@@ -7,6 +7,7 @@ This application is  project assessment for Asp .NET MVC Advanced-February 2024 
 Getting Started
 </h2>
 Just download or clone the repository and run it in Visual Studio on your local machine. <br>
+See the seedeed Users in OnlineShop.Infrastructure.Configuration.SeedDb and login with seeded Admin for admin funcitonaities<br>
 <hr class="hr" />
 
 <h3>  
