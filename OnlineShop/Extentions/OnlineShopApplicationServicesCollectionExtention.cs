@@ -16,25 +16,20 @@ namespace OnlineShop.Extentions
             //Add Garment Service
             services.AddScoped<IGarmentService, GarmentService>();
 
-           
-
+            //Add garment size service
+            services.AddScoped<IGarmentSizeService, GarmentSizeService>();
 
             //Add HttpContext
             services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
             
-
             //Add shoe service
             services.AddScoped<IShoeService, ShoeService>();
 
             //Add repository
             services.AddScoped<IRepository, Repository>();
 
-           
-
             //Add accessory service
             services.AddScoped<IAccessoryService, AccessoryService>();
-
-           
 
             //Add Brand service
             services.AddScoped<IBrandService,BrandService>();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Core.Contracts;
 using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Garment;
 using OnlineShop.Models.Garment;
@@ -12,12 +13,14 @@ namespace OnlineShop.Controllers
     public class GarmentController : BaseController
     {
         private readonly IGarmentService service;
+        private readonly IGarmentSizeService garmentSizeService;
         
         private readonly IHttpContextAccessor context;
-        public GarmentController(IGarmentService _service, IHttpContextAccessor context)
+        public GarmentController(IGarmentService _service, IHttpContextAccessor context,
+            IGarmentSizeService _garmentSizeService)
         {
             service = _service;
-            
+            garmentSizeService = _garmentSizeService;
             this.context = context;
         }
 
@@ -95,7 +98,11 @@ namespace OnlineShop.Controllers
             }
             return View(model);
         }
-
+        [HttpPost]
+        public async Task<IActionResult> PickSize(int garmentId)
+        {
+            
+        }
       
     }
 }
