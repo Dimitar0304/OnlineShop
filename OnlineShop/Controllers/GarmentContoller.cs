@@ -2,6 +2,8 @@
 using OnlineShop.Core.Contracts;
 using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Garment;
+using OnlineShop.Core.Models.Size;
+using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
 using Syncfusion.EJ2.Linq;
@@ -70,7 +72,6 @@ namespace OnlineShop.Controllers
         /// <param name="information"></param>
         /// <returns></returns>
         [HttpPost]
-        
         public async Task<IActionResult> Details(int id, string information)
         {
             if (await service.GetByIdAsync(id) == null)
@@ -101,8 +102,27 @@ namespace OnlineShop.Controllers
         [HttpPost]
         public async Task<IActionResult> PickSize(int garmentId)
         {
-            
+            var g =garmentSizeService.GetAllGarments().Result.Where(g => g.GarmentId == garmentId);
+
+            var sizes =   g.Select(gs => new SizeViewModel()
+            {
+                Id = gs.SizeId,
+                Name = gs.Size.Name
+            }).ToList();
+
+            return View(sizes);
         }
-      
+        [HttpGet]
+        public async Task<IActionResult> PickSize(int garmentId, int sizeId)
+        {
+            var model = new GarmentSize()
+            {
+                GarmentId = garmentId,
+                SizeId = sizeId,
+               
+            };
+
+            return RedirectToAction("Index", "Home", new { area = " " });
+        }
     }
 }

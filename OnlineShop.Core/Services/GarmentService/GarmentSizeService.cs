@@ -8,12 +8,12 @@ namespace OnlineShop.Core.Services.GarmentService
 {
     public class GarmentSizeService : IGarmentSizeService
     {
-        private readonly HttpContextAccessor context;
+       
         private readonly IRepository repository;
-        public GarmentSizeService(HttpContextAccessor _context,IRepository _repository)
+        public GarmentSizeService(IRepository _repository)
         {
             repository = _repository;
-            context= _context;
+           
         }
         public Task AddGarmentToCart(GarmentSize model)
         {
@@ -22,7 +22,7 @@ namespace OnlineShop.Core.Services.GarmentService
 
         public async Task<List<GarmentSize>> GetAllGarments()
         {
-            return await repository.All<GarmentSize>().ToListAsync();
+            return await repository.All<GarmentSize>().Include(s=>s.Size).ToListAsync();
         }
     }
 }
