@@ -1,36 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnlineShop.Core.Models.CartItem;
 
-namespace OnlineShop.Core.Models.Cart
+
+
+
+namespace OnlineShop.Core.Models.Cart;
+public class ShoppingCart
 {
-    public class ShoppingCart
+    public List<CartItem.CartItem> Items { get; set; } = new List<CartItem.CartItem>();
+
+    public void AddItem(Product.Product product, int quantity)
     {
-        public List<CartItem> Items { get; set; } = new List<CartItem>();
-
-        public void AddItem(Product product, int quantity)
+        var existingItem = Items.FirstOrDefault(i => i.Product.Name == product.Name);
+        if (existingItem != null)
         {
-            var existingItem = Items.FirstOrDefault(i => i.Product.ProductId == product.ProductId);
-            if (existingItem != null)
-            {
-                existingItem.Quantity += quantity;
-            }
-            else
-            {
-                Items.Add(new CartItem { Product = product, Quantity = quantity });
-            }
+            existingItem.Quantity += quantity;
         }
-
-        public void RemoveItem(int productId)
+        else
         {
-            Items.RemoveAll(i => i.Product.ProductId == productId);
+            Items.Add(new CartItem.CartItem { Product = product, Quantity = quantity });
         }
+    }
 
-        public decimal GetTotal()
-        {
-            return Items.Sum(i => i.Product.Price * i.Quantity);
-        }
+    public void RemoveItem(string productName)
+    {
+        Items.RemoveAll(i => i.Product.Name == productName);
+    }
+
+    public decimal GetTotal()
+    {
+        return Items.Sum(i => i.Product.Price * i.Quantity);
     }
 }
