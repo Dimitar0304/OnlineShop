@@ -4,6 +4,7 @@ using OnlineShop.Core.Services.BrandService;
 using OnlineShop.Core.Services.Contracts;
 using OnlineShop.Core.Services.GarmentService;
 using OnlineShop.Core.Services.ShoeService;
+using OnlineShop.Core.Services.ShoppingCartService;
 using OnlineShop.Infrastructure.Common;
 using OnlineShop.Services.Contracts;
 
@@ -27,6 +28,9 @@ namespace OnlineShop.Extentions
 
             //Add repository
             services.AddScoped<IRepository, Repository>();
+
+            //Add Shopping Cart service
+            services.AddScoped<IShoppingCartService, ShoppingCartService>();
 
             //Add accessory service
             services.AddScoped<IAccessoryService, AccessoryService>();

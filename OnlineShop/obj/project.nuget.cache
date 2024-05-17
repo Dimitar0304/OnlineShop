@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vb301Czrqt+cdspICrdlz6EgDUf7ejvX7fv5wexXv9t768CgqL0rmaXDUF1sD5Grci5ssshuvSCYcr4gFUTHFA==",
+  "dgSpecHash": "cqANcxAH7nLGb5VIDW1C1SSjHQXgc95/pp5nSaUzauiDPWUc5QgOKbyxarWZvmsZTiZA0LIf1MAgBD32dkx6Nw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
   "expectedPackageFiles": [
@@ -129,7 +129,7 @@
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\lasss\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\lasss\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\nuget.common\\6.6.1\\nuget.common.6.6.1.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\nuget.configuration\\6.6.1\\nuget.configuration.6.6.1.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\nuget.dependencyresolver.core\\6.6.1\\nuget.dependencyresolver.core.6.6.1.nupkg.sha512",

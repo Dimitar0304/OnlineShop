@@ -4627,6 +4627,7 @@
           "Microsoft.AspNetCore.Identity.UI": "6.0.27",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
+          "Newtonsoft.Json": "13.0.3",
           "OnlineShop.Core": "1.0.0",
           "PagedList.Mvc": "4.5.0",
           "Syncfusion.EJ2.MVC5": "24.2.3",
