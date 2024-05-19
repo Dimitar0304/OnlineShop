@@ -19,6 +19,33 @@ namespace OnlineShop.Controllers
             return View(cart);
         }
 
+        [HttpPost]
+        public IActionResult AddToCart(string productName, int quantity,decimal price,string brandName)
+        {
+           //var product = _context.Products.SingleOrDefault(p => p.ProductId == productName);
+
+            var product = new Core.Models.Product.Product()
+            {
+                Name = productName,
+                Quantity=+quantity,
+                Price=price,
+                BrandName = brandName
+            };
+            if (product != null)
+            {
+                var cart = GetCart();
+                cart.AddItem(product, quantity);
+                SaveCart(cart);
+            }
+            return RedirectToAction("Index");
+        }
+        public IActionResult RemoveFromCart(string productName)
+        {
+            var cart = GetCart();
+            cart.RemoveItem(productName);
+            SaveCart(cart);
+            return RedirectToAction("Index");
+        }
         //Add and remove to Cart action TO DO 
         private ShoppingCart GetCart()
         {

@@ -1,13 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Contracts;
 using OnlineShop.Core.Extentions;
+using OnlineShop.Core.Models.CartItem;
 using OnlineShop.Core.Models.Garment;
 using OnlineShop.Core.Models.Size;
+using OnlineShop.Extentions;
 using OnlineShop.Infrastructure.Data.Models;
 using OnlineShop.Models.Garment;
 using OnlineShop.Services.Contracts;
+using Syncfusion.EJ2.Gantt;
 using Syncfusion.EJ2.Linq;
-
+using System.Security.Claims;
 
 namespace OnlineShop.Controllers
 {
@@ -99,30 +102,66 @@ namespace OnlineShop.Controllers
             }
             return View(model);
         }
-        [HttpPost]
+
+
+
+        [HttpGet]
         public async Task<IActionResult> PickSize(int garmentId)
         {
-            var g =garmentSizeService.GetAllGarments().Result.Where(g => g.GarmentId == garmentId);
+            var garment =  service.GetAllGarmentsAsync().Result
+           .FirstOrDefault(g => g.Id == garmentId);
 
-            var sizes =   g.Select(gs => new SizeViewModel()
+            if (garment == null)
+            {
+                return NotFound();
+            }
+
+            var model = new GarmentSizeViewModel()
+            {
+                GarmentId = garmentId,
+                Garment = new GarmentViewModel()
+                {
+                    Id = garment.Id,
+                    BrandName = garment.BrandName,
+                    Name = garment.Name,
+                    Price = garment.Price
+                }
+            };
+            var g = garmentSizeService.GetAllGarments().Result.Where(g => g.GarmentId == garmentId);
+            var sizes = g.Select(gs => new SizeViewModel()
             {
                 Id = gs.SizeId,
                 Name = gs.Size.Name
             }).ToList();
-
-            return View(sizes);
+            model.Sizes = sizes;
+            return View(model);
         }
-        [HttpGet]
-        public async Task<IActionResult> PickSize(int garmentId, int sizeId)
+      
+        
+        [HttpPost]
+        public async Task<IActionResult> AddToCart(GarmentSizeViewModel model)
         {
-            var model = new GarmentSize()
+            if (ModelState.IsValid)
             {
-                GarmentId = garmentId,
-                SizeId = sizeId,
-               
-            };
+                var cartItem = new CartItem
+                {
+                    CartItemId = ClaimsPrincipalExtentions.Id(User),
+                    Product = model,
+                    Quantity = +1
+                };
 
-            return RedirectToAction("Index", "Home", new { area = " " });
+                return RedirectToAction("Index", "Cart");
+            }
+
+            var garment =  service.GetAllGarmentsAsync().Result
+                .FirstOrDefault(g => g.Id == model.GarmentId);
+
+            if (garment == null)
+            {
+                return NotFound();
+            }
+
+            return View("Add", model);
         }
     }
 }
