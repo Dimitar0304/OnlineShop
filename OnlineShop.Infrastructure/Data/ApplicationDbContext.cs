@@ -76,6 +76,11 @@ namespace OnlineShop.Infrastructure
         public DbSet<UserOrder> UsersOrders { get; set; } = null!;
 
         /// <summary>
+        /// Collection of Promotions
+        /// </summary>
+        public DbSet<Promotion> Promotions { get; set; }
+
+        /// <summary>
         /// Models configuration
         /// </summary>
         /// <param name="builder"></param>
@@ -118,7 +123,8 @@ namespace OnlineShop.Infrastructure
             ////Seed Garment
             builder.ApplyConfiguration(new GarmentConfiguration());
 
-           
+            //Seed Promotions
+            builder.ApplyConfiguration(new PromotionConfiguration());
 
             //Seed Shoe 
             builder.ApplyConfiguration(new ShoeConfiguration());

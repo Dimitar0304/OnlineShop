@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineShop.Infrastructure;
 
@@ -11,9 +12,10 @@ using OnlineShop.Infrastructure;
 namespace OnlineShop.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240525152054_promotionsAd")]
+    partial class promotionsAd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,14 +54,14 @@ namespace OnlineShop.Infrastructure.Migrations
                         new
                         {
                             Id = "f05308b9-55ff-4b20-8e57-9a2b89573525",
-                            ConcurrencyStamp = "962f860d-5335-4e59-83bd-58253f089322",
+                            ConcurrencyStamp = "588ba79e-b846-444c-916b-666ad26f54f6",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "322a7bf2-124a-4ce7-bdf8-43eba64446b5",
-                            ConcurrencyStamp = "b3788676-40de-4511-a51b-e4f40953ab60",
+                            ConcurrencyStamp = "35b47de4-aee1-4bbb-a746-1dc1b5bf3335",
                             Name = "User",
                             NormalizedName = "User"
                         });
@@ -573,43 +575,6 @@ namespace OnlineShop.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Promotions");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            PromoCode = "Christ",
-                            PromoName = "Christmas Promotion",
-                            PromotionProcentage = 15
-                        },
-                        new
-                        {
-                            Id = 2,
-                            PromoCode = "Spring",
-                            PromoName = "Spring Promotion",
-                            PromotionProcentage = 15
-                        },
-                        new
-                        {
-                            Id = 3,
-                            PromoCode = "summer",
-                            PromoName = "Summer Promotion",
-                            PromotionProcentage = 20
-                        },
-                        new
-                        {
-                            Id = 4,
-                            PromoCode = "winter",
-                            PromoName = "Winter Promotion",
-                            PromotionProcentage = 13
-                        },
-                        new
-                        {
-                            Id = 5,
-                            PromoCode = "25M",
-                            PromoName = "25th of May",
-                            PromotionProcentage = 15
-                        });
                 });
 
             modelBuilder.Entity("OnlineShop.Infrastructure.Data.Models.Shoe", b =>
@@ -880,7 +845,7 @@ namespace OnlineShop.Infrastructure.Migrations
                         {
                             Id = "bb77b48a-3afa-4050-8b2e-1847bbe5413b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5728d4a6-d1be-4ca5-81e6-d3bcb846f7e2",
+                            ConcurrencyStamp = "2a5276ad-b692-4ece-9228-317471318a52",
                             Email = "JustUser@mail.com",
                             EmailConfirmed = true,
                             FirstName = "Just",
@@ -888,10 +853,10 @@ namespace OnlineShop.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JUSTUSER@mail.com",
                             NormalizedUserName = "JUSTUSER4E",
-                            PasswordHash = "AQAAAAEAACcQAAAAELSOyDiMk4sJBHt49GQ+C40M0mQZ4ADPq7ARjnKVRZpMfCbPaF5GAT29Vufjh8+/aQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEByIVmpWcP2yULjsSgDa+41ilupwXYVDrDMFpm/0UbLjgTl0gyhUieYb7EQ9Fx581w==",
                             PhoneNumberConfirmed = false,
-                            RegistrationDate = new DateTime(2024, 5, 25, 18, 26, 38, 308, DateTimeKind.Local).AddTicks(2985),
-                            SecurityStamp = "4e0f1cbc-cdc7-4dc7-ba58-f339d418efc8",
+                            RegistrationDate = new DateTime(2024, 5, 25, 18, 20, 53, 818, DateTimeKind.Local).AddTicks(9509),
+                            SecurityStamp = "7c97e957-9afe-4316-a925-ec0eb686728c",
                             TwoFactorEnabled = false,
                             UserName = "JustUser4e"
                         },
@@ -899,7 +864,7 @@ namespace OnlineShop.Infrastructure.Migrations
                         {
                             Id = "250f8800-ede3-4210-a8d0-8a0353a67e24",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5689d6b7-03e9-477d-952a-a45cc06aa38f",
+                            ConcurrencyStamp = "14c7df5d-40f6-4258-b742-8032e4fad1e7",
                             Email = "JustAdmin@mail.com",
                             EmailConfirmed = true,
                             FirstName = "Just",
@@ -907,10 +872,10 @@ namespace OnlineShop.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "JUSTADMIN@mail.com",
                             NormalizedUserName = "JUSTADMIN4E",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ4ctL8fY0zR0O4XMEPZZQSx3TD8kFJaCrnE6/dm6yubETE+nktXJY6ntoNlBQWhew==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP95o5vx9glWgQENzvHxsCaMDZ0pdsvKMFDf9iVce5WjZOJz8g5PcbMW3Us4tKaXug==",
                             PhoneNumberConfirmed = false,
-                            RegistrationDate = new DateTime(2024, 5, 25, 18, 26, 38, 309, DateTimeKind.Local).AddTicks(9311),
-                            SecurityStamp = "b693cf9d-bd4a-4271-a270-fa56042a2a44",
+                            RegistrationDate = new DateTime(2024, 5, 25, 18, 20, 53, 820, DateTimeKind.Local).AddTicks(4947),
+                            SecurityStamp = "4151ebd4-d5e6-4d83-82f5-df6393c60682",
                             TwoFactorEnabled = false,
                             UserName = "JustAdmin4e"
                         });

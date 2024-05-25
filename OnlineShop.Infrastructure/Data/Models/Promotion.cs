@@ -28,20 +28,6 @@ namespace OnlineShop.Infrastructure.Data.Models
         public string PromoName { get; set;} = null!;
 
         /// <summary>
-        /// Promotion start date
-        /// </summary>
-        [Required]
-        [Comment("Promotion start date")]
-        public DateTime Start { get; set; }
-
-        /// <summary>
-        /// Promotion end date
-        /// </summary>
-        [Required]
-        [Comment("Promotion end date")]
-        public DateTime End { get; set; }
-
-        /// <summary>
         /// Promotion code
         /// </summary>
         [Required]
