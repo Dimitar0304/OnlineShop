@@ -1,0 +1,28 @@
+
+html{
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    border: black;
+    image-rendering: inherit;
+}
+
+h1{
+    text-align: center;
+    color: black; 
+    font-size: 48px;
+    font: bold;
+    
+}
+p{
+    color: aqua;
+}
+ImageContainter{
+    text-align: center;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+     height: auto;
+   
+}
