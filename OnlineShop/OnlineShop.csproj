@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="wwwroot\css\index.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +43,7 @@
 
   <ItemGroup>
     <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="wwwroot\css\index.css" />
   </ItemGroup>
 
 

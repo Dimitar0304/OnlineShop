@@ -2,7 +2,10 @@
 @{
     ViewBag.Title = "All distributed brands";
 }
-<h1 class="text-center text-primary">@ViewBag.Title</h1>
+<head>
+    <link rel="stylesheet" href="/css/AllBrands.css"
+</head>
+<h1 class="text-center text-black">@ViewBag.Title</h1>
 
 @foreach (var br in Model.Brands)
 {
@@ -10,7 +13,7 @@
         <div class="card-body">
             <h5 class="card-title">@br.Name</h5>
             <br>
-            <a asp-area="" asp-action="GetClothesForBrand" asp-controller="Brand"asp-route-brandId="@br.Id">Brand Collection</a>
+            <button asp-area="" asp-action="GetClothesForBrand" asp-controller="Brand"asp-route-brandId="@br.Id">Brand Collection</button>
         </div>
     </div>
 }

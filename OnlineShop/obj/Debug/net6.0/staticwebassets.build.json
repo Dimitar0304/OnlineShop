@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4K4KzntGloffmPs/rkiJSnhvBFnYCtXiw27qOiy98YY=",
+  "Hash": "3ORa4j95liPWQ4+lG+28HvKANbUv03rOmVtHriXyp+g=",
   "Source": "OnlineShop",
   "BasePath": "_content/OnlineShop",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\ajax-loader.gif"
+    },
+    {
+      "Identity": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\css\\AllBrands.css",
+      "SourceId": "OnlineShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\",
+      "BasePath": "_content/OnlineShop",
+      "RelativePath": "css/AllBrands.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AllBrands.css"
     },
     {
       "Identity": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\css\\bootstrap.min.css",

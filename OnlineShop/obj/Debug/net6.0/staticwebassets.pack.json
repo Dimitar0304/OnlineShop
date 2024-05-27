@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\OnlineShop.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\css\\AllBrands.css",
+      "PackagePath": "staticwebassets\\css\\AllBrands.css"
+    },
+    {
       "Id": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\css\\ajax-loader.gif",
       "PackagePath": "staticwebassets\\css\\ajax-loader.gif"
     },
