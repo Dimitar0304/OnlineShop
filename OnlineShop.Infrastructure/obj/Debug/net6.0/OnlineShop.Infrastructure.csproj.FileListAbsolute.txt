@@ -40,3 +40,4 @@ C:\Users\lasss\Desktop\OnlineShop-main\OnlineShop-main\OnlineShop.Infrastructure
 C:\Users\lasss\Desktop\OnlineShop-main\OnlineShop-main\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.pdb
 C:\Users\lasss\Desktop\OnlineShop-main\OnlineShop-main\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.genruntimeconfig.cache
 C:\Users\lasss\Desktop\OnlineShop-main\OnlineShop-main\OnlineShop.Infrastructure\obj\Debug\net6.0\ref\OnlineShop.Infrastructure.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop.Infrastructure\obj\Debug\net6.0\OnlineShop.Infrastructure.sourcelink.json
