@@ -55,3 +55,13 @@ HTML <br>
 CSS <br>
 Bootstrap <br>
 <hr class="hr" />
+<h3>
+  Snipets
+</h3><br>
+
+Home page
+<img width="950" alt="HomePage" src="https://github.com/Dimitar0304/OnlineShop/assets/114139864/1b6b82df-e64b-453f-a40c-b414f84dbd5d"><br>
+
+All Garments page
+<img width="952" alt="AllGarments" src="https://github.com/Dimitar0304/OnlineShop/assets/114139864/f0140341-b2d5-4f52-9d2f-b15b88edce5e"><br>
+
