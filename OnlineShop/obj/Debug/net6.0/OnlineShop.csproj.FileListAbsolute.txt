@@ -507,7 +507,6 @@ C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\staticweb
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\scopedcss\bundle\OnlineShop.styles.css
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\scopedcss\projectbundle\OnlineShop.bundle.scp.css
-C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.csproj.CopyComplete
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\refint\OnlineShop.dll
 C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.pdb
@@ -1116,3 +1115,5 @@ C:\Users\lasss\Desktop\OnlineShop-main\OnlineShop-main\OnlineShop\obj\Debug\net6
 C:\Users\lasss\Desktop\OnlineShop-main\OnlineShop-main\OnlineShop\obj\Debug\net6.0\OnlineShop.pdb
 C:\Users\lasss\Desktop\OnlineShop-main\OnlineShop-main\OnlineShop\obj\Debug\net6.0\OnlineShop.genruntimeconfig.cache
 C:\Users\lasss\Desktop\OnlineShop-main\OnlineShop-main\OnlineShop\obj\Debug\net6.0\ref\OnlineShop.dll
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.sourcelink.json
+C:\Users\lasss\Documents\GitHub\OnlineShop\OnlineShop\obj\Debug\net6.0\OnlineShop.csproj.Up2Date

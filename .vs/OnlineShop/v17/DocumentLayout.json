@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\documents\\github\\onlineshop\\onlineshop\\views\\brand\\allbrands.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\views\\brand\\allbrands.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\documents\\github\\onlineshop\\onlineshop\\wwwroot\\css\\allbrands.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\wwwroot\\css\\allbrands.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\documents\\github\\onlineshop\\onlineshop\\views\\accessory\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\views\\accessory\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\documents\\github\\onlineshop\\onlineshop\\views\\garment\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\views\\garment\\all.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\documents\\github\\onlineshop\\onlineshop\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\documents\\github\\onlineshop\\onlineshop\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AllBrands.css",
+              "DocumentMoniker": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\css\\AllBrands.css",
+              "RelativeDocumentMoniker": "OnlineShop\\wwwroot\\css\\AllBrands.css",
+              "ToolTip": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\css\\AllBrands.css",
+              "RelativeToolTip": "OnlineShop\\wwwroot\\css\\AllBrands.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-27T10:15:23.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AllBrands.cshtml",
+              "DocumentMoniker": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\Views\\Brand\\AllBrands.cshtml",
+              "RelativeDocumentMoniker": "OnlineShop\\Views\\Brand\\AllBrands.cshtml",
+              "ToolTip": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\Views\\Brand\\AllBrands.cshtml",
+              "RelativeToolTip": "OnlineShop\\Views\\Brand\\AllBrands.cshtml",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAuwBEAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T10:13:39.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "All.cshtml",
+              "DocumentMoniker": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\Views\\Accessory\\All.cshtml",
+              "RelativeDocumentMoniker": "OnlineShop\\Views\\Accessory\\All.cshtml",
+              "ToolTip": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\Views\\Accessory\\All.cshtml",
+              "RelativeToolTip": "OnlineShop\\Views\\Accessory\\All.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T10:13:30.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "All.cshtml",
+              "DocumentMoniker": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\Views\\Garment\\All.cshtml",
+              "RelativeDocumentMoniker": "OnlineShop\\Views\\Garment\\All.cshtml",
+              "ToolTip": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\Views\\Garment\\All.cshtml",
+              "RelativeToolTip": "OnlineShop\\Views\\Garment\\All.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACMAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T10:11:39.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\css\\index.css",
+              "RelativeDocumentMoniker": "OnlineShop\\wwwroot\\css\\index.css",
+              "ToolTip": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\wwwroot\\css\\index.css",
+              "RelativeToolTip": "OnlineShop\\wwwroot\\css\\index.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-26T10:43:54.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "OnlineShop\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "OnlineShop\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T10:38:44.544Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
