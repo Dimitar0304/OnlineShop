@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "te3RSM8CdMg=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
+  "dgSpecHash": "rqhnLRstzJw=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lasss\\.nuget\\packages\\abp\\9.1.3\\abp.9.1.3.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
@@ -65,7 +65,6 @@
     "C:\\Users\\lasss\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
-    "C:\\Users\\lasss\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.aspnet.mvc\\5.3.0\\microsoft.aspnet.mvc.5.3.0.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.aspnet.razor\\3.3.0\\microsoft.aspnet.razor.3.3.0.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\microsoft.aspnet.webpages\\3.3.0\\microsoft.aspnet.webpages.3.3.0.nupkg.sha512",
@@ -178,8 +177,6 @@
     "C:\\Users\\lasss\\.nuget\\packages\\nunit3testadapter\\4.4.2\\nunit3testadapter.4.4.2.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\pagedlist\\1.17.0\\pagedlist.1.17.0.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\pagedlist.mvc\\4.5.0\\pagedlist.mvc.4.5.0.nupkg.sha512",
-    "C:\\Users\\lasss\\.nuget\\packages\\sendgrid\\9.29.2\\sendgrid.9.29.2.nupkg.sha512",
-    "C:\\Users\\lasss\\.nuget\\packages\\starkbank-ecdsa\\1.3.3\\starkbank-ecdsa.1.3.3.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\syncfusion.ej2.javascript\\24.2.3\\syncfusion.ej2.javascript.24.2.3.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\syncfusion.ej2.mvc5\\24.2.3\\syncfusion.ej2.mvc5.24.2.3.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\syncfusion.licensing\\24.2.3\\syncfusion.licensing.24.2.3.nupkg.sha512",
@@ -266,11 +263,10 @@
   ],
   "logs": [
     {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Habanero 3.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Habanero",
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj",
       "targetGraphs": [
         "net6.0"
       ]
@@ -279,8 +275,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "message": "Package 'Habanero 3.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Habanero",
       "targetGraphs": [
         "net6.0"
       ]

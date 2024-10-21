@@ -662,19 +662,6 @@
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
       },
-      "Microsoft.AspNet.Identity.Core/2.2.4": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.AspNet.Mvc/5.3.0": {
         "type": "package",
         "dependencies": {
@@ -2516,32 +2503,6 @@
           }
         }
       },
-      "SendGrid/9.29.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
-          "starkbank-ecdsa": "[1.3.3, 2.0.0)"
-        },
-        "compile": {
-          "lib/netstandard2.0/SendGrid.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/SendGrid.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "starkbank-ecdsa/1.3.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
-        }
-      },
       "Syncfusion.EJ2.JavaScript/24.2.3": {
         "type": "package"
       },
@@ -4193,43 +4154,6 @@
             "related": ".xml"
           }
         }
-      },
-      "OnlineShop.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity.UI": "6.0.27",
-          "OnlineShop.Infrastructure": "1.0.0",
-          "PagedList.Mvc": "4.5.0",
-          "SendGrid": "9.29.2",
-          "X.PagedList": "8.4.7",
-          "xunit": "2.7.0"
-        },
-        "compile": {
-          "bin/placeholder/OnlineShop.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OnlineShop.Core.dll": {}
-        }
-      },
-      "OnlineShop.Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.AspNet.Identity.Core": "2.2.4",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.27",
-          "Microsoft.EntityFrameworkCore": "6.0.27",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27",
-          "PagedList.Mvc": "4.5.0",
-          "X.PagedList": "8.4.7",
-          "xunit": "2.7.0"
-        },
-        "compile": {
-          "bin/placeholder/OnlineShop.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OnlineShop.Infrastructure.dll": {}
-        }
       }
     }
   },
@@ -5061,19 +4985,6 @@
         "messagepackanalyzer.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
-      ]
-    },
-    "Microsoft.AspNet.Identity.Core/2.2.4": {
-      "sha512": "s3u/o3iG5h0z7Ggukwo4soPwogD56ZrYbolGxTfw41zkuG6jAXUJT/V3EThqHJXGuCNvWSdSnnwAhPfT9Sn36g==",
-      "type": "package",
-      "path": "microsoft.aspnet.identity.core/2.2.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
-        "lib/net45/Microsoft.AspNet.Identity.Core.xml",
-        "microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
-        "microsoft.aspnet.identity.core.nuspec"
       ]
     },
     "Microsoft.AspNet.Mvc/5.3.0": {
@@ -7794,45 +7705,6 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
-      ]
-    },
-    "SendGrid/9.29.2": {
-      "sha512": "/Uj+2Wd4poD73okfZApJe98QNwSBHzyrz73Ovz4m2Jvw5dHwxRsVYF9jUPsGR3WjkID3EOEMBa4EBiKuBHUfjg==",
-      "type": "package",
-      "path": "sendgrid/9.29.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/SendGrid.dll",
-        "lib/net40/SendGrid.pdb",
-        "lib/net40/SendGrid.xml",
-        "lib/net452/SendGrid.dll",
-        "lib/net452/SendGrid.pdb",
-        "lib/net452/SendGrid.xml",
-        "lib/netstandard1.3/SendGrid.dll",
-        "lib/netstandard1.3/SendGrid.pdb",
-        "lib/netstandard1.3/SendGrid.xml",
-        "lib/netstandard2.0/SendGrid.dll",
-        "lib/netstandard2.0/SendGrid.pdb",
-        "lib/netstandard2.0/SendGrid.xml",
-        "sendgrid.9.29.2.nupkg.sha512",
-        "sendgrid.nuspec"
-      ]
-    },
-    "starkbank-ecdsa/1.3.3": {
-      "sha512": "OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
-      "type": "package",
-      "path": "starkbank-ecdsa/1.3.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/StarkbankEcdsa.dll",
-        "lib/net452/StarkbankEcdsa.dll",
-        "lib/netstandard1.3/StarkbankEcdsa.dll",
-        "lib/netstandard2.0/StarkbankEcdsa.dll",
-        "lib/netstandard2.1/StarkbankEcdsa.dll",
-        "starkbank-ecdsa.1.3.3.nupkg.sha512",
-        "starkbank-ecdsa.nuspec"
       ]
     },
     "Syncfusion.EJ2.JavaScript/24.2.3": {
@@ -11864,20 +11736,11 @@
         "xunit.extensibility.execution.2.7.0.nupkg.sha512",
         "xunit.extensibility.execution.nuspec"
       ]
-    },
-    "OnlineShop.Core/1.0.0": {
-      "type": "project",
-      "path": "../OnlineShop.Core/OnlineShop.Core.csproj",
-      "msbuildProject": "../OnlineShop.Core/OnlineShop.Core.csproj"
-    },
-    "OnlineShop.Infrastructure/1.0.0": {
-      "type": "project",
-      "path": "../OnlineShop.Infrastructure/OnlineShop.Infrastructure.csproj",
-      "msbuildProject": "../OnlineShop.Infrastructure/OnlineShop.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj",
       "Habanero >= 3.0.1",
       "Microsoft.AspNet.Mvc >= 5.3.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.15",
@@ -11887,7 +11750,6 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.27",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
       "Newtonsoft.Json >= 13.0.3",
-      "OnlineShop.Core >= 1.0.0",
       "PagedList.Mvc >= 4.5.0",
       "Syncfusion.EJ2.MVC5 >= 24.2.3",
       "X.PagedList >= 8.4.7",
@@ -11901,11 +11763,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+      "projectUniqueName": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
       "projectName": "OnlineShop",
-      "projectPath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+      "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
       "packagesPath": "C:\\Users\\lasss\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop\\obj\\",
+      "outputPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11927,8 +11789,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj": {
-              "projectPath": "C:\\Users\\lasss\\Documents\\GitHub\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj"
+            "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj": {
+              "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj"
             }
           }
         }
@@ -12028,11 +11890,10 @@
   },
   "logs": [
     {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Habanero 3.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Habanero",
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj",
       "targetGraphs": [
         "net6.0"
       ]
@@ -12041,8 +11902,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "message": "Package 'Habanero 3.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Habanero",
       "targetGraphs": [
         "net6.0"
       ]

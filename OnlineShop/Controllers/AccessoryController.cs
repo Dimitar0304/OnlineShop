@@ -1,12 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Core.Extentions;
 using OnlineShop.Core.Models.Accessory;
 using OnlineShop.Core.Services.Contracts;
-using OnlineShop.Models.Garment;
-using SendGrid.Helpers.Errors.Model;
-using System.Linq.Expressions;
-using System.Net;
 using System.Web.Mvc;
 
 namespace OnlineShop.Controllers

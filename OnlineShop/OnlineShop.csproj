@@ -32,10 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OnlineShop.Core\OnlineShop.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Attributes\" />
@@ -44,6 +40,10 @@
   <ItemGroup>
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="wwwroot\css\index.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineShop.Core\OnlineShop.Core.csproj" />
   </ItemGroup>
 
 
