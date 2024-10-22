@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj": {}
+    "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj": {
+    "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\core\\OnlineShop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
-        "projectName": "OnlineShop.Tests",
-        "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\core\\OnlineShop.Core.csproj",
+        "projectName": "OnlineShop.Core",
+        "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\core\\OnlineShop.Core.csproj",
         "packagesPath": "C:\\Users\\lasss\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\obj\\",
+        "outputPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,152 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
-                "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj"
+              "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj",
+        "projectName": "OnlineShop.Infrastructure",
+        "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\lasss\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lasss\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.27, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
+        "projectName": "OnlineShop.Tests",
+        "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
+        "packagesPath": "C:\\Users\\lasss\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lasss\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
+                "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj"
               }
             }
           }
@@ -127,14 +271,14 @@
         }
       }
     },
-    "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
+    "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+        "projectUniqueName": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
         "projectName": "OnlineShop",
-        "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+        "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
         "packagesPath": "C:\\Users\\lasss\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\obj\\",
+        "outputPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -156,8 +300,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj": {
-                "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj"
+              "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\core\\OnlineShop.Core.csproj": {
+                "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\core\\OnlineShop.Core.csproj"
               }
             }
           }

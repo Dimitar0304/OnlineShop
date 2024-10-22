@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OnlineShop.Core\OnlineShop.Core.csproj" />
+    <ProjectReference Include="..\core\OnlineShop.Core.csproj" />
   </ItemGroup>
 
 

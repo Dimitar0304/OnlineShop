@@ -64,6 +64,8 @@
           "Microsoft.AspNetCore.Connections.Abstractions": "6.0.0.0",
           "Microsoft.AspNetCore.CookiePolicy": "6.0.0.0",
           "Microsoft.AspNetCore.Cors": "6.0.0.0",
+          "Microsoft.AspNetCore.Cryptography.Internal.Reference": "6.0.0.0",
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference": "6.0.0.0",
           "Microsoft.AspNetCore.DataProtection.Abstractions": "6.0.0.0",
           "Microsoft.AspNetCore.DataProtection": "6.0.0.0",
           "Microsoft.AspNetCore.DataProtection.Extensions": "6.0.0.0",
@@ -144,11 +146,14 @@
           "Microsoft.Extensions.Features": "6.0.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions.Reference": "6.0.0.0",
           "Microsoft.Extensions.FileProviders.Composite": "6.0.0.0",
+          "Microsoft.Extensions.FileProviders.Embedded.Reference": "6.0.0.0",
           "Microsoft.Extensions.FileProviders.Physical.Reference": "6.0.0.0",
           "Microsoft.Extensions.FileSystemGlobbing.Reference": "6.0.0.0",
           "Microsoft.Extensions.Hosting.Abstractions.Reference": "6.0.0.0",
           "Microsoft.Extensions.Hosting.Reference": "6.0.0.0",
           "Microsoft.Extensions.Http": "6.0.0.0",
+          "Microsoft.Extensions.Identity.Core.Reference": "6.0.0.0",
+          "Microsoft.Extensions.Identity.Stores.Reference": "6.0.0.0",
           "Microsoft.Extensions.Localization.Abstractions": "6.0.0.0",
           "Microsoft.Extensions.Localization": "6.0.0.0",
           "Microsoft.Extensions.Logging.Configuration.Reference": "6.0.0.0",
@@ -1034,17 +1039,6 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
-      "Microsoft.AspNet.Identity.Core/2.2.4": {
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.2.4.50621"
-          }
-        },
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        }
-      },
       "Microsoft.AspNet.Mvc/5.3.0": {
         "dependencies": {
           "Microsoft.AspNet.Razor": "3.3.0",
@@ -1107,9 +1101,6 @@
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.2724.7002"
           }
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.KeyDerivation/6.0.27": {
@@ -1121,9 +1112,6 @@
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.2724.7002"
           }
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.15": {
@@ -2029,9 +2017,6 @@
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.2724.7002"
           }
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.Extensions.FileProviders.Embedded.dll": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Physical/6.0.0": {
@@ -2091,9 +2076,6 @@
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.2724.7002"
           }
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.Extensions.Identity.Core.dll": {}
         }
       },
       "Microsoft.Extensions.Identity.Stores/6.0.27": {
@@ -2107,9 +2089,6 @@
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.2724.7002"
           }
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.Extensions.Identity.Stores.dll": {}
         }
       },
       "Microsoft.Extensions.Logging/6.0.0": {
@@ -3016,32 +2995,6 @@
           "lib/net40/PagedList.Mvc.dll": {}
         }
       },
-      "SendGrid/9.29.2": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3",
-          "starkbank-ecdsa": "1.3.3"
-        },
-        "runtime": {
-          "lib/netstandard2.0/SendGrid.dll": {
-            "assemblyVersion": "9.29.2.0",
-            "fileVersion": "9.29.2.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/SendGrid.dll": {}
-        }
-      },
-      "starkbank-ecdsa/1.3.3": {
-        "runtime": {
-          "lib/netstandard2.1/StarkbankEcdsa.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.1/StarkbankEcdsa.dll": {}
-        }
-      },
       "Syncfusion.EJ2.JavaScript/24.2.3": {},
       "Syncfusion.EJ2.MVC5/24.2.3": {
         "dependencies": {
@@ -3889,12 +3842,7 @@
       },
       "OnlineShop.Core/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.UI": "6.0.27",
-          "OnlineShop.Infrastructure": "1.0.0",
-          "PagedList.Mvc": "4.5.0",
-          "SendGrid": "9.29.2",
-          "X.PagedList": "8.4.7",
-          "xunit": "2.7.0"
+          "OnlineShop.Infrastructure": "1.0.0"
         },
         "runtime": {
           "OnlineShop.Core.dll": {}
@@ -3905,13 +3853,8 @@
       },
       "OnlineShop.Infrastructure/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNet.Identity.Core": "2.2.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.27",
-          "Microsoft.EntityFrameworkCore": "6.0.28",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27",
-          "PagedList.Mvc": "4.5.0",
-          "X.PagedList": "8.4.7",
-          "xunit": "2.7.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27"
         },
         "runtime": {
           "OnlineShop.Infrastructure.dll": {}
@@ -4013,6 +3956,18 @@
       "Microsoft.AspNetCore.Cors/6.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Cors.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.AspNetCore.Cryptography.Internal.Reference/6.0.0.0": {
+        "compile": {
+          "Microsoft.AspNetCore.Cryptography.Internal.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference/6.0.0.0": {
+        "compile": {
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
         },
         "compileOnly": true
       },
@@ -4496,6 +4451,12 @@
         },
         "compileOnly": true
       },
+      "Microsoft.Extensions.FileProviders.Embedded.Reference/6.0.0.0": {
+        "compile": {
+          "Microsoft.Extensions.FileProviders.Embedded.dll": {}
+        },
+        "compileOnly": true
+      },
       "Microsoft.Extensions.FileProviders.Physical.Reference/6.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Physical.dll": {}
@@ -4523,6 +4484,18 @@
       "Microsoft.Extensions.Http/6.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Http.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.Extensions.Identity.Core.Reference/6.0.0.0": {
+        "compile": {
+          "Microsoft.Extensions.Identity.Core.dll": {}
+        },
+        "compileOnly": true
+      },
+      "Microsoft.Extensions.Identity.Stores.Reference/6.0.0.0": {
+        "compile": {
+          "Microsoft.Extensions.Identity.Stores.dll": {}
         },
         "compileOnly": true
       },
@@ -5999,13 +5972,6 @@
       "path": "messagepackanalyzer/2.1.152",
       "hashPath": "messagepackanalyzer.2.1.152.nupkg.sha512"
     },
-    "Microsoft.AspNet.Identity.Core/2.2.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-s3u/o3iG5h0z7Ggukwo4soPwogD56ZrYbolGxTfw41zkuG6jAXUJT/V3EThqHJXGuCNvWSdSnnwAhPfT9Sn36g==",
-      "path": "microsoft.aspnet.identity.core/2.2.4",
-      "hashPath": "microsoft.aspnet.identity.core.2.2.4.nupkg.sha512"
-    },
     "Microsoft.AspNet.Mvc/5.3.0": {
       "type": "package",
       "serviceable": true,
@@ -6790,20 +6756,6 @@
       "path": "pagedlist.mvc/4.5.0",
       "hashPath": "pagedlist.mvc.4.5.0.nupkg.sha512"
     },
-    "SendGrid/9.29.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/Uj+2Wd4poD73okfZApJe98QNwSBHzyrz73Ovz4m2Jvw5dHwxRsVYF9jUPsGR3WjkID3EOEMBa4EBiKuBHUfjg==",
-      "path": "sendgrid/9.29.2",
-      "hashPath": "sendgrid.9.29.2.nupkg.sha512"
-    },
-    "starkbank-ecdsa/1.3.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OblOaKb1enXn+dSp7tsx9yjwV+/BEKM9jFhshIkZTwCk7LuTFTp+wSon6rFzuPiIiTGtvVWQNUw2slHjGktJog==",
-      "path": "starkbank-ecdsa/1.3.3",
-      "hashPath": "starkbank-ecdsa.1.3.3.nupkg.sha512"
-    },
     "Syncfusion.EJ2.JavaScript/24.2.3": {
       "type": "package",
       "serviceable": true,
@@ -7480,6 +7432,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.AspNetCore.Cryptography.Internal.Reference/6.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation.Reference/6.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Microsoft.AspNetCore.DataProtection.Abstractions/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -7880,6 +7842,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.Extensions.FileProviders.Embedded.Reference/6.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Microsoft.Extensions.FileProviders.Physical.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -7901,6 +7868,16 @@
       "sha512": ""
     },
     "Microsoft.Extensions.Http/6.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Identity.Core.Reference/6.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Identity.Stores.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

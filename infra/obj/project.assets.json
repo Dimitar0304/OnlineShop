@@ -2090,11 +2090,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lasss\\Desktop\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj",
       "projectName": "OnlineShop.Infrastructure",
-      "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\lasss\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\infra\\obj\\",
+      "outputPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\infra\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

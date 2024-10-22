@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4l/l88tLKyo=",
-  "success": false,
-  "projectFilePath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+  "dgSpecHash": "fD/jLlyBiMY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lasss\\.nuget\\packages\\habanero\\3.0.1\\habanero.3.0.1.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
@@ -249,15 +249,6 @@
     "C:\\Users\\lasss\\.nuget\\packages\\xunit.extensibility.execution\\2.7.0\\xunit.extensibility.execution.2.7.0.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

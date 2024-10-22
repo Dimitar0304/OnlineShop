@@ -4581,7 +4581,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj": "1.0.0",
           "Habanero": "3.0.1",
           "Microsoft.AspNet.Mvc": "5.3.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
@@ -4590,6 +4589,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
           "Newtonsoft.Json": "13.0.3",
+          "OnlineShop.Core": "1.0.0",
           "PagedList.Mvc": "4.5.0",
           "Syncfusion.EJ2.MVC5": "24.2.3",
           "X.PagedList": "8.4.7",
@@ -4604,6 +4604,33 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "OnlineShop.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "OnlineShop.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OnlineShop.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineShop.Core.dll": {}
+        }
+      },
+      "OnlineShop.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.27",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27"
+        },
+        "compile": {
+          "bin/placeholder/OnlineShop.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineShop.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -12709,6 +12736,16 @@
       "type": "project",
       "path": "../OnlineShop/OnlineShop.csproj",
       "msbuildProject": "../OnlineShop/OnlineShop.csproj"
+    },
+    "OnlineShop.Core/1.0.0": {
+      "type": "project",
+      "path": "../core/OnlineShop.Core.csproj",
+      "msbuildProject": "../core/OnlineShop.Core.csproj"
+    },
+    "OnlineShop.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../infra/OnlineShop.Infrastructure.csproj",
+      "msbuildProject": "../infra/OnlineShop.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12736,11 +12773,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
       "projectName": "OnlineShop.Tests",
-      "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
+      "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
       "packagesPath": "C:\\Users\\lasss\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Tests\\obj\\",
+      "outputPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -12762,8 +12799,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
-              "projectPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj"
+            "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj": {
+              "projectPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj"
             }
           }
         }
@@ -12857,15 +12894,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop.Core\\OnlineShop.Core.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

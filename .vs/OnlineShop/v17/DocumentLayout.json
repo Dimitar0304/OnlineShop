@@ -1,28 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lasss\\Desktop\\OnlineShop\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8F440E78-CDA7-4ED1-9978-E0FB89BF717F}|core\\OnlineShop.Core.csproj|c:\\users\\lasss\\desktop\\onlineshop\\core\\onlineshop.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8F440E78-CDA7-4ED1-9978-E0FB89BF717F}|core\\OnlineShop.Core.csproj|solutionrelative:core\\onlineshop.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4EE618A-7DA9-4558-B31D-9E8F6F096436}|infra\\OnlineShop.Infrastructure.csproj|c:\\users\\lasss\\desktop\\onlineshop\\infra\\onlineshop.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A4EE618A-7DA9-4558-B31D-9E8F6F096436}|infra\\OnlineShop.Infrastructure.csproj|solutionrelative:infra\\onlineshop.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\desktop\\onlineshop\\onlineshop\\onlineshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\onlineshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\desktop\\onlineshop\\onlineshop\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|c:\\users\\lasss\\desktop\\onlineshop\\onlineshop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{311D753C-A62E-4186-90A5-CB505A854399}|OnlineShop\\OnlineShop.csproj|solutionrelative:onlineshop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,74 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OnlineShop.Core.csproj",
-              "DocumentMoniker": "C:\\Users\\lasss\\Desktop\\OnlineShop\\core\\OnlineShop.Core.csproj",
-              "RelativeDocumentMoniker": "core\\OnlineShop.Core.csproj",
-              "ToolTip": "C:\\Users\\lasss\\Desktop\\OnlineShop\\core\\OnlineShop.Core.csproj",
-              "RelativeToolTip": "core\\OnlineShop.Core.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-21T12:54:16.269Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OnlineShop.Infrastructure.csproj",
-              "DocumentMoniker": "C:\\Users\\lasss\\Desktop\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "infra\\OnlineShop.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\lasss\\Desktop\\OnlineShop\\infra\\OnlineShop.Infrastructure.csproj",
-              "RelativeToolTip": "infra\\OnlineShop.Infrastructure.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-21T12:51:51.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OnlineShop.csproj",
-              "DocumentMoniker": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
-              "RelativeDocumentMoniker": "OnlineShop\\OnlineShop.csproj",
-              "ToolTip": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
-              "RelativeToolTip": "OnlineShop\\OnlineShop.csproj",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-21T12:48:24.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "OnlineShop\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "OnlineShop\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAzwBcAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T12:39:35.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "OnlineShop\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\lasss\\Desktop\\OnlineShop\\OnlineShop\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "OnlineShop\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAABUAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-21T12:37:06.593Z"
             }
           ]
         }
