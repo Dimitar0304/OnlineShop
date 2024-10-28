@@ -57,27 +57,6 @@ namespace OnlineShop.Infrastructure.Data.Models
         public string Address { get; set; } = null!;
 
         /// <summary>
-        /// UserOrder Collection
-        /// </summary>
-        public IEnumerable<UserOrder> UsersOrders { get; set; } = new List<UserOrder>();
-
-        /// <summary>
-        /// Payment Method identifier
-        /// </summary>
-        [Required]
-        [ForeignKey(nameof(PaymentMethod))]
-        [Comment("Payment method identifier")]
-        public int PaymentMethodId { get; set; }
-
-        /// <summary>
-        /// Payment method type
-        /// </summary>
-        [Required]
-        [Comment("Payment method type")]
-        public PaymentMethod PaymentMethod { get; set; } = null!;
-
-
-        /// <summary>
         /// Property for delete 
         /// </summary>
         [Required]

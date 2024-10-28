@@ -23,7 +23,6 @@ namespace OnlineShop.Infrastructure.Data.Configuration
 
         public List<ShoeSize> ShoeSizes { get; set; } = new List<ShoeSize>();
 
-        public List<Promotion> Promotions { get; set; } = new List<Promotion>();
 
         public SeedData()
         {
@@ -32,7 +31,7 @@ namespace OnlineShop.Infrastructure.Data.Configuration
             SeedGarments();
             SeedShoes();
             SeedAccessories();
-            SeedPromotions();
+
         }
         private void SeedUsers()
         {
@@ -178,48 +177,6 @@ namespace OnlineShop.Infrastructure.Data.Configuration
             
         }
 
-        private void SeedPromotions()
-        {
-            Promotions = new List<Promotion>() {
-
-                new Promotion()
-                {
-                    Id= 1,
-                    PromoName = "Christmas Promotion",
-                    PromoCode = "Christ",
-                    PromotionProcentage = 15
-                },
-                new Promotion()
-                {
-                    Id= 2,
-                    PromoName = "Spring Promotion",
-                    PromoCode = "Spring",
-                    PromotionProcentage = 15
-                },
-                new Promotion()
-                {
-                    Id= 3,
-                    PromoName = "Summer Promotion",
-                    PromoCode = "summer",
-                    PromotionProcentage = 20
-                },
-                new Promotion()
-                {
-                    Id= 4,
-                    PromoName = "Winter Promotion",
-                    PromoCode = "winter",
-                    PromotionProcentage = 13
-                },
-                new Promotion()
-                {
-                    Id= 5,
-                    PromoName = "25th of May",
-                    PromoCode = "25M",
-                    PromotionProcentage = 15
-                }
-            };
-        }
-      
     }
 }
 

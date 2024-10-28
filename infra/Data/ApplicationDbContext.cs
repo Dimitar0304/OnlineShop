@@ -70,15 +70,6 @@ namespace OnlineShop.Infrastructure
         /// </summary>
         public DbSet<Size> Sizes { get; set; } = null!;
 
-        /// <summary>
-        /// Collection of UserOrder
-        /// </summary>
-        public DbSet<UserOrder> UsersOrders { get; set; } = null!;
-
-        /// <summary>
-        /// Collection of Promotions
-        /// </summary>
-        public DbSet<Promotion> Promotions { get; set; }
 
         /// <summary>
         /// Models configuration
@@ -91,13 +82,7 @@ namespace OnlineShop.Infrastructure
 
             builder.Entity<ShoeSize>()
                 .HasKey(ss => new {ss.ShoeId,ss.Size});
-            builder.Entity<UserOrder>()
-                .HasKey(uo=>new {uo.OrderId,uo.UserId});
 
-            builder.Entity<UserOrder>()
-                .HasOne(uo => uo.Order)
-                .WithMany(uo => uo.UsersOrders)
-                .OnDelete(DeleteBehavior.Restrict);
 
             //Seeding brands  configuration
             builder.ApplyConfiguration(new BrandConfiguration());
@@ -108,8 +93,7 @@ namespace OnlineShop.Infrastructure
             //Seed identity roles configuration
             builder.ApplyConfiguration(new IdentityRolesConfiguration());
 
-            //Seed payment method configuration
-            builder.ApplyConfiguration(new PaymentMethodConfiguration());
+  
 
             //Seed shoe type configuration
             builder.ApplyConfiguration(new ShoeTypeConfiguration());
@@ -123,8 +107,6 @@ namespace OnlineShop.Infrastructure
             ////Seed Garment
             builder.ApplyConfiguration(new GarmentConfiguration());
 
-            //Seed Promotions
-            builder.ApplyConfiguration(new PromotionConfiguration());
 
             //Seed Shoe 
             builder.ApplyConfiguration(new ShoeConfiguration());
