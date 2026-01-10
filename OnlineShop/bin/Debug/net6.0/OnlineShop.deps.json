@@ -2766,7 +2766,10 @@
           "OnlineShop.Infrastructure": "1.0.0"
         },
         "runtime": {
-          "OnlineShop.Core.dll": {}
+          "OnlineShop.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "OnlineShop.Infrastructure/1.0.0": {
@@ -2775,7 +2778,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.27"
         },
         "runtime": {
-          "OnlineShop.Infrastructure.dll": {}
+          "OnlineShop.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

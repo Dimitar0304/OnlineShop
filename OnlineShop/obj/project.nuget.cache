@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fD/jLlyBiMY=",
+  "dgSpecHash": "gwVkxUSokek=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop\\OnlineShop.csproj",
+  "projectFilePath": "C:\\Users\\lasss\\Desktop\\OnlineShopRefact\\OnlineShop\\OnlineShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lasss\\.nuget\\packages\\habanero\\3.0.1\\habanero.3.0.1.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

@@ -11,16 +11,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new InvalidOperationException(
+        "Connection string 'DefaultConnection' is null or empty. " +
+        "Please ensure it is configured in appsettings.json, appsettings.Development.json, " +
+        "user secrets, or environment variables.");
+}
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
-
-
-
-
-
-
-
-
 
 //Adding session options
 builder.Services.ConfigureApplicationCookie(o =>

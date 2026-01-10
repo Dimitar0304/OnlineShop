@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XCrwF+2srF4=",
+  "dgSpecHash": "Rqzo48AMMGs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lasss\\Desktop\\Adcash assigment\\OnlineShop\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
+  "projectFilePath": "C:\\Users\\lasss\\Desktop\\OnlineShopRefact\\OnlineShop.Tests\\OnlineShop.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lasss\\.nuget\\packages\\abp\\9.1.3\\abp.9.1.3.nupkg.sha512",
     "C:\\Users\\lasss\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",

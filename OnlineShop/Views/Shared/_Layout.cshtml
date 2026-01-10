@@ -15,7 +15,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-dark box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <style>
@@ -34,25 +34,25 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
+                            <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
                         </li>
               
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Garment" asp-action="All"data="1">All Garments</a>
+                                <a class="nav-link btn btn-sm custom-button-color text-dark fw-bold" asp-area="" asp-controller="Garment" asp-action="All" data="1">All Garments</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Shoe" asp-action="All">All Shoes</a>
+                                <a class="nav-link btn btn-sm custom-button-color text-dark fw-bold" asp-area="" asp-controller="Shoe" asp-action="All">All Shoes</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Accessory" asp-action="All">All Accessories</a>
+                                <a class="nav-link btn btn-sm custom-button-color text-dark fw-bold" asp-area="" asp-controller="Accessory" asp-action="All">All Accessories</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link btn btn-sm custom-button-color text-primary" asp-area="" asp-controller="Brand" asp-action="AllBrands"asp-route-currentPage=1>All Brands</a>
+                                <a class="nav-link btn btn-sm custom-button-color text-dark fw-bold" asp-area="" asp-controller="Brand" asp-action="AllBrands" asp-route-currentPage=1>All Brands</a>
                             </li>
                         }
 
@@ -70,7 +70,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top border-dark footer text-dark">
         <div class="container">
             &copy; 2024 - OnlineShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">For Us</a>
         </div>

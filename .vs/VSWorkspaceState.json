@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\OnlineShop",
+    "\\OnlineShop\\Views",
+    "\\OnlineShop\\Views\\Home"
   ],
+  "SelectedNode": "\\OnlineShop\\Views\\Home\\Privacy.cshtml",
   "PreviewInSolutionExplorer": false
 }
